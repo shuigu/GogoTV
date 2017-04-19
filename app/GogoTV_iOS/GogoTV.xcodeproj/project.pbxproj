@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22396DDDB393E75700681363 /* libPods-GogoTVUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBCFA86BA985B8156FF769D /* libPods-GogoTVUITests.a */; };
+		5073A8D3D2913A4FF5D25B34 /* libPods-GogoTVTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C95B916F984FF89612EBB2 /* libPods-GogoTVTests.a */; };
+		7E84B6EE1EA62F1800F99052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6ED1EA62F1800F99052 /* main.m */; };
+		7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6F01EA62F1800F99052 /* AppDelegate.m */; };
+		7E84B6F41EA62F1800F99052 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6F31EA62F1800F99052 /* ViewController.m */; };
+		7E84B6F71EA62F1800F99052 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6F51EA62F1800F99052 /* Main.storyboard */; };
+		7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6F81EA62F1800F99052 /* Assets.xcassets */; };
+		7E84B6FC1EA62F1800F99052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */; };
+		7E84B7071EA62F1800F99052 /* GogoTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7061EA62F1800F99052 /* GogoTVTests.m */; };
+		7E84B7121EA62F1800F99052 /* GogoTVUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7111EA62F1800F99052 /* GogoTVUITests.m */; };
+		B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967B128B2D3861E5473E978B /* libPods-GogoTV.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E84B7031EA62F1800F99052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E84B6E11EA62F1700F99052 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E84B6E81EA62F1700F99052;
+			remoteInfo = GogoTV;
+		};
+		7E84B70E1EA62F1800F99052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E84B6E11EA62F1700F99052 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E84B6E81EA62F1700F99052;
+			remoteInfo = GogoTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00C18D1DC395F65CEEF379C9 /* Pods-GogoTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTV/Pods-GogoTV.release.xcconfig"; sourceTree = "<group>"; };
+		38721A1C84778C9726271C62 /* Pods-GogoTVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVUITests/Pods-GogoTVUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C2D78E4B80193E6DDE834D1 /* Pods-GogoTVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests.release.xcconfig"; sourceTree = "<group>"; };
+		7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		7E84B6E91EA62F1700F99052 /* GogoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GogoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E84B6ED1EA62F1800F99052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E84B6EF1EA62F1800F99052 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7E84B6F01EA62F1800F99052 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7E84B6F21EA62F1800F99052 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7E84B6F31EA62F1800F99052 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7E84B6F61EA62F1800F99052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E84B6F81EA62F1800F99052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E84B6FB1EA62F1800F99052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E84B6FD1EA62F1800F99052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E84B7021EA62F1800F99052 /* GogoTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogoTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E84B7061EA62F1800F99052 /* GogoTVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GogoTVTests.m; sourceTree = "<group>"; };
+		7E84B7081EA62F1800F99052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E84B70D1EA62F1800F99052 /* GogoTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogoTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E84B7111EA62F1800F99052 /* GogoTVUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GogoTVUITests.m; sourceTree = "<group>"; };
+		7E84B7131EA62F1800F99052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		967B128B2D3861E5473E978B /* libPods-GogoTV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BBCFA86BA985B8156FF769D /* libPods-GogoTVUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTVUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F16A2E410081E5D0B59CA6 /* Pods-GogoTVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E61A6A45BCAEDE49B7084F5E /* Pods-GogoTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTV/Pods-GogoTV.debug.xcconfig"; sourceTree = "<group>"; };
+		F405630DDE50A853E86FDFCD /* Pods-GogoTVUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVUITests/Pods-GogoTVUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F5C95B916F984FF89612EBB2 /* libPods-GogoTVTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTVTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E84B6E61EA62F1700F99052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E84B6FF1EA62F1800F99052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5073A8D3D2913A4FF5D25B34 /* libPods-GogoTVTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E84B70A1EA62F1800F99052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22396DDDB393E75700681363 /* libPods-GogoTVUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		419621EA407E1A391D9693EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E61A6A45BCAEDE49B7084F5E /* Pods-GogoTV.debug.xcconfig */,
+				00C18D1DC395F65CEEF379C9 /* Pods-GogoTV.release.xcconfig */,
+				A7F16A2E410081E5D0B59CA6 /* Pods-GogoTVTests.debug.xcconfig */,
+				4C2D78E4B80193E6DDE834D1 /* Pods-GogoTVTests.release.xcconfig */,
+				38721A1C84778C9726271C62 /* Pods-GogoTVUITests.debug.xcconfig */,
+				F405630DDE50A853E86FDFCD /* Pods-GogoTVUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4A05B01E44626BD0D4F59E77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */,
+				967B128B2D3861E5473E978B /* libPods-GogoTV.a */,
+				F5C95B916F984FF89612EBB2 /* libPods-GogoTVTests.a */,
+				9BBCFA86BA985B8156FF769D /* libPods-GogoTVUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E84B6E01EA62F1700F99052 = {
+			isa = PBXGroup;
+			children = (
+				7E84B6EB1EA62F1800F99052 /* GogoTV */,
+				7E84B7051EA62F1800F99052 /* GogoTVTests */,
+				7E84B7101EA62F1800F99052 /* GogoTVUITests */,
+				7E84B6EA1EA62F1700F99052 /* Products */,
+				419621EA407E1A391D9693EB /* Pods */,
+				4A05B01E44626BD0D4F59E77 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7E84B6EA1EA62F1700F99052 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E84B6E91EA62F1700F99052 /* GogoTV.app */,
+				7E84B7021EA62F1800F99052 /* GogoTVTests.xctest */,
+				7E84B70D1EA62F1800F99052 /* GogoTVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E84B6EB1EA62F1800F99052 /* GogoTV */ = {
+			isa = PBXGroup;
+			children = (
+				7E84B6EF1EA62F1800F99052 /* AppDelegate.h */,
+				7E84B6F01EA62F1800F99052 /* AppDelegate.m */,
+				7E84B6F21EA62F1800F99052 /* ViewController.h */,
+				7E84B6F31EA62F1800F99052 /* ViewController.m */,
+				7E84B6F51EA62F1800F99052 /* Main.storyboard */,
+				7E84B6F81EA62F1800F99052 /* Assets.xcassets */,
+				7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */,
+				7E84B6FD1EA62F1800F99052 /* Info.plist */,
+				7E84B6EC1EA62F1800F99052 /* Supporting Files */,
+			);
+			path = GogoTV;
+			sourceTree = "<group>";
+		};
+		7E84B6EC1EA62F1800F99052 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E84B6ED1EA62F1800F99052 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E84B7051EA62F1800F99052 /* GogoTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E84B7061EA62F1800F99052 /* GogoTVTests.m */,
+				7E84B7081EA62F1800F99052 /* Info.plist */,
+			);
+			path = GogoTVTests;
+			sourceTree = "<group>";
+		};
+		7E84B7101EA62F1800F99052 /* GogoTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7E84B7111EA62F1800F99052 /* GogoTVUITests.m */,
+				7E84B7131EA62F1800F99052 /* Info.plist */,
+			);
+			path = GogoTVUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E84B6E81EA62F1700F99052 /* GogoTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E84B7161EA62F1800F99052 /* Build configuration list for PBXNativeTarget "GogoTV" */;
+			buildPhases = (
+				06009BB94E097BC30DEBC746 /* [CP] Check Pods Manifest.lock */,
+				7E84B6E51EA62F1700F99052 /* Sources */,
+				7E84B6E61EA62F1700F99052 /* Frameworks */,
+				7E84B6E71EA62F1700F99052 /* Resources */,
+				6CCE852103BD1054BF72488D /* [CP] Embed Pods Frameworks */,
+				6C8D6E07BC171853D3FCED5E /* [CP] Copy Pods Resources */,
+				7E5B0D401EA704CD000BBDA1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GogoTV;
+			productName = GogoTV;
+			productReference = 7E84B6E91EA62F1700F99052 /* GogoTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E84B7011EA62F1800F99052 /* GogoTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E84B7191EA62F1800F99052 /* Build configuration list for PBXNativeTarget "GogoTVTests" */;
+			buildPhases = (
+				45429322F871A796571E0E2C /* [CP] Check Pods Manifest.lock */,
+				7E84B6FE1EA62F1800F99052 /* Sources */,
+				7E84B6FF1EA62F1800F99052 /* Frameworks */,
+				7E84B7001EA62F1800F99052 /* Resources */,
+				E04499895BF77A71BFD4DFE1 /* [CP] Embed Pods Frameworks */,
+				689B11E14217A35B092E5A53 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E84B7041EA62F1800F99052 /* PBXTargetDependency */,
+			);
+			name = GogoTVTests;
+			productName = GogoTVTests;
+			productReference = 7E84B7021EA62F1800F99052 /* GogoTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E84B70C1EA62F1800F99052 /* GogoTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E84B71C1EA62F1800F99052 /* Build configuration list for PBXNativeTarget "GogoTVUITests" */;
+			buildPhases = (
+				5658556C400F6B67B77C9C4C /* [CP] Check Pods Manifest.lock */,
+				7E84B7091EA62F1800F99052 /* Sources */,
+				7E84B70A1EA62F1800F99052 /* Frameworks */,
+				7E84B70B1EA62F1800F99052 /* Resources */,
+				0FE600F1570E668647BA387B /* [CP] Embed Pods Frameworks */,
+				F057F029305A24F912128956 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E84B70F1EA62F1800F99052 /* PBXTargetDependency */,
+			);
+			name = GogoTVUITests;
+			productName = GogoTVUITests;
+			productReference = 7E84B70D1EA62F1800F99052 /* GogoTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E84B6E11EA62F1700F99052 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "朱国清";
+				TargetAttributes = {
+					7E84B6E81EA62F1700F99052 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					7E84B7011EA62F1800F99052 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7E84B6E81EA62F1700F99052;
+					};
+					7E84B70C1EA62F1800F99052 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7E84B6E81EA62F1700F99052;
+					};
+				};
+			};
+			buildConfigurationList = 7E84B6E41EA62F1700F99052 /* Build configuration list for PBXProject "GogoTV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E84B6E01EA62F1700F99052;
+			productRefGroup = 7E84B6EA1EA62F1700F99052 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E84B6E81EA62F1700F99052 /* GogoTV */,
+				7E84B7011EA62F1800F99052 /* GogoTVTests */,
+				7E84B70C1EA62F1800F99052 /* GogoTVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E84B6E71EA62F1700F99052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E84B6FC1EA62F1800F99052 /* LaunchScreen.storyboard in Resources */,
+				7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */,
+				7E84B6F71EA62F1800F99052 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E84B7001EA62F1800F99052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E84B70B1EA62F1800F99052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06009BB94E097BC30DEBC746 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0FE600F1570E668647BA387B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GogoTVUITests/Pods-GogoTVUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45429322F871A796571E0E2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5658556C400F6B67B77C9C4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		689B11E14217A35B092E5A53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C8D6E07BC171853D3FCED5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GogoTV/Pods-GogoTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CCE852103BD1054BF72488D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GogoTV/Pods-GogoTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E5B0D401EA704CD000BBDA1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../react_native/node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		E04499895BF77A71BFD4DFE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F057F029305A24F912128956 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GogoTVUITests/Pods-GogoTVUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E84B6E51EA62F1700F99052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E84B6F41EA62F1800F99052 /* ViewController.m in Sources */,
+				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
+				7E84B6EE1EA62F1800F99052 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E84B6FE1EA62F1800F99052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E84B7071EA62F1800F99052 /* GogoTVTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E84B7091EA62F1800F99052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E84B7121EA62F1800F99052 /* GogoTVUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E84B7041EA62F1800F99052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E84B6E81EA62F1700F99052 /* GogoTV */;
+			targetProxy = 7E84B7031EA62F1800F99052 /* PBXContainerItemProxy */;
+		};
+		7E84B70F1EA62F1800F99052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E84B6E81EA62F1700F99052 /* GogoTV */;
+			targetProxy = 7E84B70E1EA62F1800F99052 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E84B6F51EA62F1800F99052 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E84B6F61EA62F1800F99052 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E84B6FB1EA62F1800F99052 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E84B7141EA62F1800F99052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7E84B7151EA62F1800F99052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E84B7171EA62F1800F99052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E61A6A45BCAEDE49B7084F5E /* Pods-GogoTV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GogoTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_LIBTOOLFLAGS = " $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guoqing.GogoTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7E84B7181EA62F1800F99052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C18D1DC395F65CEEF379C9 /* Pods-GogoTV.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GogoTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_LIBTOOLFLAGS = " $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guoqing.GogoTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7E84B71A1EA62F1800F99052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7F16A2E410081E5D0B59CA6 /* Pods-GogoTVTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GogoTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guoqing.GogoTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GogoTV.app/GogoTV";
+			};
+			name = Debug;
+		};
+		7E84B71B1EA62F1800F99052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C2D78E4B80193E6DDE834D1 /* Pods-GogoTVTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GogoTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guoqing.GogoTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GogoTV.app/GogoTV";
+			};
+			name = Release;
+		};
+		7E84B71D1EA62F1800F99052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38721A1C84778C9726271C62 /* Pods-GogoTVUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = GogoTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guoqing.GogoTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GogoTV;
+			};
+			name = Debug;
+		};
+		7E84B71E1EA62F1800F99052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F405630DDE50A853E86FDFCD /* Pods-GogoTVUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = GogoTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guoqing.GogoTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GogoTV;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E84B6E41EA62F1700F99052 /* Build configuration list for PBXProject "GogoTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E84B7141EA62F1800F99052 /* Debug */,
+				7E84B7151EA62F1800F99052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E84B7161EA62F1800F99052 /* Build configuration list for PBXNativeTarget "GogoTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E84B7171EA62F1800F99052 /* Debug */,
+				7E84B7181EA62F1800F99052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E84B7191EA62F1800F99052 /* Build configuration list for PBXNativeTarget "GogoTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E84B71A1EA62F1800F99052 /* Debug */,
+				7E84B71B1EA62F1800F99052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E84B71C1EA62F1800F99052 /* Build configuration list for PBXNativeTarget "GogoTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E84B71D1EA62F1800F99052 /* Debug */,
+				7E84B71E1EA62F1800F99052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E84B6E11EA62F1700F99052 /* Project object */;
+}
