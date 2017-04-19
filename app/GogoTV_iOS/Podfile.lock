@@ -1,0 +1,64 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - React/Core (0.38.0)
+  - React/RCTActionSheet (0.38.0):
+    - React/Core
+  - React/RCTGeolocation (0.38.0):
+    - React/Core
+  - React/RCTImage (0.38.0):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.38.0):
+    - React/Core
+  - React/RCTSettings (0.38.0):
+    - React/Core
+  - React/RCTText (0.38.0):
+    - React/Core
+  - React/RCTVibration (0.38.0):
+    - React/Core
+  - React/RCTWebSocket (0.38.0):
+    - React/Core
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - React/Core (from `./../react_native/node_modules/react-native`)
+  - React/RCTActionSheet (from `./../react_native/node_modules/react-native`)
+  - React/RCTGeolocation (from `./../react_native/node_modules/react-native`)
+  - React/RCTImage (from `./../react_native/node_modules/react-native`)
+  - React/RCTNetwork (from `./../react_native/node_modules/react-native`)
+  - React/RCTSettings (from `./../react_native/node_modules/react-native`)
+  - React/RCTText (from `./../react_native/node_modules/react-native`)
+  - React/RCTVibration (from `./../react_native/node_modules/react-native`)
+  - React/RCTWebSocket (from `./../react_native/node_modules/react-native`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: "./../react_native/node_modules/react-native"
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  React: 3cdd13d7c8f6ad5c20216aa83e032f0ce4087944
+
+PODFILE CHECKSUM: 5f879c5213c5fa2cfe0ac346b845be725a920127
+
+COCOAPODS: 1.2.1
