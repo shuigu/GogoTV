@@ -12,11 +12,20 @@ import {
   View
 } from 'react-native';
 
-export default class App extends Component {
+console.log("index.js begin");
+
+
+
+import {GogoTV} from './GogoTV'
+
+export default class App1 extends Component {
   // 构造
   constructor(props) {
     super(props);
-    console.log("app");
+    console.log("app constructor.");
+  }
+  componentWillUnmount() {
+    console.log("app componentWillUnMount.");
   }
   render() {
     return (
@@ -36,7 +45,7 @@ export default class App extends Component {
   }
 }
 
-class App1 extends  Component {
+class App2 extends  Component {
   // 构造
   constructor(props) {
     super(props);
@@ -46,13 +55,28 @@ class App1 extends  Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          app1 Welcome to React Native!
+          app2 app2 app2 app2
         </Text>
       </View>
     );
   }
 }
-
+class App3 extends  Component {
+  // 构造
+  constructor(props) {
+    super(props);
+    console.log("app1");
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          app3 app3 app3 app3
+        </Text>
+      </View>
+    );
+  }
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -72,5 +96,6 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('app', () => App);
 AppRegistry.registerComponent('app1', () => App1);
+AppRegistry.registerComponent('app2', () => App2);
+AppRegistry.registerComponent('app3', () => App3);

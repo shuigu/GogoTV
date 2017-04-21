@@ -7,6 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "GBridgeManager.h"
+#import "GNavigatorManager.h"
+
+/*
+  几个重要的单例
+ GBridgeManager - 管理Bridge的
+ GAppRCTModule  - 由RN创建的，
+ 
+ 
+ */
 
 @interface AppDelegate ()
 
@@ -14,32 +24,35 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // 1.显示初始化UI
+    [GNavigatorManager shareInstance];
+    // 2. 加载JSBundle ,并监听加完成时间
+    [[GBridgeManager shareInstance] setJavaScriptDidLoadBlock:^{
+        // 获取tabConfig
+        [[GBridgeManager shareInstance]enqueueJSCall:@"AppModule" method:@"getTabConfig" args:nil completion:^(NSDictionary *tabConfig) {
+            // 通过tabConfig来构造tabViewController
+            [[GNavigatorManager shareInstance]setTabConfig:tabConfig];
+        }];
+    }];
+    //
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end

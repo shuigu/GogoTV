@@ -3,6 +3,7 @@ package com.zhuguoqing.gogotv;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -29,12 +30,14 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage()
       );
     }
+
   };
 
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
+  public ReactInstanceManager getReactInstanceManager(){return mReactNativeHost.getReactInstanceManager();}
 
   @Override
   public void onCreate() {
