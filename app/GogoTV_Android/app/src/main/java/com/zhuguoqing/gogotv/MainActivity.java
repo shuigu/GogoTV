@@ -1,13 +1,14 @@
 package com.zhuguoqing.gogotv;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.CatalystInstance;
 import com.facebook.react.bridge.ReactContext;
+import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
 
 public class MainActivity extends ReactActivity {
 
@@ -22,6 +23,11 @@ public class MainActivity extends ReactActivity {
         reactInstanceManager.addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
             @Override
             public void onReactContextInitialized(ReactContext context) {
+
+                CatalystInstance catalystInstance = reactInstanceManager.getCurrentReactContext().getCatalystInstance();
+                catalystInstance.getJSModule(AppModule.class).getTabConfig();
+//                catalystInstance.getJSModule(AppModule.class).testAndroid();
+
                 Log.d("tag", "onReactContextInitialized: aaa");
             }
         });
@@ -31,7 +37,7 @@ public class MainActivity extends ReactActivity {
 
         setContentView(reactRootView);
 
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
     }
 }

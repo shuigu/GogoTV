@@ -25,18 +25,18 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     // 1.显示初始化UI
     [GNavigatorManager shareInstance];
     // 2. 加载JSBundle ,并监听加完成时间
     [[GBridgeManager shareInstance] setJavaScriptDidLoadBlock:^{
         // 获取tabConfig
-        [[GBridgeManager shareInstance]enqueueJSCall:@"AppModule" method:@"getTabConfig" args:nil completion:^(NSDictionary *tabConfig) {
-            // 通过tabConfig来构造tabViewController
-            [[GNavigatorManager shareInstance]setTabConfig:tabConfig];
-        }];
+        [[GBridgeManager shareInstance]enqueueJSCall:@"AppModule" method:@"getTabConfig" args:nil];
     }];
-    //
+    // 3. 获取tabConfig成功的回调
+    [[GBridgeManager shareInstance]setGetTabConfigBlock:^(NSDictionary * tabConfig){
+        [[GNavigatorManager shareInstance]setTabConfig:tabConfig];
+    }];
+    // 
     return YES;
 }
 

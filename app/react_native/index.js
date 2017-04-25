@@ -14,8 +14,6 @@ import {
 
 console.log("index.js begin");
 
-
-
 import {GogoTV} from './GogoTV'
 
 export default class App1 extends Component {

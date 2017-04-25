@@ -12,25 +12,21 @@
 #import "GAppRCTModule.h"
 
 typedef void (^JavaScriptDidLoadBlock)();
-typedef void (^JSReturnValueBlock)(NSDictionary *returnValue);
+typedef void (^getTabConfigBlock)(NSDictionary *tabConfig);
 
 @interface GBridgeManager : NSObject<RCTBridgeDelegate>
 
 + (instancetype)shareInstance;
 + (RCTBridge*)shareBridge;
 
-- (GAppRCTModule *)appModule;
 
 - (void)enqueueJSCall:(NSString *)module
                method:(NSString *)method
                  args:(NSArray *)args;
-- (void)enqueueJSCall:(NSString *)module
-               method:(NSString *)method
-                 args:(NSArray *)args
-           completion:(JSReturnValueBlock) completion;
 
 
-@property (nonatomic,readonly) RCTBridge * bridge;
-@property (nonatomic) JavaScriptDidLoadBlock javaScriptDidLoadBlock;
+@property (nonatomic,readonly)  RCTBridge * bridge;
+@property (nonatomic,strong)    JavaScriptDidLoadBlock javaScriptDidLoadBlock;
+@property (nonatomic,strong)    getTabConfigBlock      getTabConfigBlock;
 
 @end

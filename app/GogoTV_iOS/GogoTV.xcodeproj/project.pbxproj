@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		22396DDDB393E75700681363 /* libPods-GogoTVUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBCFA86BA985B8156FF769D /* libPods-GogoTVUITests.a */; };
 		5073A8D3D2913A4FF5D25B34 /* libPods-GogoTVTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C95B916F984FF89612EBB2 /* libPods-GogoTVTests.a */; };
-		7E5564DE1EAA18CE00873C80 /* GNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5564DD1EAA18CE00873C80 /* GNavigationViewController.m */; };
+		7E1059451EADF551007F957F /* GNavigatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059321EADF551007F957F /* GNavigatorManager.m */; };
+		7E1059461EADF551007F957F /* GNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059351EADF551007F957F /* GNavigationViewController.m */; };
+		7E1059471EADF551007F957F /* GTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059371EADF551007F957F /* GTabViewController.m */; };
+		7E1059481EADF551007F957F /* GBridgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10593B1EADF551007F957F /* GBridgeManager.m */; };
+		7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10593E1EADF551007F957F /* GAppRCTModule.m */; };
+		7E10594A1EADF551007F957F /* GRCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059411EADF551007F957F /* GRCTViewController.m */; };
+		7E10594B1EADF551007F957F /* GUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059441EADF551007F957F /* GUtil.m */; };
 		7E84B6EE1EA62F1800F99052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6ED1EA62F1800F99052 /* main.m */; };
 		7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6F01EA62F1800F99052 /* AppDelegate.m */; };
 		7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6F81EA62F1800F99052 /* Assets.xcassets */; };
 		7E84B6FC1EA62F1800F99052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */; };
 		7E84B7071EA62F1800F99052 /* GogoTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7061EA62F1800F99052 /* GogoTVTests.m */; };
 		7E84B7121EA62F1800F99052 /* GogoTVUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7111EA62F1800F99052 /* GogoTVUITests.m */; };
-		7E9B642C1EA9D5750071CD24 /* GBridgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B64251EA9D5750071CD24 /* GBridgeManager.m */; };
-		7E9B642D1EA9D5750071CD24 /* GAppRCTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B64281EA9D5750071CD24 /* GAppRCTModule.m */; };
-		7E9B642E1EA9D5750071CD24 /* GRCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B642B1EA9D5750071CD24 /* GRCTViewController.m */; };
-		7E9B64331EA9EF330071CD24 /* GUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B64321EA9EF330071CD24 /* GUtil.m */; };
-		7EAC748E1EAA04FA004E1DDD /* GNavigatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC748D1EAA04FA004E1DDD /* GNavigatorManager.m */; };
-		7ECD8D661EAA0FB5001A1743 /* GTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD8D651EAA0FB5001A1743 /* GTabViewController.m */; };
 		B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967B128B2D3861E5473E978B /* libPods-GogoTV.a */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +46,20 @@
 		00C18D1DC395F65CEEF379C9 /* Pods-GogoTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTV/Pods-GogoTV.release.xcconfig"; sourceTree = "<group>"; };
 		38721A1C84778C9726271C62 /* Pods-GogoTVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVUITests/Pods-GogoTVUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2D78E4B80193E6DDE834D1 /* Pods-GogoTVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests.release.xcconfig"; sourceTree = "<group>"; };
-		7E5564DC1EAA18CE00873C80 /* GNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNavigationViewController.h; sourceTree = "<group>"; };
-		7E5564DD1EAA18CE00873C80 /* GNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNavigationViewController.m; sourceTree = "<group>"; };
+		7E1059311EADF551007F957F /* GNavigatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNavigatorManager.h; sourceTree = "<group>"; };
+		7E1059321EADF551007F957F /* GNavigatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNavigatorManager.m; sourceTree = "<group>"; };
+		7E1059341EADF551007F957F /* GNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNavigationViewController.h; sourceTree = "<group>"; };
+		7E1059351EADF551007F957F /* GNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNavigationViewController.m; sourceTree = "<group>"; };
+		7E1059361EADF551007F957F /* GTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTabViewController.h; sourceTree = "<group>"; };
+		7E1059371EADF551007F957F /* GTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTabViewController.m; sourceTree = "<group>"; };
+		7E10593A1EADF551007F957F /* GBridgeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBridgeManager.h; sourceTree = "<group>"; };
+		7E10593B1EADF551007F957F /* GBridgeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBridgeManager.m; sourceTree = "<group>"; };
+		7E10593D1EADF551007F957F /* GAppRCTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAppRCTModule.h; sourceTree = "<group>"; };
+		7E10593E1EADF551007F957F /* GAppRCTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAppRCTModule.m; sourceTree = "<group>"; };
+		7E1059401EADF551007F957F /* GRCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRCTViewController.h; sourceTree = "<group>"; };
+		7E1059411EADF551007F957F /* GRCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRCTViewController.m; sourceTree = "<group>"; };
+		7E1059431EADF551007F957F /* GUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtil.h; sourceTree = "<group>"; };
+		7E1059441EADF551007F957F /* GUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtil.m; sourceTree = "<group>"; };
 		7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		7E84B6E91EA62F1700F99052 /* GogoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GogoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84B6ED1EA62F1800F99052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,18 +74,6 @@
 		7E84B70D1EA62F1800F99052 /* GogoTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogoTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84B7111EA62F1800F99052 /* GogoTVUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GogoTVUITests.m; sourceTree = "<group>"; };
 		7E84B7131EA62F1800F99052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E9B64241EA9D5750071CD24 /* GBridgeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBridgeManager.h; sourceTree = "<group>"; };
-		7E9B64251EA9D5750071CD24 /* GBridgeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBridgeManager.m; sourceTree = "<group>"; };
-		7E9B64271EA9D5750071CD24 /* GAppRCTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAppRCTModule.h; sourceTree = "<group>"; };
-		7E9B64281EA9D5750071CD24 /* GAppRCTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAppRCTModule.m; sourceTree = "<group>"; };
-		7E9B642A1EA9D5750071CD24 /* GRCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRCTViewController.h; sourceTree = "<group>"; };
-		7E9B642B1EA9D5750071CD24 /* GRCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRCTViewController.m; sourceTree = "<group>"; };
-		7E9B64311EA9EF330071CD24 /* GUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtil.h; sourceTree = "<group>"; };
-		7E9B64321EA9EF330071CD24 /* GUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtil.m; sourceTree = "<group>"; };
-		7EAC748C1EAA04FA004E1DDD /* GNavigatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNavigatorManager.h; sourceTree = "<group>"; };
-		7EAC748D1EAA04FA004E1DDD /* GNavigatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNavigatorManager.m; sourceTree = "<group>"; };
-		7ECD8D641EAA0FB5001A1743 /* GTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTabViewController.h; sourceTree = "<group>"; };
-		7ECD8D651EAA0FB5001A1743 /* GTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTabViewController.m; sourceTree = "<group>"; };
 		967B128B2D3861E5473E978B /* libPods-GogoTV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBCFA86BA985B8156FF769D /* libPods-GogoTVUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTVUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F16A2E410081E5D0B59CA6 /* Pods-GogoTVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,10 +134,95 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E10592E1EADF551007F957F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7E10592F1EADF551007F957F /* GogoTV */,
+				7E1059381EADF551007F957F /* ReactNative */,
+				7E1059421EADF551007F957F /* Util */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7E10592F1EADF551007F957F /* GogoTV */ = {
+			isa = PBXGroup;
+			children = (
+				7E1059301EADF551007F957F /* Base */,
+				7E1059331EADF551007F957F /* UI */,
+			);
+			path = GogoTV;
+			sourceTree = "<group>";
+		};
+		7E1059301EADF551007F957F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7E1059311EADF551007F957F /* GNavigatorManager.h */,
+				7E1059321EADF551007F957F /* GNavigatorManager.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7E1059331EADF551007F957F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7E1059341EADF551007F957F /* GNavigationViewController.h */,
+				7E1059351EADF551007F957F /* GNavigationViewController.m */,
+				7E1059361EADF551007F957F /* GTabViewController.h */,
+				7E1059371EADF551007F957F /* GTabViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7E1059381EADF551007F957F /* ReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				7E1059391EADF551007F957F /* Base */,
+				7E10593C1EADF551007F957F /* ReactNativeModules */,
+				7E10593F1EADF551007F957F /* UI */,
+			);
+			path = ReactNative;
+			sourceTree = "<group>";
+		};
+		7E1059391EADF551007F957F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7E10593A1EADF551007F957F /* GBridgeManager.h */,
+				7E10593B1EADF551007F957F /* GBridgeManager.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7E10593C1EADF551007F957F /* ReactNativeModules */ = {
+			isa = PBXGroup;
+			children = (
+				7E10593D1EADF551007F957F /* GAppRCTModule.h */,
+				7E10593E1EADF551007F957F /* GAppRCTModule.m */,
+			);
+			path = ReactNativeModules;
+			sourceTree = "<group>";
+		};
+		7E10593F1EADF551007F957F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7E1059401EADF551007F957F /* GRCTViewController.h */,
+				7E1059411EADF551007F957F /* GRCTViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7E1059421EADF551007F957F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7E1059431EADF551007F957F /* GUtil.h */,
+				7E1059441EADF551007F957F /* GUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		7E84B6E01EA62F1700F99052 = {
 			isa = PBXGroup;
 			children = (
-				7E9B64211EA9D5750071CD24 /* Source */,
+				7E10592E1EADF551007F957F /* Source */,
 				7E84B6EB1EA62F1800F99052 /* GogoTV */,
 				7E84B7051EA62F1800F99052 /* GogoTVTests */,
 				7E84B7101EA62F1800F99052 /* GogoTVUITests */,
@@ -194,91 +279,6 @@
 				7E84B7131EA62F1800F99052 /* Info.plist */,
 			);
 			path = GogoTVUITests;
-			sourceTree = "<group>";
-		};
-		7E9B64211EA9D5750071CD24 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				7EAC748A1EAA02F6004E1DDD /* GogoTV */,
-				7E9B64301EA9EF220071CD24 /* Util */,
-				7E9B64221EA9D5750071CD24 /* ReactNative */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		7E9B64221EA9D5750071CD24 /* ReactNative */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B64231EA9D5750071CD24 /* Core */,
-				7E9B64261EA9D5750071CD24 /* Module */,
-				7E9B64291EA9D5750071CD24 /* UI */,
-			);
-			path = ReactNative;
-			sourceTree = "<group>";
-		};
-		7E9B64231EA9D5750071CD24 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B64241EA9D5750071CD24 /* GBridgeManager.h */,
-				7E9B64251EA9D5750071CD24 /* GBridgeManager.m */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7E9B64261EA9D5750071CD24 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B64271EA9D5750071CD24 /* GAppRCTModule.h */,
-				7E9B64281EA9D5750071CD24 /* GAppRCTModule.m */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		7E9B64291EA9D5750071CD24 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B642A1EA9D5750071CD24 /* GRCTViewController.h */,
-				7E9B642B1EA9D5750071CD24 /* GRCTViewController.m */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		7E9B64301EA9EF220071CD24 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B64311EA9EF330071CD24 /* GUtil.h */,
-				7E9B64321EA9EF330071CD24 /* GUtil.m */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		7EAC748A1EAA02F6004E1DDD /* GogoTV */ = {
-			isa = PBXGroup;
-			children = (
-				7ECD8D631EAA0F69001A1743 /* UI */,
-				7EAC748B1EAA049B004E1DDD /* Base */,
-			);
-			path = GogoTV;
-			sourceTree = "<group>";
-		};
-		7EAC748B1EAA049B004E1DDD /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				7EAC748C1EAA04FA004E1DDD /* GNavigatorManager.h */,
-				7EAC748D1EAA04FA004E1DDD /* GNavigatorManager.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		7ECD8D631EAA0F69001A1743 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				7ECD8D641EAA0FB5001A1743 /* GTabViewController.h */,
-				7ECD8D651EAA0FB5001A1743 /* GTabViewController.m */,
-				7E5564DC1EAA18CE00873C80 /* GNavigationViewController.h */,
-				7E5564DD1EAA18CE00873C80 /* GNavigationViewController.m */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,15 +571,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E10594B1EADF551007F957F /* GUtil.m in Sources */,
+				7E1059481EADF551007F957F /* GBridgeManager.m in Sources */,
+				7E1059461EADF551007F957F /* GNavigationViewController.m in Sources */,
+				7E1059471EADF551007F957F /* GTabViewController.m in Sources */,
+				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
 				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
-				7E9B642D1EA9D5750071CD24 /* GAppRCTModule.m in Sources */,
-				7EAC748E1EAA04FA004E1DDD /* GNavigatorManager.m in Sources */,
-				7E5564DE1EAA18CE00873C80 /* GNavigationViewController.m in Sources */,
 				7E84B6EE1EA62F1800F99052 /* main.m in Sources */,
-				7ECD8D661EAA0FB5001A1743 /* GTabViewController.m in Sources */,
-				7E9B64331EA9EF330071CD24 /* GUtil.m in Sources */,
-				7E9B642E1EA9D5750071CD24 /* GRCTViewController.m in Sources */,
-				7E9B642C1EA9D5750071CD24 /* GBridgeManager.m in Sources */,
+				7E10594A1EADF551007F957F /* GRCTViewController.m in Sources */,
+				7E1059451EADF551007F957F /* GNavigatorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

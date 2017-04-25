@@ -12,9 +12,7 @@
 
 static GBridgeManager * bridgeManager;
 
-@implementation GBridgeManager{
-    NSMutableDictionary<NSString*,JSReturnValueBlock> * invokeMap;
-}
+@implementation GBridgeManager
 #pragma mark - 静态函数
 +(instancetype)shareInstance{
     static dispatch_once_t onceToken;
@@ -29,7 +27,6 @@ static GBridgeManager * bridgeManager;
 #pragma mark - 成员函数
 -(instancetype)init{
     if (self=[super init]) {
-        invokeMap = [[NSMutableDictionary alloc]init];
         [[NSNotificationCenter defaultCenter]addObserver:self
                                                 selector:@selector(onGAppInvokeReturnNotification:)
                                                     name:KGInvokeValueNotification
@@ -44,41 +41,19 @@ static GBridgeManager * bridgeManager;
                                              selector:@selector(javaScriptDidLoad:)
                                                  name:RCTJavaScriptDidLoadNotification
                                                object:_bridge];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(bridgeDidReload:)
-                                                 name:RCTJavaScriptWillStartLoadingNotification
-                                               object:_bridge];
-}
-
-- (GAppRCTModule *)appModule{
-    id app = [_bridge moduleForClass:[GAppRCTModule class]];
-    return app;
 }
 - (void)enqueueJSCall:(NSString *)module
                method:(NSString *)method
                  args:(NSArray *)args{
     [_bridge enqueueJSCall:module method:method args:args completion:nil];
 }
-- (void)enqueueJSCall:(NSString *)module
-               method:(NSString *)method
-                 args:(NSArray *)args
-           completion:(JSReturnValueBlock) completion{
-    
-    NSString * uuid = [GUtil uuid];
-    invokeMap[uuid] = completion;
-    NSMutableArray * newArgs = args?[args mutableCopy]:[NSMutableArray array];
-    [newArgs insertObject:uuid atIndex:0];
-    
-    [_bridge enqueueJSCall:module method:method args:newArgs completion:nil];
-}
 -(void)onGAppInvokeReturnNotification:(NSNotification *)notification{
-    NSString * invokeId = [notification.object valueForKey:@"invokeId"];
-    NSDictionary * returnValue = [notification.object valueForKey:@"returnValue"];
-    if (invokeId && returnValue) {
-        JSReturnValueBlock block = [invokeMap valueForKey:invokeId];
-        if (block) {
-            block(returnValue);
-            [invokeMap removeObjectForKey:invokeId];
+    NSString * key = [notification.object valueForKey:@"key"];
+    NSDictionary * data = [notification.object valueForKey:@"data"];
+    // 获取tabConfig
+    if (key && [key isEqual:TabConfig]) {
+        if (self.getTabConfigBlock) {
+            self.getTabConfigBlock(data);
         }
     }
 }
@@ -93,9 +68,5 @@ static GBridgeManager * bridgeManager;
         self.javaScriptDidLoadBlock();
     }
 }
-- (void)bridgeDidReload:(NSNotification *)notification{
-    
-}
-
 
 @end
