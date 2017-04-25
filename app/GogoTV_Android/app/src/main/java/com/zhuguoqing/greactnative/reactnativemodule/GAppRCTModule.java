@@ -15,8 +15,8 @@ import com.zhuguoqing.gogotv.MainApplication;
  */
 
 public class GAppRCTModule extends ReactContextBaseJavaModule {
+    public static final String TAB_CONFIG = "tabConfig";
 
-    public static final String action = "com.zhuguoqing.gogotv.senddata";
     public GAppRCTModule(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -29,13 +29,14 @@ public class GAppRCTModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void sendData(String key,ReadableMap data){
-        Intent intent = new Intent(action);
-        intent.putExtra("key",key);
-        intent.putExtra("data","data");
         /**
-         * 可以优化？
+         * 这个函数可以优化？
          */
-        MainApplication.getContext().sendBroadcast(intent);
+        /*
+        * **/
+        if (key.equals(TAB_CONFIG)){
+            MainApplication.getInstance().tabConfig(data);
+        }
     }
 
 }

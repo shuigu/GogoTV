@@ -1,26 +1,28 @@
 package com.zhuguoqing.gogotv;
 
 import android.app.Application;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.zhuguoqing.gogotv.base.ApplicationListener;
 import com.zhuguoqing.greactnative.base.GReactPackage;
-import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
+import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MainApplication extends Application implements ReactApplication {
-  private static Context instance;
-  public static Context getContext()
+  private static String JsMainModuleName = "index";
+  private static MainApplication instance;
+  public static MainApplication getInstance()
   {
     return instance;
   }
@@ -31,7 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     }
     @Override
     protected String getJSMainModuleName() {
-      return "index";
+      return JsMainModuleName;
     }
     @Override
     protected List<ReactPackage> getPackages() {
@@ -41,26 +43,43 @@ public class MainApplication extends Application implements ReactApplication {
       );
     }
   };
-  private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-      String key = intent.getStringExtra("key");
-      int a = 9;
-    }
-  };
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    instance = this;
+    SoLoader.init(this, /* native exopackage */ false);
+    /**
+     * 初始化 React环境
+     * */
+    mReactNativeHost.getReactInstanceManager().createReactContextInBackground();
+    mReactNativeHost.getReactInstanceManager().addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
+      @Override
+      public void onReactContextInitialized(ReactContext context) {
+        context.getJSModule(AppModule.class).getTabConfig();
+      }
+    });
+  }
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
-  public ReactInstanceManager getReactInstanceManager(){return mReactNativeHost.getReactInstanceManager();}
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    instance = getApplicationContext();
-    SoLoader.init(this, /* native exopackage */ false);
-    IntentFilter filter = new IntentFilter();
-    filter.addAction(GAppRCTModule.action);
-    registerReceiver(mBroadcastReceiver, filter);
+
+  /************** application listener *******************/
+  private Set<ApplicationListener> mListenerSet = new HashSet<>();
+  public void addApplicationListener(ApplicationListener listener){
+    mListenerSet.add(listener);
+  }
+  public void removeApplicationListener(ApplicationListener listener){
+    mListenerSet.remove(listener);
+  }
+
+  /**
+   * 由GAppRCTModule调用
+   * */
+  public void tabConfig(ReadableMap tabConfig){
+    for (ApplicationListener listener:mListenerSet){
+      listener.tabConfig(tabConfig);
+    }
   }
 
 
