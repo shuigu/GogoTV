@@ -5,18 +5,22 @@ var TabConfig = {
   version:'1.0',
   tabs:[
     {
-      title:'主页',
+      title:'推荐',
       moduleName:'app1',
     }
     ,
     {
-      title:'测试',
+      title:'视库',
       moduleName:'app2',
     }
     ,
     {
-      title:'测试2',
+      title:'历史',
       moduleName:'app3',
+    },
+    {
+      title:'我的',
+      moduleName:'app4',
     }
   ],
 }

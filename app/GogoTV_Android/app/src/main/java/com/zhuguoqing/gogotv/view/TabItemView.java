@@ -13,9 +13,8 @@ import com.zhuguoqing.gogotv.R;
  */
 
 public class TabItemView extends LinearLayout {
-    public TabItemView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        // 加载布局
+    public TabItemView(Context context) {
+        super(context);
         LayoutInflater.from(context).inflate(R.layout.bottom_tab_item, this);
     }
     public void setTitle(String title){

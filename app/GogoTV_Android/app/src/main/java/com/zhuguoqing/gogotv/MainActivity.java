@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.facebook.react.ReactActivity;
@@ -41,8 +42,12 @@ public class MainActivity extends ReactActivity {
         MainApplication.getInstance().addApplicationListener(mApplicationListener);
     }
     private  void initTabView(ReadableMap tabConfig){
-        LinearLayout mainView = (LinearLayout) findViewById(R.id.activity_main);
-        BottomTabView tabView = new BottomTabView(this.getBaseContext(),null);
+
+        LinearLayout tabLayout = (LinearLayout) findViewById(R.id.id_tab);
+        tabLayout.removeAllViews();
+        BottomTabView tabView = new BottomTabView(this.getBaseContext());
+
+        tabView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         ReadableArray tabs = tabConfig.getArray("tabs");
         for (int i=0;i<tabs.size();i++){
             ReadableMap tabItem = tabs.getMap(i);
@@ -50,9 +55,8 @@ public class MainActivity extends ReactActivity {
             String moduleName = tabItem.getString("moduleName");
             tabView.addItem(title);
         }
-        mainView.addView(tabView);
+        tabLayout.addView(tabView);
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

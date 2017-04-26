@@ -75,6 +75,17 @@ class App3 extends  Component {
     );
   }
 }
+class App4 extends  Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          app3 app3 app3 app3
+        </Text>
+      </View>
+    );
+  }
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -97,3 +108,4 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('app1', () => App1);
 AppRegistry.registerComponent('app2', () => App2);
 AppRegistry.registerComponent('app3', () => App3);
+AppRegistry.registerComponent('app4', () => App4);

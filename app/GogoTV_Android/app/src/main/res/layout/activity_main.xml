@@ -12,4 +12,10 @@
         android:layout_height="0dp"
         android:layout_weight="1">
     </FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/id_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </LinearLayout>
 </LinearLayout>
