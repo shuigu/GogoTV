@@ -80,7 +80,7 @@ class App4 extends  Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          app3 app3 app3 app3
+          app4 app4 app4 app4
         </Text>
       </View>
     );

@@ -1,5 +1,6 @@
 package com.zhuguoqing.gogotv;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,19 +9,21 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.facebook.react.ReactActivity;
-import com.facebook.react.ReactInstanceManager;
-import com.facebook.react.ReactRootView;
-import com.facebook.react.bridge.CatalystInstance;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
-import com.zhuguoqing.gogotv.base.ApplicationListener;
 import com.zhuguoqing.gogotv.view.BottomTabView;
-import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
+import com.zhuguoqing.gogotv.view.GReactFragment;
+import com.zhuguoqing.gogotv.view.TabItemView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends ReactActivity {
-    private ApplicationListener mApplicationListener;
+    private MainApplication.ApplicationListener mApplicationListener;
     private ReadableMap mTabConfig;
+    private BottomTabView mTabView;
+    private List<GReactFragment> mFlagments = new ArrayList();
     private Handler mTabViewHander = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -32,7 +35,7 @@ public class MainActivity extends ReactActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mApplicationListener = new ApplicationListener() {
+        mApplicationListener = new MainApplication.ApplicationListener() {
             @Override
             public void tabConfig(ReadableMap tabConfig) {
                 mTabConfig = tabConfig;
@@ -45,17 +48,42 @@ public class MainActivity extends ReactActivity {
 
         LinearLayout tabLayout = (LinearLayout) findViewById(R.id.id_tab);
         tabLayout.removeAllViews();
-        BottomTabView tabView = new BottomTabView(this.getBaseContext());
+        mTabView = new BottomTabView(this.getBaseContext());
 
-        tabView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        mTabView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         ReadableArray tabs = tabConfig.getArray("tabs");
         for (int i=0;i<tabs.size();i++){
             ReadableMap tabItem = tabs.getMap(i);
             String title = tabItem.getString("title");
             String moduleName = tabItem.getString("moduleName");
-            tabView.addItem(title);
+            mTabView.addItem(title);
+            GReactFragment fragment = new GReactFragment(moduleName);
+            mFlagments.add(fragment);
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.add(R.id.id_content,fragment);
+            transaction.commit();
         }
-        tabLayout.addView(tabView);
+        mTabView.setTabClickListener(new BottomTabView.OnTabClickListener() {
+            @Override
+            public void onTabSelected(int index) {
+                selectTab(index);
+            }
+        });
+        selectTab(0);
+        tabLayout.addView(mTabView);
+    }
+    public void selectTab(int index){
+        mTabView.setCheck(index);
+        GReactFragment fragment = mFlagments.get(index);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        hideAllFlagment(transaction);
+        transaction.show(fragment);
+        transaction.commit();
+    }
+    public void hideAllFlagment(FragmentTransaction transaction){
+        for (GReactFragment fragment:mFlagments){
+            transaction.hide(fragment);
+        }
     }
     @Override
     protected void onDestroy() {

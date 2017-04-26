@@ -10,7 +10,6 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.zhuguoqing.gogotv.base.ApplicationListener;
 import com.zhuguoqing.greactnative.base.GReactPackage;
 import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
 
@@ -82,6 +81,8 @@ public class MainApplication extends Application implements ReactApplication {
     }
   }
 
-
+  public interface ApplicationListener {
+    public void tabConfig(ReadableMap tabConfig);
+  }
 
 }
