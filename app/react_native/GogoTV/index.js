@@ -3,8 +3,12 @@
  */
 
 
-import GogoTV from './app'
+import App from './app'
+import RegisterComponent from './RegisterComponent'
+import Config from './Config'
 
 module.exports = {
-  GogoTV,
+  RegisterComponent,
+  App,
+  Config,
 }

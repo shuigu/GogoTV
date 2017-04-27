@@ -25,17 +25,11 @@ GNavigatorManager * gNavigatorManager;
     _window = [[UIWindow alloc]initWithFrame:screenFrame];
     _window.backgroundColor = [UIColor whiteColor];
     
-    _tabViewController = [[GTabViewController alloc]init];
-    _window.rootViewController = _tabViewController;
+    _rootViewController = [[GRootViewController alloc]init];
+    _rootNavigationViewController = [[GNavigationViewController alloc]initWithRootViewController:_rootViewController];
+    _window.rootViewController = _rootNavigationViewController;
     
     [_window makeKeyAndVisible];
-    
-}
--(void)setTabConfig:(NSDictionary *)tabConfig{
-    _tabConfig = tabConfig;
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [_tabViewController setTabConfig:tabConfig];
-    });
     
 }
 @end

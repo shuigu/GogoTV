@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Masonry (1.0.2)
   - React/Core (0.38.0)
   - React/RCTActionSheet (0.38.0):
     - React/Core
@@ -41,6 +42,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - Masonry
   - React/Core (from `./../react_native/node_modules/react-native`)
   - React/RCTActionSheet (from `./../react_native/node_modules/react-native`)
   - React/RCTGeolocation (from `./../react_native/node_modules/react-native`)
@@ -57,8 +59,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   React: 3cdd13d7c8f6ad5c20216aa83e032f0ce4087944
 
-PODFILE CHECKSUM: 5f879c5213c5fa2cfe0ac346b845be725a920127
+PODFILE CHECKSUM: b482608dc88b35ae7131ab429c22b8b230be0618
 
 COCOAPODS: 1.2.1

@@ -7,6 +7,7 @@ target 'GogoTV' do
 
   # Pods for GogoTV
   pod 'AFNetworking', '~> 2.0'
+  pod 'Masonry'
 
   pod 'React', :path => './../react_native/node_modules/react-native', :subspecs => [
     'Core',
@@ -19,7 +20,8 @@ target 'GogoTV' do
     'RCTVibration',
     'RCTWebSocket',
   ]
-
+  
+  
 
   target 'GogoTVTests' do
     inherit! :search_paths

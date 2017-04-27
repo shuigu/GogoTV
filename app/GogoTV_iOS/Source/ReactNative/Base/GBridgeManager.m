@@ -53,7 +53,9 @@ static GBridgeManager * bridgeManager;
     // 获取tabConfig
     if (key && [key isEqual:TabConfig]) {
         if (self.getTabConfigBlock) {
-            self.getTabConfigBlock(data);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.getTabConfigBlock(data);
+            });            
         }
     }
 }

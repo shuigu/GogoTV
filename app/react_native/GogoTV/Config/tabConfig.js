@@ -6,21 +6,21 @@ var TabConfig = {
   tabs:[
     {
       title:'推荐',
-      moduleName:'app1',
+      moduleName:'recommend',
     }
     ,
     {
       title:'视库',
-      moduleName:'app2',
+      moduleName:'videoLibrary',
     }
     ,
     {
       title:'历史',
-      moduleName:'app3',
+      moduleName:'history',
     },
     {
       title:'我的',
-      moduleName:'app4',
+      moduleName:'mine',
     }
   ],
 }

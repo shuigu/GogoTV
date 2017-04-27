@@ -34,7 +34,7 @@
     }];
     // 3. 获取tabConfig成功的回调
     [[GBridgeManager shareInstance]setGetTabConfigBlock:^(NSDictionary * tabConfig){
-        [[GNavigatorManager shareInstance]setTabConfig:tabConfig];
+        [[GNavigatorManager shareInstance].rootViewController setTabConfig:tabConfig];
     }];
     // 
     return YES;
