@@ -2,20 +2,27 @@
  * Created by zhuguoqing on 17/4/27.
  */
 import React,{ Component } from 'react';
-
+var Navigator    = require('NativeModules').GNavigationRCTModule;
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity,
 } from 'react-native';
 
 class Login extends  Component {
+  back(){
+    Navigator.pop();
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Mine page
+          login page
         </Text>
+        <TouchableOpacity onPress={this.back}>
+          <Text>返回</Text>
+        </TouchableOpacity>
       </View>
     );
   }

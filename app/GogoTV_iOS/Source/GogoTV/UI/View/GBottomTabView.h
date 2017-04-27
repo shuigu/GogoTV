@@ -11,6 +11,6 @@
 typedef void(^TabViewSelectedBlock)(NSInteger index);
 @interface GBottomTabView : UIView
 -(void)addTabItemWithTitles:(NSArray<NSString*> *)titles;
-
+-(void)removeAllChileViews;
 @property (nonatomic,strong) TabViewSelectedBlock tabViewSelectedBlock;
 @end

@@ -78,10 +78,14 @@
     [self showViewControllerWithIndex:0];
 }
 -(void)removeAllChildViewController{
+    currentViewController = nil;
     for (GRCTViewController *vc in viewControllers) {
+        [vc.view removeFromSuperview];
         [vc removeFromParentViewController];
     }
+    
     [viewControllers removeAllObjects];
+    [tabView removeAllChileViews];
 }
 -(void)addViewController:(GRCTViewController *)viewController{
     if (!viewControllers) {
@@ -94,6 +98,9 @@
 }
 
 -(void)showViewControllerWithIndex:(NSInteger)index{
+    if (viewControllers.count < 1) {
+        return;
+    }
     GRCTViewController * newViewController = [viewControllers objectAtIndex:index];
     if (!newViewController) {
         return;

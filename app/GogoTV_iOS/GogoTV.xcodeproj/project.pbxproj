@@ -24,6 +24,7 @@
 		7E970CB41EB1C0B2009D4DFD /* GRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CB31EB1C0B2009D4DFD /* GRootViewController.m */; };
 		7E970CB81EB1C1A9009D4DFD /* GBottomTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CB71EB1C1A9009D4DFD /* GBottomTabView.m */; };
 		7E970CBB1EB1C1BA009D4DFD /* GBottomTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CBA1EB1C1BA009D4DFD /* GBottomTabItemView.m */; };
+		7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB738591EB22A51003AB74A /* GNavigationRCTModule.m */; };
 		B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967B128B2D3861E5473E978B /* libPods-GogoTV.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,8 @@
 		7E970CB91EB1C1BA009D4DFD /* GBottomTabItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBottomTabItemView.h; sourceTree = "<group>"; };
 		7E970CBA1EB1C1BA009D4DFD /* GBottomTabItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBottomTabItemView.m; sourceTree = "<group>"; };
 		7EA8A15B1EB1C5EB0071F521 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7EB738581EB22A51003AB74A /* GNavigationRCTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNavigationRCTModule.h; sourceTree = "<group>"; };
+		7EB738591EB22A51003AB74A /* GNavigationRCTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNavigationRCTModule.m; sourceTree = "<group>"; };
 		967B128B2D3861E5473E978B /* libPods-GogoTV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBCFA86BA985B8156FF769D /* libPods-GogoTVUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GogoTVUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F16A2E410081E5D0B59CA6 /* Pods-GogoTVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GogoTVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GogoTVTests/Pods-GogoTVTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 			children = (
 				7E10593D1EADF551007F957F /* GAppRCTModule.h */,
 				7E10593E1EADF551007F957F /* GAppRCTModule.m */,
+				7EB738581EB22A51003AB74A /* GNavigationRCTModule.h */,
+				7EB738591EB22A51003AB74A /* GNavigationRCTModule.m */,
 			);
 			path = ReactNativeModules;
 			sourceTree = "<group>";
@@ -448,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0FE600F1570E668647BA387B /* [CP] Embed Pods Frameworks */ = {
@@ -478,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5658556C400F6B67B77C9C4C /* [CP] Check Pods Manifest.lock */ = {
@@ -493,7 +498,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		689B11E14217A35B092E5A53 /* [CP] Copy Pods Resources */ = {
@@ -594,6 +599,7 @@
 				7E10594B1EADF551007F957F /* GUtil.m in Sources */,
 				7E1059481EADF551007F957F /* GBridgeManager.m in Sources */,
 				7E1059461EADF551007F957F /* GNavigationViewController.m in Sources */,
+				7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */,
 				7E970CB81EB1C1A9009D4DFD /* GBottomTabView.m in Sources */,
 				7E970CBB1EB1C1BA009D4DFD /* GBottomTabItemView.m in Sources */,
 				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
@@ -738,6 +744,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				GCC_PREFIX_HEADER = GogoTV/PrefixHeader.pch;
 				INFOPLIST_FILE = GogoTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -758,6 +765,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				GCC_PREFIX_HEADER = GogoTV/PrefixHeader.pch;
 				INFOPLIST_FILE = GogoTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

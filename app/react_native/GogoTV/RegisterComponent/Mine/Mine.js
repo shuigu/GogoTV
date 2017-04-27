@@ -2,7 +2,7 @@
  * Created by zhuguoqing on 17/4/27.
  */
 import React,{ Component } from 'react';
-
+var Navigator    = require('NativeModules').GNavigationRCTModule;
 import {
   StyleSheet,
   Text,
@@ -13,6 +13,7 @@ import {
 class Mine extends  Component {
   login(){
     console.log('login.')
+    Navigator.push("login",{a:"a"});
   }
   render() {
     return (

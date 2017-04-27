@@ -71,6 +71,11 @@
         [item setCheck:NO];
     }
 }
+-(void)removeAllChileViews{
+    for (UIView * view in self.subviews) {
+        [view removeFromSuperview];
+    }
+}
 @end
 
 
