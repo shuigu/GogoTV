@@ -1,5 +1,6 @@
 package com.zhuguoqing.gogotv;
 
+import android.app.Activity;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
@@ -21,6 +22,7 @@ import java.util.Set;
 public class MainApplication extends Application implements ReactApplication {
   private static String JsMainModuleName = "index";
   private static MainApplication instance;
+  public Activity mainActivity;
   public static MainApplication getInstance()
   {
     return instance;
@@ -61,6 +63,9 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
+  }
+  public ReactInstanceManager getReactInstanceManager() {
+    return mReactNativeHost.getReactInstanceManager();
   }
 
   /************** application listener *******************/

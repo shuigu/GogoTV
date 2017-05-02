@@ -4,7 +4,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
@@ -13,7 +12,6 @@ import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.zhuguoqing.gogotv.view.BottomTabView;
 import com.zhuguoqing.gogotv.view.GReactFragment;
-import com.zhuguoqing.gogotv.view.TabItemView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,25 +22,25 @@ public class MainActivity extends ReactActivity {
     private ReadableMap mTabConfig;
     private BottomTabView mTabView;
     private List<GReactFragment> mFlagments = new ArrayList();
-    private Handler mTabViewHander = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            initTabView(mTabConfig);
-        }
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppManager.getAppManager().addActivity(this);
         setContentView(R.layout.activity_main);
-
         mApplicationListener = new MainApplication.ApplicationListener() {
             @Override
-            public void tabConfig(ReadableMap tabConfig) {
+            public void tabConfig(final ReadableMap tabConfig) {
                 mTabConfig = tabConfig;
-                mTabViewHander.sendEmptyMessage(0);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        MainActivity.this.initTabView(tabConfig);
+                    }
+                });
             }
         };
         MainApplication.getInstance().addApplicationListener(mApplicationListener);
+        MainApplication.getInstance().mainActivity = this;
     }
     private  void initTabView(ReadableMap tabConfig){
 
@@ -69,7 +67,7 @@ public class MainActivity extends ReactActivity {
                 selectTab(index);
             }
         });
-        selectTab(0);
+        selectTab(3);
         tabLayout.addView(mTabView);
     }
     public void selectTab(int index){
@@ -88,6 +86,7 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        AppManager.getAppManager().finishActivity(this);
         MainApplication.getInstance().removeApplicationListener(mApplicationListener);
     }
 }

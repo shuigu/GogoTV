@@ -13,10 +13,10 @@ import com.zhuguoqing.gogotv.R;
  * Created by zhuguoqing on 17/4/25.
  */
 
-public class TabItemView extends LinearLayout {
+public class BottomTabItemView extends LinearLayout {
     private Boolean mCheck = false;
     private String  mTitle;
-    public TabItemView(Context context) {
+    public BottomTabItemView(Context context) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.bottom_tab_item, this);
         updateUI();

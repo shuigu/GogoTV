@@ -14,7 +14,6 @@
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(push:(NSString *)moduleName initProps:(NSDictionary *)initProps){
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         GRCTViewController * vc = [[GRCTViewController alloc]initWithBridge:[GBridgeManager shareInstance].bridge
                                                                  moduleName:moduleName

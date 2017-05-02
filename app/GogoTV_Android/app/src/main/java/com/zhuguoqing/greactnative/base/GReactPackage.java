@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
 import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
+import com.zhuguoqing.greactnative.reactnativemodule.GNavigationRCTModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +22,7 @@ public class GReactPackage extends Object implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> list = new ArrayList<>();
         list.add(new GAppRCTModule(reactContext));
+        list.add(new GNavigationRCTModule(reactContext));
         return list;
     }
 
