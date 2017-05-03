@@ -15,6 +15,22 @@
 		7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10593E1EADF551007F957F /* GAppRCTModule.m */; };
 		7E10594A1EADF551007F957F /* GRCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059411EADF551007F957F /* GRCTViewController.m */; };
 		7E10594B1EADF551007F957F /* GUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1059441EADF551007F957F /* GUtil.m */; };
+		7E1777941EB97E020018678F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777931EB97E020018678F /* AudioToolbox.framework */; };
+		7E1777961EB97E0F0018678F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777951EB97E0F0018678F /* AVFoundation.framework */; };
+		7E1777981EB97E180018678F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777971EB97E180018678F /* CoreGraphics.framework */; };
+		7E17779A1EB97E220018678F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777991EB97E220018678F /* CoreMedia.framework */; };
+		7E17779C1EB97E280018678F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E17779B1EB97E280018678F /* CoreVideo.framework */; };
+		7E17779E1EB97E300018678F /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E17779D1EB97E300018678F /* libbz2.tbd */; };
+		7E1777A01EB97E3A0018678F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E17779F1EB97E3A0018678F /* libz.tbd */; };
+		7E1777A21EB97E400018678F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A11EB97E400018678F /* MediaPlayer.framework */; };
+		7E1777A41EB97E480018678F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A31EB97E480018678F /* MobileCoreServices.framework */; };
+		7E1777A61EB97E500018678F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A51EB97E500018678F /* OpenGLES.framework */; };
+		7E1777A81EB97E560018678F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A71EB97E560018678F /* QuartzCore.framework */; };
+		7E1777AA1EB97E5F0018678F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A91EB97E5F0018678F /* UIKit.framework */; };
+		7E1777AC1EB97E670018678F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777AB1EB97E670018678F /* VideoToolbox.framework */; };
+		7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */; };
+		7E1777B11EB97EC00018678F /* TestPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1777AF1EB97EC00018678F /* TestPlayerViewController.xib */; };
+		7E1778091EB988A50018678F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777F91EB985110018678F /* IJKMediaFramework.framework */; };
 		7E84B6EE1EA62F1800F99052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6ED1EA62F1800F99052 /* main.m */; };
 		7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6F01EA62F1800F99052 /* AppDelegate.m */; };
 		7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6F81EA62F1800F99052 /* Assets.xcassets */; };
@@ -29,6 +45,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7E1777F81EB985110018678F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E654EA8A1B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFramework;
+		};
+		7E1777FA1EB985110018678F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5450B0431E63EA4300568494;
+			remoteInfo = IJKMediaFrameworkWithSSL;
+		};
+		7E1777FC1EB985110018678F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E654EA941B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFrameworkTests;
+		};
+		7E1778071EB9870A0018678F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E654EA891B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFramework;
+		};
+		7E17780F1EB988CC0018678F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E6903EFC17EAF70200CFD954;
+			remoteInfo = IJKMediaDemo;
+		};
 		7E84B7031EA62F1800F99052 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E84B6E11EA62F1700F99052 /* Project object */;
@@ -61,6 +112,24 @@
 		7E1059411EADF551007F957F /* GRCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRCTViewController.m; sourceTree = "<group>"; };
 		7E1059431EADF551007F957F /* GUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtil.h; sourceTree = "<group>"; };
 		7E1059441EADF551007F957F /* GUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtil.m; sourceTree = "<group>"; };
+		7E1777931EB97E020018678F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7E1777951EB97E0F0018678F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7E1777971EB97E180018678F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7E1777991EB97E220018678F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7E17779B1EB97E280018678F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7E17779D1EB97E300018678F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		7E17779F1EB97E3A0018678F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7E1777A11EB97E400018678F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		7E1777A31EB97E480018678F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7E1777A51EB97E500018678F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7E1777A71EB97E560018678F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7E1777A91EB97E5F0018678F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7E1777AB1EB97E670018678F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		7E1777AD1EB97EC00018678F /* TestPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPlayerViewController.h; sourceTree = "<group>"; };
+		7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlayerViewController.m; sourceTree = "<group>"; };
+		7E1777AF1EB97EC00018678F /* TestPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestPlayerViewController.xib; sourceTree = "<group>"; };
+		7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaDemo.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaDemo/IJKMediaDemo.xcodeproj"; sourceTree = "<group>"; };
 		7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		7E84B6E91EA62F1700F99052 /* GogoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GogoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84B6ED1EA62F1800F99052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +166,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1778091EB988A50018678F /* IJKMediaFramework.framework in Frameworks */,
+				7E1777AC1EB97E670018678F /* VideoToolbox.framework in Frameworks */,
+				7E1777AA1EB97E5F0018678F /* UIKit.framework in Frameworks */,
+				7E1777A81EB97E560018678F /* QuartzCore.framework in Frameworks */,
+				7E1777A61EB97E500018678F /* OpenGLES.framework in Frameworks */,
+				7E1777A41EB97E480018678F /* MobileCoreServices.framework in Frameworks */,
+				7E1777A21EB97E400018678F /* MediaPlayer.framework in Frameworks */,
+				7E1777A01EB97E3A0018678F /* libz.tbd in Frameworks */,
+				7E17779E1EB97E300018678F /* libbz2.tbd in Frameworks */,
+				7E17779C1EB97E280018678F /* CoreVideo.framework in Frameworks */,
+				7E17779A1EB97E220018678F /* CoreMedia.framework in Frameworks */,
+				7E1777981EB97E180018678F /* CoreGraphics.framework in Frameworks */,
+				7E1777961EB97E0F0018678F /* AVFoundation.framework in Frameworks */,
+				7E1777941EB97E020018678F /* AudioToolbox.framework in Frameworks */,
 				B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +219,19 @@
 		4A05B01E44626BD0D4F59E77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E1777AB1EB97E670018678F /* VideoToolbox.framework */,
+				7E1777A91EB97E5F0018678F /* UIKit.framework */,
+				7E1777A71EB97E560018678F /* QuartzCore.framework */,
+				7E1777A51EB97E500018678F /* OpenGLES.framework */,
+				7E1777A31EB97E480018678F /* MobileCoreServices.framework */,
+				7E1777A11EB97E400018678F /* MediaPlayer.framework */,
+				7E17779F1EB97E3A0018678F /* libz.tbd */,
+				7E17779D1EB97E300018678F /* libbz2.tbd */,
+				7E17779B1EB97E280018678F /* CoreVideo.framework */,
+				7E1777991EB97E220018678F /* CoreMedia.framework */,
+				7E1777971EB97E180018678F /* CoreGraphics.framework */,
+				7E1777951EB97E0F0018678F /* AVFoundation.framework */,
+				7E1777931EB97E020018678F /* AudioToolbox.framework */,
 				7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */,
 				967B128B2D3861E5473E978B /* libPods-GogoTV.a */,
 				F5C95B916F984FF89612EBB2 /* libPods-GogoTVTests.a */,
@@ -232,9 +328,28 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		7E1777F31EB985110018678F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E1777F91EB985110018678F /* IJKMediaFramework.framework */,
+				7E1777FB1EB985110018678F /* IJKMediaFrameworkWithSSL.framework */,
+				7E1777FD1EB985110018678F /* IJKMediaFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E17780B1EB988CB0018678F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E1778101EB988CC0018678F /* IJKMediaDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E84B6E01EA62F1700F99052 = {
 			isa = PBXGroup;
 			children = (
+				7EA103D21EB97BB4000627AD /* Projects */,
 				7E10592E1EADF551007F957F /* Source */,
 				7E84B6EB1EA62F1800F99052 /* GogoTV */,
 				7E84B7051EA62F1800F99052 /* GogoTVTests */,
@@ -265,6 +380,9 @@
 				7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */,
 				7E84B6FD1EA62F1800F99052 /* Info.plist */,
 				7E84B6EC1EA62F1800F99052 /* Supporting Files */,
+				7E1777AD1EB97EC00018678F /* TestPlayerViewController.h */,
+				7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */,
+				7E1777AF1EB97EC00018678F /* TestPlayerViewController.xib */,
 			);
 			path = GogoTV;
 			sourceTree = "<group>";
@@ -306,6 +424,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7EA103D21EB97BB4000627AD /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */,
+				7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,6 +451,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E1778081EB9870A0018678F /* PBXTargetDependency */,
 			);
 			name = GogoTV;
 			productName = GogoTV;
@@ -405,6 +533,16 @@
 			mainGroup = 7E84B6E01EA62F1700F99052;
 			productRefGroup = 7E84B6EA1EA62F1700F99052 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7E17780B1EB988CB0018678F /* Products */;
+					ProjectRef = 7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E1777F31EB985110018678F /* Products */;
+					ProjectRef = 7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7E84B6E81EA62F1700F99052 /* GogoTV */,
@@ -414,6 +552,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		7E1777F91EB985110018678F /* IJKMediaFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IJKMediaFramework.framework;
+			remoteRef = 7E1777F81EB985110018678F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E1777FB1EB985110018678F /* IJKMediaFrameworkWithSSL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IJKMediaFrameworkWithSSL.framework;
+			remoteRef = 7E1777FA1EB985110018678F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E1777FD1EB985110018678F /* IJKMediaFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IJKMediaFrameworkTests.xctest;
+			remoteRef = 7E1777FC1EB985110018678F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E1778101EB988CC0018678F /* IJKMediaDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = IJKMediaDemo.app;
+			remoteRef = 7E17780F1EB988CC0018678F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		7E84B6E71EA62F1700F99052 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -421,6 +590,7 @@
 			files = (
 				7E84B6FC1EA62F1800F99052 /* LaunchScreen.storyboard in Resources */,
 				7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */,
+				7E1777B11EB97EC00018678F /* TestPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +774,7 @@
 				7E970CBB1EB1C1BA009D4DFD /* GBottomTabItemView.m in Sources */,
 				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
 				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
+				7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */,
 				7E970CB41EB1C0B2009D4DFD /* GRootViewController.m in Sources */,
 				7E84B6EE1EA62F1800F99052 /* main.m in Sources */,
 				7E10594A1EADF551007F957F /* GRCTViewController.m in Sources */,
@@ -630,6 +801,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7E1778081EB9870A0018678F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IJKMediaFramework;
+			targetProxy = 7E1778071EB9870A0018678F /* PBXContainerItemProxy */;
+		};
 		7E84B7041EA62F1800F99052 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7E84B6E81EA62F1700F99052 /* GogoTV */;
