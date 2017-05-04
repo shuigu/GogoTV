@@ -60,6 +60,7 @@
     
 }
 -(void)setTabConfig:(NSDictionary *)tabConfig{
+
     _tabConfig = tabConfig;
     
     [self removeAllChildViewController];
@@ -75,7 +76,10 @@
             [self addViewController:rctVC];
         }
     }
-    [self showViewControllerWithIndex:0];
+    NSInteger index = 3;
+    [tabView setCheckWithIndex:index];
+    [self showViewControllerWithIndex:index];
+
 }
 -(void)removeAllChildViewController{
     currentViewController = nil;
@@ -92,7 +96,14 @@
         viewControllers = [NSMutableArray array];
     }
     [viewControllers addObject:viewController];
+    
+    [viewController.view setFrame:contentView.bounds];
+    viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    contentView.autoresizesSubviews = YES;
+    
+    
     [contentView addSubview:viewController.view];
+    
     [self addChildViewController:viewController];
     currentViewController = viewController;
 }
@@ -103,6 +114,9 @@
     }
     GRCTViewController * newViewController = [viewControllers objectAtIndex:index];
     if (!newViewController) {
+        return;
+    }
+    if (newViewController == currentViewController) {
         return;
     }
     [self transitionFromViewController:currentViewController

@@ -8,6 +8,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 
 class Mine extends  Component {
@@ -17,21 +18,30 @@ class Mine extends  Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Mine page
-        </Text>
-        <TouchableOpacity onPress={this.login}>
-          <Text>登录</Text>
-        </TouchableOpacity>
+      <View key="rootView" style={styles.backgroundView}>
+        <ScrollView style={styles.scrollView}>
+            <View style={styles.container}>
+              <Text style={styles.welcome}>
+                Mine page
+              </Text>
+              <TouchableOpacity onPress={this.login}>
+                <Text>登录</Text>
+              </TouchableOpacity>
+            </View>
+        </ScrollView>
       </View>
+
     );
   }
 }
 const styles = StyleSheet.create({
-  container: {
+  backgroundView:{
     flex: 1,
-    justifyContent: 'center',
+  },
+  scrollView: {
+    backgroundColor: '#EEEEEE',
+  },
+  container: {
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
@@ -41,6 +51,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   instructions: {
+    flex: 3,
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,

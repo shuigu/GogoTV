@@ -2,9 +2,21 @@
  * Created by zhuguoqing on 17/4/27.
  */
 import {AppRegistry}    from 'react-native';
-import Recommend        from './MainTab/Recommend'
-import VideoLibrary     from './MainTab/VideoLibrary'
-import History          from './MainTab/History'
+
+// Recommend
+import  {
+  Recommend
+} from './Recommend'
+
+// VideoLibrary
+import {
+  VideoLibrary
+} from './VideoLibrary'
+
+// History
+import {
+  History
+} from './History'
 
 // Mine
 import  {
@@ -12,10 +24,14 @@ import  {
   Login,
 } from './Mine'
 
-
 function RegisterComponent() {
+  // recommend
   AppRegistry.registerComponent('recommend',() => Recommend)
+
+  // videoLibrary
   AppRegistry.registerComponent('videoLibrary',() => VideoLibrary)
+
+  // history
   AppRegistry.registerComponent('history',() => History)
 
   // Mine

@@ -56,7 +56,7 @@
     
     [self setCheckWithIndex:0];
 }
--(void)setCheckWithIndex:(int)index{
+-(void)setCheckWithIndex:(NSInteger)index{
     [self clearAllItemCheck];
     GBottomTabItemView * item = [itemArray objectAtIndex:index];
     if (item) {
