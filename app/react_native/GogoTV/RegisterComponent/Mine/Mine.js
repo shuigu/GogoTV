@@ -10,6 +10,12 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import {NavigationBar} from './../../Component/Common'
+import {
+  themeStyles,
+} from './../../Theme'
+
+
 
 class Mine extends  Component {
   login(){
@@ -17,10 +23,12 @@ class Mine extends  Component {
     Navigator.push("login",{a:"a"});
   }
   render() {
+    let title = this.props.title;
     return (
-      <View key="rootView" style={styles.backgroundView}>
-        <ScrollView style={styles.scrollView}>
-            <View style={styles.container}>
+      <View key="rootView" style={themeStyles.rootView}>
+        <NavigationBar title={title}/>
+        <ScrollView style={themeStyles.scrollView}>
+            <View style={themeStyles.defaultContainer}>
               <Text style={styles.welcome}>
                 Mine page
               </Text>
@@ -30,31 +38,14 @@ class Mine extends  Component {
             </View>
         </ScrollView>
       </View>
-
     );
   }
 }
 const styles = StyleSheet.create({
-  backgroundView:{
-    flex: 1,
-  },
-  scrollView: {
-    backgroundColor: '#EEEEEE',
-  },
-  container: {
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    flex: 3,
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
 module.exports = Mine;

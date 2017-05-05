@@ -55,7 +55,10 @@ public class MainActivity extends ReactActivity {
             String title = tabItem.getString("title");
             String moduleName = tabItem.getString("moduleName");
             mTabView.addItem(title);
-            GReactFragment fragment = new GReactFragment(moduleName);
+            Bundle launchOptions = new Bundle();
+            launchOptions.putString("title",title);
+            launchOptions.putString("moduleName",moduleName);
+            GReactFragment fragment = new GReactFragment(launchOptions);
             mFlagments.add(fragment);
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.add(R.id.id_content,fragment);

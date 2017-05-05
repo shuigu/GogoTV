@@ -72,7 +72,7 @@
             NSDictionary * tab = tabs[i];
             NSString * moduleName = [tab valueForKey:@"moduleName"];
             GRCTViewController * rctVC = [[GRCTViewController alloc]initWithBridge:[GBridgeManager shareBridge]                                                                        moduleName:moduleName
-                                                                 initialProperties:nil];
+                                                                 initialProperties:tab];
             [self addViewController:rctVC];
         }
     }

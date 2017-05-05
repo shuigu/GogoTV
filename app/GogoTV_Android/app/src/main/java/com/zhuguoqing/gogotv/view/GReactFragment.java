@@ -11,11 +11,13 @@ import com.zhuguoqing.gogotv.MainApplication;
 
 public class GReactFragment extends Fragment {
     private String mModuleName;
+    private Bundle mLaunchOptions;
     public GReactFragment() {
         super();
     }
-    public GReactFragment(String moduleName) {
-        this.mModuleName = moduleName;
+    public GReactFragment(Bundle launchOptions) {
+        this.mLaunchOptions = launchOptions;
+        mModuleName = launchOptions.getString("moduleName");
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,11 +27,7 @@ public class GReactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ReactRootView rootView = new ReactRootView(getActivity());
-        rootView.startReactApplication(MainApplication.getInstance().getReactNativeHost().getReactInstanceManager(),mModuleName);
+        rootView.startReactApplication(MainApplication.getInstance().getReactNativeHost().getReactInstanceManager(),mModuleName,mLaunchOptions);
         return rootView;
-    }
-
-    public void setModuleName(String moduleName) {
-        this.mModuleName = moduleName;
     }
 }

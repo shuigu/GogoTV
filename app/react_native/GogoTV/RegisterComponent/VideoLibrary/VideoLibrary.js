@@ -8,14 +8,23 @@ import {
   Text,
   View
 } from 'react-native';
+import {NavigationBar} from './../../Component/Common'
+import {
+  themeStyles,
+} from './../../Theme'
+
 
 class VideoLibrary extends  Component {
   render() {
+    let title = this.props.title;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          VideoLibrary page
-        </Text>
+      <View key="rootView" style={themeStyles.rootView}>
+        <NavigationBar title={title}/>
+        <View style={themeStyles.defaultContainer}>
+          <Text style={styles.welcome}>
+            VideoLibrary page
+          </Text>
+        </View>
       </View>
     );
   }
