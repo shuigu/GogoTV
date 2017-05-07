@@ -10,3 +10,5 @@ import {App,RegisterComponent} from './GogoTV'
 // 2.注册组件
 RegisterComponent();
 
+// 3.
+

@@ -44,9 +44,9 @@
 }
 -(void)updateUi{
     if (_check) {
-        [_titleLabel setTextColor:UIColorFromHex(0xFF0000)];
+        [_titleLabel setTextColor:UIColorFromHex(0x1AA318)];
     }else{
-        [_titleLabel setTextColor:UIColorFromHex(0xFFFFFF)];
+        [_titleLabel setTextColor:UIColorFromHex(0x9d9da1)];
     }
 }
 -(void)initEvent{

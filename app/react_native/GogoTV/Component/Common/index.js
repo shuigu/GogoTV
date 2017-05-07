@@ -3,7 +3,8 @@
  */
 
 import NavigationBar from './NavigationBar'
-
+import SctionLineView from './SectionLineView'
 module.exports ={
-  NavigationBar
+  NavigationBar,
+  SctionLineView
 }

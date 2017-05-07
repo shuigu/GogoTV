@@ -11,18 +11,26 @@
 #import <Masonry.h>
 @implementation GBottomTabView{
     NSMutableArray<GBottomTabItemView *> * itemArray;
+    UIView * lineView;
 }
 
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        [self initUi];
-    }
-    return self;
+-(void)didMoveToSuperview{
+    [super didMoveToSuperview];
+    [self initUi];
 }
 -(void)initUi{
     itemArray=[NSMutableArray array];
-    [self setBackgroundColor:UIColorFromHex(0x37474f)];
+    [self setBackgroundColor:UIColorFromHex(0xf3f3f6)];
+    
+    lineView = [[UIView alloc]init];
+    [self addSubview:lineView];
+    
+    [lineView setBackgroundColor:UIColorFromHex(0x9d9da1)];
+    WS(weakSelf);
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@0.5);
+        make.left.top.right.equalTo(weakSelf);
+    }];
 }
 -(void)addTabItemWithTitles:(NSArray<NSString*> *)titles{
     [itemArray removeAllObjects];
@@ -73,7 +81,9 @@
 }
 -(void)removeAllChileViews{
     for (UIView * view in self.subviews) {
-        [view removeFromSuperview];
+        if (![view isEqual:lineView]) {
+            [view removeFromSuperview];
+        }        
     }
 }
 @end

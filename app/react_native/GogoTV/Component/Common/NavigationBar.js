@@ -16,7 +16,7 @@ import {
 
 
 let IS_IOS      = Platform.OS === 'ios';
-let BAR_HEIGHT  = 44;
+let BAR_HEIGHT  = 34;
 let STATUS_BAR_HEIGHT = 22;
 
 
