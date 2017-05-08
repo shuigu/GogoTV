@@ -2,9 +2,9 @@
  * Created by zhuguoqing on 17/4/27.
  */
 import Mine   from './Mine'
-import Login  from './Login'
+import MineShowInfo  from './MineShowInfo'
 
 module.exports = {
   Mine,
-  Login,
+  MineShowInfo,
 }

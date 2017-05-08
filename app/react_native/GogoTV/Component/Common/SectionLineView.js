@@ -9,7 +9,7 @@ import {
 class SectionLineView extends Component {
   render(){
     let style = {
-      height:this.props.height || 20,
+      height: this.props.height || 20,
     };
     return (
       <View style={style}/>

@@ -21,7 +21,7 @@ import {
 // Mine
 import  {
   Mine,
-  Login,
+  MineShowInfo,
 } from './Mine'
 
 function RegisterComponent() {
@@ -36,7 +36,7 @@ function RegisterComponent() {
 
   // Mine
   AppRegistry.registerComponent('mine',() => Mine)
-  AppRegistry.registerComponent('login',() => Login)
+  AppRegistry.registerComponent('mineShowInfo',() => MineShowInfo)
 }
 
 module.exports = RegisterComponent;

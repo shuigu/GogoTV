@@ -9,20 +9,26 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+import {
+  NavigationBar,
+} from './../../Component/Common'
+import {
+  themeStyles,
+} from './../../Theme'
 
-class Login extends  Component {
+class MineShowInfo extends  Component {
   back(){
     Navigator.pop();
   }
   render() {
+    let textContent = this.props.content || '请输入内容'
+    let title = this.props.title || '标题';
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          login page
-        </Text>
-        <TouchableOpacity onPress={this.back}>
-          <Text>返回</Text>
-        </TouchableOpacity>
+      <View key="rootView" style={themeStyles.rootView}>
+        <NavigationBar showBackButton={true} title={title}/>
+        <View style={styles.container}>
+          <Text>{textContent}</Text>
+        </View>
       </View>
     );
   }
@@ -45,4 +51,4 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-module.exports = Login;
+module.exports = MineShowInfo;

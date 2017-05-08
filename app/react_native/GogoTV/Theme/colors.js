@@ -5,5 +5,6 @@ module.exports = {
   scrollViewBkgColor:{backgroundColor:'#ECECF2'},
   contentViewBkgColor:{backgroundColor:'#FFFFFF'},
   statusBkgColor:{backgroundColor:'#303035'},
+  sectionLineBkgColor:{backgroundColor:'#d9d9d9'},
 }
 

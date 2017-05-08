@@ -12,22 +12,24 @@ import {
 } from 'react-native';
 import {
   NavigationBar,
-  SctionLineView
+  SectionLineView,
 } from './../../Component/Common'
 import {
   themeStyles,
 } from './../../Theme'
-import {MineInfoView} from './../../Component/Mine'
+import {
+  MineInfoView,
+  MineListView
+} from './../../Component/Mine'
+
 
 class Mine extends  Component {
-  login(){
-    console.log('login.')
-    Navigator.push("login",{a:"a"});
+  onMineInfoClick(data){
+    Navigator.push('mineShowInfo',{content:'用户信息',title:'用户信息'})
   }
-  infoRender(){
-    return (
-      <MineInfoView/>
-    );
+  onMineListItemClick(data){
+    let {itemTitle} = data;
+    Navigator.push('mineShowInfo',{content:itemTitle,title:itemTitle})
   }
   render() {
     let title = this.props.title;
@@ -35,10 +37,10 @@ class Mine extends  Component {
       <View key="rootView" style={themeStyles.rootView}>
         <NavigationBar title={title}/>
         <ScrollView style={themeStyles.scrollView}>
-          <SctionLineView height="15" />
-          {this.infoRender()}
-          <SctionLineView height="20" />
-          {this.infoRender()}
+          <SectionLineView height={15} />
+          <MineInfoView onClick={this.onMineInfoClick}/>
+          <SectionLineView height={20} />
+          <MineListView onClick={this.onMineListItemClick}/>
         </ScrollView>
       </View>
     );

@@ -4,6 +4,7 @@
 
 import  colors from './colors'
 import  styles from './styles'
+import  images from './images'
 
 function styleWithCombine(target,from1,from2,from3,from4) {
   return {...target,...from1,...from2,...from3,...from4}
@@ -12,5 +13,6 @@ function styleWithCombine(target,from1,from2,from3,from4) {
 module.exports = {
   themeColors:colors,
   themeStyles:styles,
+  themeImages:images,
   styleCombine:styleWithCombine,
 }
