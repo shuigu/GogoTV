@@ -30,7 +30,7 @@ class Mine extends  Component {
   onMineListItemClick(data){
     let {title} = data;
     itemTitle = title;
-    GNavigator.push('mineShowInfo',{content:itemTitle,title:itemTitle})
+    GNavigator.push('mineShowInfo',{content:itemTitle,title:itemTitle,list:["a","b"],list1:[1,2],list2:[{a:"a"},{b:"b"}],list3:[["a","b"],[1,2]]})
   }
   render() {
     let title = this.props.title;

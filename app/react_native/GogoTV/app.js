@@ -3,16 +3,14 @@
  */
 
 var BatchedBridge = require('BatchedBridge');
-var GAppModule    = require('NativeModules').GAppRCTModule;
 import {InvokeReturn} from './../Core'
 import {TabConfig} from './Config/'
 
 
 var AppModule = {
-  getTabConfig:()=>{
-    GAppModule.sendData('tabConfig',TabConfig);
-  }
-
+  getTabConfig:InvokeReturn(()=>{
+    return TabConfig;
+  }),
 }
 
 BatchedBridge.registerCallableModule('AppModule', AppModule);

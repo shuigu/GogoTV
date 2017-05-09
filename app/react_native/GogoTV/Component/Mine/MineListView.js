@@ -8,7 +8,7 @@ import {
   View,
   Text,
   Image,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import {
   SectionContainerView,
@@ -27,7 +27,7 @@ class MineListView extends Component {
   }
   renderSection(icon,title){
     return (
-      <TouchableHighlight activeOpacity={0.5} underlayColor="#FFFFFF" onPress={()=>{
+      <TouchableOpacity activeOpacity={0.5} underlayColor="#FFFFFF" onPress={()=>{
         if(this.props.onClick){
             this.props.onClick({title});
           }
@@ -41,7 +41,7 @@ class MineListView extends Component {
             <Image style={styles.rightArrowImage} source={themeImages.commonImages.rightArrow}/>
           </View>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
   }
   render(){

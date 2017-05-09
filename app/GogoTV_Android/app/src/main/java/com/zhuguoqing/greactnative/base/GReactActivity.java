@@ -10,6 +10,10 @@ import com.zhuguoqing.gogotv.BaseActivity;
 import com.zhuguoqing.gogotv.MainApplication;
 import com.zhuguoqing.gogotv.R;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 public class GReactActivity extends BaseActivity{
     private String mModuleName;
     private Bundle mInitProps;

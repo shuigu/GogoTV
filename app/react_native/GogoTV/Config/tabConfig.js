@@ -3,12 +3,12 @@
  */
 var TabConfig = {
   version:'1.0',
+  test:{a:1},
   tabs:[
     {
       title:'推荐',
       moduleName:'recommend',
-    }
-    ,
+    },
     {
       title:'视库',
       moduleName:'videoLibrary',

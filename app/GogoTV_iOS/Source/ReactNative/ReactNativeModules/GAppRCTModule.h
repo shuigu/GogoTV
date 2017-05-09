@@ -10,10 +10,7 @@
 #import <React/RCTBridgeModule.h>
 
 
-#define TabConfig @"tabConfig"
-
-
-extern NSString *const KGInvokeValueNotification;
+extern NSString *const KGInvokeReturnNotification;
 
 @interface GAppRCTModule : NSObject<RCTBridgeModule>
 

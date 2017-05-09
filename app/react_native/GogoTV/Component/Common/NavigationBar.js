@@ -8,7 +8,7 @@ import {
   Text,
   View,
   Image,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import {
   themeImages,
@@ -44,7 +44,7 @@ class NavigationBar extends Component{
     }
     return (
       <View style={{flex:1}}>
-        <TouchableHighlight onPress={()=>{
+        <TouchableOpacity onPress={()=>{
           if(this.props.backClick){
             this.props.backClick();
           }else{
@@ -55,7 +55,7 @@ class NavigationBar extends Component{
             <Image style={styles.backImageView} source={themeImages.commonImages.leftArrow}/>
             <Text style={styles.backText}>{"返回"}</Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -95,10 +95,12 @@ const styles = StyleSheet.create({
     left:0,
     flexDirection:'row',
     alignItems:'center',
+    marginLeft:8,
   },
   backImageView:{
     width:20,
     height:20,
+    tintColor:'#FFFFFF',
   },
   backText:{
     fontSize: 12,

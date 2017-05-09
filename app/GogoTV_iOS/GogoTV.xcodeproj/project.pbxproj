@@ -30,6 +30,7 @@
 		7E1777AC1EB97E670018678F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777AB1EB97E670018678F /* VideoToolbox.framework */; };
 		7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */; };
 		7E1778091EB988A50018678F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777F91EB985110018678F /* IJKMediaFramework.framework */; };
+		7E2676221EC1E4070075E025 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26761D1EC1E3FB0075E025 /* libRCTAnimation.a */; };
 		7E84B6EE1EA62F1800F99052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6ED1EA62F1800F99052 /* main.m */; };
 		7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6F01EA62F1800F99052 /* AppDelegate.m */; };
 		7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6F81EA62F1800F99052 /* Assets.xcassets */; };
@@ -78,6 +79,27 @@
 			proxyType = 2;
 			remoteGlobalIDString = E6903EFC17EAF70200CFD954;
 			remoteInfo = IJKMediaDemo;
+		};
+		7E26761C1EC1E3FB0075E025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTAnimation;
+		};
+		7E26761E1EC1E3FB0075E025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
+			remoteInfo = "RCTAnimation-tvOS";
+		};
+		7E2676201EC1E4010075E025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 58B511DA1A9E6C8500147676;
+			remoteInfo = RCTAnimation;
 		};
 		7E84B7031EA62F1800F99052 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -128,6 +150,8 @@
 		7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlayerViewController.m; sourceTree = "<group>"; };
 		7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
 		7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaDemo.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaDemo/IJKMediaDemo.xcodeproj"; sourceTree = "<group>"; };
+		7E2676151EC1E36B0075E025 /* libRCTAnimation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTAnimation.a; path = "../../../../../Library/Developer/Xcode/DerivedData/GogoTV-hedhaqxkljrbhjgbyzthuecnybda/Build/Products/Debug-iphonesimulator/libRCTAnimation.a"; sourceTree = "<group>"; };
+		7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../react_native/node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		7E84B6E91EA62F1700F99052 /* GogoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GogoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84B6ED1EA62F1800F99052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E2676221EC1E4070075E025 /* libRCTAnimation.a in Frameworks */,
 				7E1778091EB988A50018678F /* IJKMediaFramework.framework in Frameworks */,
 				7E1777AC1EB97E670018678F /* VideoToolbox.framework in Frameworks */,
 				7E1777AA1EB97E5F0018678F /* UIKit.framework in Frameworks */,
@@ -217,6 +242,7 @@
 		4A05B01E44626BD0D4F59E77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E2676151EC1E36B0075E025 /* libRCTAnimation.a */,
 				7E1777AB1EB97E670018678F /* VideoToolbox.framework */,
 				7E1777A91EB97E5F0018678F /* UIKit.framework */,
 				7E1777A71EB97E560018678F /* QuartzCore.framework */,
@@ -344,6 +370,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E2676181EC1E3FB0075E025 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E26761D1EC1E3FB0075E025 /* libRCTAnimation.a */,
+				7E26761F1EC1E3FB0075E025 /* libRCTAnimation-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E84B6E01EA62F1700F99052 = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +459,7 @@
 		7EA103D21EB97BB4000627AD /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */,
 				7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */,
 				7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */,
 			);
@@ -448,6 +484,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E2676211EC1E4010075E025 /* PBXTargetDependency */,
 				7E1778081EB9870A0018678F /* PBXTargetDependency */,
 			);
 			name = GogoTV;
@@ -539,6 +576,10 @@
 					ProductGroup = 7E1777F31EB985110018678F /* Products */;
 					ProjectRef = 7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */;
 				},
+				{
+					ProductGroup = 7E2676181EC1E3FB0075E025 /* Products */;
+					ProjectRef = 7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -576,6 +617,20 @@
 			fileType = wrapper.application;
 			path = IJKMediaDemo.app;
 			remoteRef = 7E17780F1EB988CC0018678F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26761D1EC1E3FB0075E025 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 7E26761C1EC1E3FB0075E025 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E26761F1EC1E3FB0075E025 /* libRCTAnimation-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTAnimation-tvOS.a";
+			remoteRef = 7E26761E1EC1E3FB0075E025 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -801,6 +856,11 @@
 			isa = PBXTargetDependency;
 			name = IJKMediaFramework;
 			targetProxy = 7E1778071EB9870A0018678F /* PBXContainerItemProxy */;
+		};
+		7E2676211EC1E4010075E025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RCTAnimation;
+			targetProxy = 7E2676201EC1E4010075E025 /* PBXContainerItemProxy */;
 		};
 		7E84B7041EA62F1800F99052 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

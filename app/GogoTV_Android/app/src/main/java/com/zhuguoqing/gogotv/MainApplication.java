@@ -2,26 +2,32 @@ package com.zhuguoqing.gogotv;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.zhuguoqing.greactnative.base.GReactPackage;
-import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
+import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
+import com.zhuguoqing.util.GUtil;
 
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class MainApplication extends Application implements ReactApplication {
   private static String JsMainModuleName = "index";
   private static MainApplication instance;
+  private Map<String,InvokeReturn> invokeMap;
   public Activity mainActivity;
   public static MainApplication getInstance()
   {
@@ -47,18 +53,20 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    instance = this;
     SoLoader.init(this, /* native exopackage */ false);
+
+    instance = this;
+
+    /**
+    * 初始化 Invoke Return
+    * **/
+
+    initInvokeReturn();
+
     /**
      * 初始化 React环境
      * */
     mReactNativeHost.getReactInstanceManager().createReactContextInBackground();
-    mReactNativeHost.getReactInstanceManager().addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
-      @Override
-      public void onReactContextInitialized(ReactContext context) {
-        context.getJSModule(AppModule.class).getTabConfig();
-      }
-    });
   }
   @Override
   public ReactNativeHost getReactNativeHost() {
@@ -68,26 +76,50 @@ public class MainApplication extends Application implements ReactApplication {
     return mReactNativeHost.getReactInstanceManager();
   }
 
-  /************** application listener *******************/
-  private Set<ApplicationListener> mListenerSet = new HashSet<>();
-  public void addApplicationListener(ApplicationListener listener){
-    mListenerSet.add(listener);
-  }
-  public void removeApplicationListener(ApplicationListener listener){
-    mListenerSet.remove(listener);
-  }
+  /************** invokeReturn *******************/
+  public void initInvokeReturn(){
 
-  /**
-   * 由GAppRCTModule调用
-   * */
-  public void tabConfig(ReadableMap tabConfig){
-    for (ApplicationListener listener:mListenerSet){
-      listener.tabConfig(tabConfig);
-    }
-  }
+    /**
+     * inti invokeMap
+     * */
+    invokeMap = new HashMap<>();
 
-  public interface ApplicationListener {
-    public void tabConfig(ReadableMap tabConfig);
-  }
+    /**
+     * 注册广播
+     * */
+    IntentFilter intentFilter = new IntentFilter();
+    intentFilter.addAction(GAppRCTModule.BROADCAST_INVOKE_RETURN);
+    registerReceiver(new BroadcastReceiver() {
+      @Override
+      public void onReceive(Context context, Intent intent) {
+        String invokeId = intent.getStringExtra("invokeId");
+        final  Bundle returnJson = intent.getBundleExtra("returnJson");
 
+        final  InvokeReturn invokeReturn = invokeMap.get(invokeId);
+        if (invokeReturn != null){
+          mainActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+              invokeReturn.onInvokeRetrun(returnJson);
+            }
+          });
+          invokeMap.remove(invokeId);
+        }
+      }
+    },intentFilter);
+
+  }
+  public void invokeJSModule(Invoke invoke,InvokeReturn invokeReturn){
+    String invokeId = GUtil.uuid();
+    invokeMap.put(invokeId,invokeReturn);
+    invoke.doInvoke(getReactInstanceManager().getCurrentReactContext(),invokeId);
+  }
+  public  interface InvokeReturn {
+    public void onInvokeRetrun(Bundle returnJson);
+  }
+  public interface Invoke {
+    public void doInvoke(ReactContext context, String invokeId);
+  }
 }
+
+

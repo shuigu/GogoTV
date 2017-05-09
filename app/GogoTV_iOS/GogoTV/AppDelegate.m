@@ -30,13 +30,10 @@
     // 2. 加载JSBundle ,并监听加完成时间
     [[GBridgeManager shareInstance] setJavaScriptDidLoadBlock:^{
         // 获取tabConfig
-        [[GBridgeManager shareInstance]enqueueJSCall:@"AppModule" method:@"getTabConfig" args:nil];
+        [[GBridgeManager shareInstance]enqueueJSCall:@"AppModule" method:@"getTabConfig" args:nil completion:^(NSDictionary *returnJson) {
+            [[GNavigatorManager shareInstance].rootViewController setTabConfig:returnJson];;
+        }];
     }];
-    // 3. 获取tabConfig成功的回调
-    [[GBridgeManager shareInstance]setGetTabConfigBlock:^(NSDictionary * tabConfig){
-        [[GNavigatorManager shareInstance].rootViewController setTabConfig:tabConfig];
-    }];
-    // 
     return YES;
 }
 

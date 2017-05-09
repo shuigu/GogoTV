@@ -7,5 +7,5 @@ import com.facebook.react.bridge.JavaScriptModule;
  */
 
 public interface AppModule extends JavaScriptModule {
-    void getTabConfig();
+    void getTabConfig(String invokeId);
 }

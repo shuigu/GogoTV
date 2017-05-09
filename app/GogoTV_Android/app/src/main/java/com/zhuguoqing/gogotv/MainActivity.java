@@ -6,18 +6,18 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.facebook.react.ReactActivity;
-import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.bridge.ReactContext;
 import com.zhuguoqing.gogotv.view.BottomTabView;
 import com.zhuguoqing.greactnative.base.GReactFragment;
+import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends ReactActivity {
-    private MainApplication.ApplicationListener mApplicationListener;
-    private ReadableMap mTabConfig;
+    private Bundle mTabConfig;
     private BottomTabView mTabView;
     private List<GReactFragment> mFlagments = new ArrayList();
     @Override
@@ -25,33 +25,40 @@ public class MainActivity extends ReactActivity {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         setContentView(R.layout.activity_main);
-        mApplicationListener = new MainApplication.ApplicationListener() {
+        MainApplication.getInstance().mainActivity = this;
+
+
+        MainApplication.getInstance().getReactInstanceManager().addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
             @Override
-            public void tabConfig(final ReadableMap tabConfig) {
-                mTabConfig = tabConfig;
-                runOnUiThread(new Runnable() {
+            public void onReactContextInitialized(ReactContext context) {
+                MainApplication.getInstance().invokeJSModule(new MainApplication.Invoke() {
                     @Override
-                    public void run() {
-                        MainActivity.this.initTabView(tabConfig);
+                    public void doInvoke(ReactContext context, String invokeId) {
+                        context.getJSModule(AppModule.class).getTabConfig(invokeId);
+                    }
+                }, new MainApplication.InvokeReturn() {
+                    @Override
+                    public void onInvokeRetrun(Bundle returnJson) {
+                        mTabConfig = returnJson;
+                        initTabView(mTabConfig);
                     }
                 });
             }
-        };
-        MainApplication.getInstance().addApplicationListener(mApplicationListener);
-        MainApplication.getInstance().mainActivity = this;
+        });
+
     }
-    private  void initTabView(ReadableMap tabConfig){
+    private  void initTabView(Bundle tabConfig){
 
         LinearLayout tabLayout = (LinearLayout) findViewById(R.id.id_tab);
         tabLayout.removeAllViews();
         mTabView = new BottomTabView(this.getBaseContext());
 
         mTabView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        ReadableArray tabs = tabConfig.getArray("tabs");
-        for (int i=0;i<tabs.size();i++){
-            ReadableMap tabItem = tabs.getMap(i);
-            String title = tabItem.getString("title");
-            String moduleName = tabItem.getString("moduleName");
+        List<Bundle> list = (List<Bundle>)tabConfig.getSerializable("tabs");
+        for (int i=0;i<list.size();i++){
+            Bundle item = list.get(i);
+            String title = item.getString("title");
+            String moduleName = item.getString("moduleName");
             mTabView.addItem(title);
             Bundle initProps = new Bundle();
             initProps.putString("title",title);
@@ -88,6 +95,5 @@ public class MainActivity extends ReactActivity {
     protected void onDestroy() {
         super.onDestroy();
         AppManager.getAppManager().finishActivity(this);
-        MainApplication.getInstance().removeApplicationListener(mApplicationListener);
     }
 }
