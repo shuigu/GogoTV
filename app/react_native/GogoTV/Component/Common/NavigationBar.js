@@ -30,23 +30,33 @@ class NavigationBar extends Component{
       );
     }
   }
+  rightRender(){
+    if (!this.props.showBackButton){
+      return ;
+    }
+    return (
+      <View style={{flex:1}}/>
+    )
+  }
   backButtonRender(){
     if (!this.props.showBackButton){
       return ;
     }
     return (
-      <TouchableHighlight onPress={()=>{
-        if(this.props.backClick){
-          this.props.backClick();
-        }else{
-          Navigator.pop();
-        }
-      }}>
-        <View style={styles.backButtonView}>
-          <Image style={styles.backImageView} source={themeImages.commonImages.leftArrow}/>
-          <Text style={styles.backText}>{"返回"}</Text>
-        </View>
-      </TouchableHighlight>
+      <View style={{flex:1}}>
+        <TouchableHighlight onPress={()=>{
+          if(this.props.backClick){
+            this.props.backClick();
+          }else{
+            Navigator.pop();
+          }
+        }}>
+          <View style={styles.backButtonView}>
+            <Image style={styles.backImageView} source={themeImages.commonImages.leftArrow}/>
+            <Text style={styles.backText}>{"返回"}</Text>
+          </View>
+        </TouchableHighlight>
+      </View>
     )
   }
   render(){
@@ -59,7 +69,9 @@ class NavigationBar extends Component{
           <View style={styles.titleView}>
             <Text style={styles.title}>{title}</Text>
           </View>
+          {this.rightRender()}
         </View>
+
       </View>
     )
   }
@@ -75,7 +87,7 @@ const styles = StyleSheet.create({
     height:BAR_HEIGHT,
     justifyContent:'space-between',
     alignItems:'center',
-    flexDirection:'row'
+    flexDirection:'row',
   },
   backButtonView:{
     position: 'relative',
@@ -95,6 +107,7 @@ const styles = StyleSheet.create({
   },
   titleView:{
     flex:1,
+    alignItems:'center',
   },
   title:{
     fontSize: 16,

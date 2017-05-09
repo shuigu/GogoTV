@@ -11,12 +11,15 @@ import com.zhuguoqing.gogotv.MainApplication;
 import com.zhuguoqing.gogotv.R;
 
 public class GReactActivity extends BaseActivity{
+    private String mModuleName;
+    private Bundle mInitProps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String moduleName = getIntent().getStringExtra("moduleName");
+        mModuleName = getIntent().getStringExtra("moduleName");
+        mInitProps  = getIntent().getBundleExtra("initProps");
         ReactRootView reactRootView = new ReactRootView(this);
-        reactRootView.startReactApplication(MainApplication.getInstance().getReactInstanceManager(),moduleName);
+        reactRootView.startReactApplication(MainApplication.getInstance().getReactInstanceManager(),mModuleName,mInitProps);
         setContentView(reactRootView);
     }
 }

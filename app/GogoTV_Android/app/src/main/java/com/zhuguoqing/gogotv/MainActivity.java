@@ -2,8 +2,6 @@ package com.zhuguoqing.gogotv;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
@@ -11,7 +9,7 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.zhuguoqing.gogotv.view.BottomTabView;
-import com.zhuguoqing.gogotv.view.GReactFragment;
+import com.zhuguoqing.greactnative.base.GReactFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,10 +53,10 @@ public class MainActivity extends ReactActivity {
             String title = tabItem.getString("title");
             String moduleName = tabItem.getString("moduleName");
             mTabView.addItem(title);
-            Bundle launchOptions = new Bundle();
-            launchOptions.putString("title",title);
-            launchOptions.putString("moduleName",moduleName);
-            GReactFragment fragment = new GReactFragment(launchOptions);
+            Bundle initProps = new Bundle();
+            initProps.putString("title",title);
+            GReactFragment fragment = new GReactFragment(moduleName,initProps);
+
             mFlagments.add(fragment);
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.add(R.id.id_content,fragment);

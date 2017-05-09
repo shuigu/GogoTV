@@ -1,4 +1,4 @@
-package com.zhuguoqing.gogotv.view;
+package com.zhuguoqing.greactnative.base;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,13 +11,13 @@ import com.zhuguoqing.gogotv.MainApplication;
 
 public class GReactFragment extends Fragment {
     private String mModuleName;
-    private Bundle mLaunchOptions;
+    private Bundle mInitProps;
     public GReactFragment() {
         super();
     }
-    public GReactFragment(Bundle launchOptions) {
-        this.mLaunchOptions = launchOptions;
-        mModuleName = launchOptions.getString("moduleName");
+    public GReactFragment(String moduleName,Bundle initProps){
+        mModuleName = moduleName;
+        mInitProps  = initProps;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class GReactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ReactRootView rootView = new ReactRootView(getActivity());
-        rootView.startReactApplication(MainApplication.getInstance().getReactNativeHost().getReactInstanceManager(),mModuleName,mLaunchOptions);
+        rootView.startReactApplication(MainApplication.getInstance().getReactNativeHost().getReactInstanceManager(),mModuleName,mInitProps);
         return rootView;
     }
 }

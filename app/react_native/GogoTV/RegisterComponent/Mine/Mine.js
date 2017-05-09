@@ -2,7 +2,7 @@
  * Created by zhuguoqing on 17/4/27.
  */
 import React,{ Component } from 'react';
-var Navigator    = require('NativeModules').GNavigationRCTModule;
+var GNavigator = require('NativeModules').GNavigationRCTModule;
 import {
   StyleSheet,
   Text,
@@ -25,11 +25,12 @@ import {
 
 class Mine extends  Component {
   onMineInfoClick(data){
-    Navigator.push('mineShowInfo',{content:'用户信息',title:'用户信息'})
+    GNavigator.push('mineShowInfo',{content:'用户信息',title:'用户信息'})
   }
   onMineListItemClick(data){
-    let {itemTitle} = data;
-    Navigator.push('mineShowInfo',{content:itemTitle,title:itemTitle})
+    let {title} = data;
+    itemTitle = title;
+    GNavigator.push('mineShowInfo',{content:itemTitle,title:itemTitle})
   }
   render() {
     let title = this.props.title;

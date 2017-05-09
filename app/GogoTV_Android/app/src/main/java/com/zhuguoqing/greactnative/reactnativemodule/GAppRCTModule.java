@@ -30,7 +30,7 @@ public class GAppRCTModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void sendData(String key,ReadableMap data){
         /**
-         * 这个函数可以优化？
+         * 这个函数可以优化？把ReadableMap 转为 Bundle，一广播的方式广播出去？
          */
         /*
         * **/
