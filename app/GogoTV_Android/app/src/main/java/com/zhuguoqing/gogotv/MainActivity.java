@@ -21,6 +21,7 @@ import java.util.List;
 public class MainActivity extends ReactActivity {
     private Bundle mTabConfig;
     private List<GReactFragment> mFragments = new ArrayList();
+    private BroadcastReceiver mRNBroadcastReceiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +48,13 @@ public class MainActivity extends ReactActivity {
         });
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(GAppRCTModule.BROADCAST_RN_DISPATCH);
-        registerReceiver(new BroadcastReceiver() {
+        mRNBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getStringExtra("action");
-                final  Bundle paramJson = intent.getBundleExtra("paramJson");
-                if (action.equals("setTabSelectedIndex")){
-                    final int selectedIndex =paramJson.getInt("selectedIndex");
+                final Bundle paramJson = intent.getBundleExtra("paramJson");
+                if (action.equals("setTabSelectedIndex")) {
+                    final int selectedIndex = paramJson.getInt("selectedIndex");
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -62,7 +63,8 @@ public class MainActivity extends ReactActivity {
                     });
                 }
             }
-        },intentFilter);
+        };
+        registerReceiver(mRNBroadcastReceiver,intentFilter);
     }
     private  void initTabView(Bundle tabConfig){
         List<Bundle> list = (List<Bundle>)tabConfig.getSerializable("tabs");
@@ -72,7 +74,7 @@ public class MainActivity extends ReactActivity {
 
             GReactFragment fragment = new GReactFragment(moduleName,item);
             mFragments.add(fragment);
-            
+
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.add(R.id.id_content,fragment);
             transaction.commit();
@@ -95,6 +97,7 @@ public class MainActivity extends ReactActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unregisterReceiver(mRNBroadcastReceiver);
         AppManager.getAppManager().finishActivity(this);
     }
 }

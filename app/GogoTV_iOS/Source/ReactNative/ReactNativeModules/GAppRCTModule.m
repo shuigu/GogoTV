@@ -22,7 +22,6 @@ RCT_EXPORT_METHOD(invokeReturn:(NSString *)invokeId  returnJson:(NSDictionary *)
         [[NSNotificationCenter defaultCenter]postNotificationName:KGInvokeReturnNotification object:info];
     });    
 }
-
 RCT_EXPORT_METHOD(dispatch:(NSString *)action paramJson:(NSDictionary *)paramJson){
     NSDictionary * info = @{@"action":action,@"paramJson":paramJson};
     dispatch_async(dispatch_get_main_queue(), ^{

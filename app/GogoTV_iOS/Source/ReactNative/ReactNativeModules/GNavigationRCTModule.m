@@ -10,14 +10,24 @@
 #import "GNavigatorManager.h"
 #import "GRCTViewController.h"
 #import "GBridgeManager.h"
+#import "GPlayerViewController.h"
+
+
 @implementation GNavigationRCTModule
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(push:(NSString *)moduleName initProps:(NSDictionary *)initProps){
     dispatch_async(dispatch_get_main_queue(), ^{
-        GRCTViewController * vc = [[GRCTViewController alloc]initWithBridge:[GBridgeManager shareInstance].bridge
-                                                                 moduleName:moduleName
-                                                          initialProperties:initProps];
+        
+        BOOL isPlayer = [initProps valueForKey:@"isPlayer"];
+        UIViewController * vc = nil;
+        if(isPlayer){
+            vc = [[GPlayerViewController alloc]init];
+        }else{
+            vc = [[GRCTViewController alloc]initWithBridge:[GBridgeManager shareInstance].bridge
+                                                moduleName:moduleName
+                                         initialProperties:initProps];
+        }
         [[GNavigatorManager shareInstance].rootNavigationViewController pushViewController:vc animated:YES];
     });
 

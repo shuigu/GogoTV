@@ -29,7 +29,13 @@ import  {
   MineShowInfo,
 } from './Mine'
 
+// Player 
+import {
+  TestPlayer,
+} from './Player'
+
 function RegisterComponent() {
+  
   // TabBar
   AppRegistry.registerComponent('tabBar',() => TabBar)
 
@@ -45,6 +51,9 @@ function RegisterComponent() {
   // Mine
   AppRegistry.registerComponent('mine',() => Mine)
   AppRegistry.registerComponent('mineShowInfo',() => MineShowInfo)
+
+  // Player
+  AppRegistry.registerComponent('testPlayer',() => TestPlayer)
 }
 
 module.exports = RegisterComponent;

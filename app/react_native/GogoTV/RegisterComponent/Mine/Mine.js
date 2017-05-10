@@ -25,7 +25,9 @@ import {
 
 class Mine extends  Component {
   onMineInfoClick(data){
-    GNavigator.push('mineShowInfo',{content:'用户信息',title:'用户信息'})
+
+    GNavigator.push('testPlayer',{isPlayer:true})
+
   }
   onMineListItemClick(data){
     let {title} = data;

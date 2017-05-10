@@ -31,6 +31,7 @@
 		7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */; };
 		7E1778091EB988A50018678F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777F91EB985110018678F /* IJKMediaFramework.framework */; };
 		7E2676221EC1E4070075E025 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26761D1EC1E3FB0075E025 /* libRCTAnimation.a */; };
+		7E26762B1EC31BDA0075E025 /* GPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26762A1EC31BDA0075E025 /* GPlayerViewController.m */; };
 		7E84B6EE1EA62F1800F99052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6ED1EA62F1800F99052 /* main.m */; };
 		7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B6F01EA62F1800F99052 /* AppDelegate.m */; };
 		7E84B6F91EA62F1800F99052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6F81EA62F1800F99052 /* Assets.xcassets */; };
@@ -150,6 +151,8 @@
 		7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaDemo.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaDemo/IJKMediaDemo.xcodeproj"; sourceTree = "<group>"; };
 		7E2676151EC1E36B0075E025 /* libRCTAnimation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTAnimation.a; path = "../../../../../Library/Developer/Xcode/DerivedData/GogoTV-hedhaqxkljrbhjgbyzthuecnybda/Build/Products/Debug-iphonesimulator/libRCTAnimation.a"; sourceTree = "<group>"; };
 		7E2676171EC1E3FB0075E025 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../react_native/node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		7E2676291EC31BDA0075E025 /* GPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlayerViewController.h; sourceTree = "<group>"; };
+		7E26762A1EC31BDA0075E025 /* GPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlayerViewController.m; sourceTree = "<group>"; };
 		7E82F6FC1EA700FF005BC047 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		7E84B6E91EA62F1700F99052 /* GogoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GogoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84B6ED1EA62F1800F99052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 				7E1059351EADF551007F957F /* GNavigationViewController.m */,
 				7E970CB21EB1C0B2009D4DFD /* GRootViewController.h */,
 				7E970CB31EB1C0B2009D4DFD /* GRootViewController.m */,
+				7E2676291EC31BDA0075E025 /* GPlayerViewController.h */,
+				7E26762A1EC31BDA0075E025 /* GPlayerViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -803,6 +808,7 @@
 				7E1059481EADF551007F957F /* GBridgeManager.m in Sources */,
 				7E1059461EADF551007F957F /* GNavigationViewController.m in Sources */,
 				7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */,
+				7E26762B1EC31BDA0075E025 /* GPlayerViewController.m in Sources */,
 				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
 				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
 				7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */,
