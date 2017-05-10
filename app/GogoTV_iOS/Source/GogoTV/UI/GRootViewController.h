@@ -11,4 +11,6 @@
 @interface GRootViewController : UIViewController
 
 @property (nonatomic) NSDictionary * tabConfig;
+@property (nonatomic) NSInteger selectIndex;
+
 @end

@@ -3,6 +3,11 @@
  */
 import {AppRegistry}    from 'react-native';
 
+//Tab
+import {
+  TabBar
+} from './TabBar'
+
 // Recommend
 import  {
   Recommend
@@ -25,6 +30,9 @@ import  {
 } from './Mine'
 
 function RegisterComponent() {
+  // TabBar
+  AppRegistry.registerComponent('tabBar',() => TabBar)
+
   // recommend
   AppRegistry.registerComponent('recommend',() => Recommend)
 

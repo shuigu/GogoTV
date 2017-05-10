@@ -107,7 +107,6 @@ public class MainApplication extends Application implements ReactApplication {
         }
       }
     },intentFilter);
-
   }
   public void invokeJSModule(Invoke invoke,InvokeReturn invokeReturn){
     String invokeId = GUtil.uuid();

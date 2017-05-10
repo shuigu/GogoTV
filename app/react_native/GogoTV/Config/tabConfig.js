@@ -3,7 +3,7 @@
  */
 var TabConfig = {
   version:'1.0',
-  test:{a:1},
+  selectedIndex:0,
   tabs:[
     {
       title:'推荐',
@@ -12,8 +12,7 @@ var TabConfig = {
     {
       title:'视库',
       moduleName:'videoLibrary',
-    }
-    ,
+    },
     {
       title:'历史',
       moduleName:'history',

@@ -11,6 +11,7 @@
 
 
 extern NSString *const KGInvokeReturnNotification;
+extern NSString *const KGDispatchNotification;
 
 @interface GAppRCTModule : NSObject<RCTBridgeModule>
 

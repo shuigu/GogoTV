@@ -98,12 +98,13 @@ const styles = StyleSheet.create({
     marginLeft:8,
   },
   backImageView:{
-    width:20,
-    height:20,
+    width:15,
+    height:15,
     tintColor:'#FFFFFF',
   },
   backText:{
     fontSize: 12,
+    marginLeft:5,
     fontWeight: 'bold',
     color:'#FFFFFF'
   },

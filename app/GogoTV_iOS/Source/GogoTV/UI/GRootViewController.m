@@ -8,67 +8,52 @@
 
 #import "GRootViewController.h"
 #import <Masonry.h>
-#import "GBottomTabView.h"
 #import "GRCTViewController.h"
 #import "GBridgeManager.h"
-
-@interface GRootViewController (){
-    
-    GBottomTabView * tabView;
-    UIView * contentView;
-    GRCTViewController * currentViewController;
-}
-
-@end
+#import <React/RCTRootView.h>
 
 @implementation GRootViewController{
-    NSMutableArray<GRCTViewController *> * viewControllers;
-}
 
+    UIView * contentView;
+    GRCTViewController * currentViewController;
+    NSMutableArray<GRCTViewController *> * viewControllers;
+    RCTRootView * rnTabBarView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initTabView];
+    [self initView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRNDispatchNotification:) name:KGDispatchNotification object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-- (void)initTabView{
-    // contentView 显示内容
+-(void)initView{
+    // 显示内容的view
     contentView = [[UIView alloc]init];
-    [contentView setBackgroundColor:UIColorFromHex(0xf5fcff)];
     [self.view addSubview:contentView];
+    
     // tabView 显示下部tab
-    tabView = [[GBottomTabView alloc]init];
-    [self.view addSubview:tabView];    
+    rnTabBarView = [[RCTRootView alloc]initWithBridge:[GBridgeManager shareBridge] moduleName:@"tabBar" initialProperties:nil];
+    [self.view addSubview:rnTabBarView];
+    
+    // 约束
     WS(ws);
-    [tabView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [rnTabBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(ws.view);
         make.width.equalTo(ws.view);
         make.height.equalTo(@55);
-    }];    
+    }];
     
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(ws.view);
-        make.bottom.equalTo(tabView.mas_top);
-    }];
-    WS(weakSelf);
-    [tabView setTabViewSelectedBlock:^(NSInteger index){
-        [weakSelf showViewControllerWithIndex:index];
-    }];
-    
-}
--(void)setTabConfig:(NSDictionary *)tabConfig{
+        make.bottom.equalTo(rnTabBarView.mas_top);
+    }];   
 
+}
+
+-(void)setTabConfig:(NSDictionary *)tabConfig{
     _tabConfig = tabConfig;
-    
     [self removeAllChildViewController];
     NSArray * tabs = [tabConfig valueForKey:@"tabs"];
     if (tabs) {
-        NSArray * titles = [tabs mutableArrayValueForKey:@"title"];
-        [tabView addTabItemWithTitles:titles];
         for (int i =0; i < tabs.count; i++) {
             NSDictionary * tab = tabs[i];
             NSString * moduleName = [tab valueForKey:@"moduleName"];
@@ -77,11 +62,25 @@
             [self addViewController:rctVC];
         }
     }
-    NSInteger index = 3;
-    [tabView setCheckWithIndex:index];
-    [self showViewControllerWithIndex:index];
+    NSInteger index = [[tabConfig valueForKey:@"selectedIndex"]integerValue];
+    [self setSelectIndex:index];
 
 }
+-(void)setSelectIndex:(NSInteger)selectIndex{
+    _selectIndex = selectIndex;
+    [self showViewControllerWithIndex:selectIndex];
+}
+-(void)onRNDispatchNotification:(NSNotification *)notification{
+    NSString * action = [notification.object valueForKey:@"action"];
+    NSDictionary * paramJson = [notification.object valueForKey:@"paramJson"];
+    if ([action isEqual:@"setTabSelectedIndex"]) {
+        
+        NSInteger selected = [[paramJson valueForKey:@"selectedIndex"]integerValue];
+        [self setSelectIndex:selected];
+    }
+}
+
+#pragma mark - ChildViewController
 -(void)removeAllChildViewController{
     currentViewController = nil;
     for (GRCTViewController *vc in viewControllers) {
@@ -90,7 +89,6 @@
     }
     
     [viewControllers removeAllObjects];
-    [tabView removeAllChileViews];
 }
 -(void)addViewController:(GRCTViewController *)viewController{
     if (!viewControllers) {
@@ -130,5 +128,4 @@
                                }];
     
 }
-
 @end

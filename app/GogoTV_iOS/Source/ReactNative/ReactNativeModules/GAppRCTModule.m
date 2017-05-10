@@ -8,6 +8,7 @@
 #import "GAppRCTModule.h"
 
 NSString *const KGInvokeReturnNotification = @"KGInvokeReturnNotification";
+NSString *const KGDispatchNotification = @"KGDispatchNotification";
 
 @implementation GAppRCTModule
 
@@ -20,5 +21,12 @@ RCT_EXPORT_METHOD(invokeReturn:(NSString *)invokeId  returnJson:(NSDictionary *)
     dispatch_async(dispatch_get_main_queue(), ^{
         [[NSNotificationCenter defaultCenter]postNotificationName:KGInvokeReturnNotification object:info];
     });    
+}
+
+RCT_EXPORT_METHOD(dispatch:(NSString *)action paramJson:(NSDictionary *)paramJson){
+    NSDictionary * info = @{@"action":action,@"paramJson":paramJson};
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter]postNotificationName:KGDispatchNotification object:info];
+    });
 }
 @end

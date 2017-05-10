@@ -17,11 +17,6 @@ import {
 } from './../../Theme'
 
 class MineShowInfo extends  Component {
-  // 构造
-    constructor(props) {
-      super(props);
-     console.log('aaaaProps=',this.props);
-    }
   back(){
     Navigator.pop();
   }

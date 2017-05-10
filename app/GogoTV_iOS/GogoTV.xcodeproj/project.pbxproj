@@ -38,8 +38,6 @@
 		7E84B7071EA62F1800F99052 /* GogoTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7061EA62F1800F99052 /* GogoTVTests.m */; };
 		7E84B7121EA62F1800F99052 /* GogoTVUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7111EA62F1800F99052 /* GogoTVUITests.m */; };
 		7E970CB41EB1C0B2009D4DFD /* GRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CB31EB1C0B2009D4DFD /* GRootViewController.m */; };
-		7E970CB81EB1C1A9009D4DFD /* GBottomTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CB71EB1C1A9009D4DFD /* GBottomTabView.m */; };
-		7E970CBB1EB1C1BA009D4DFD /* GBottomTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CBA1EB1C1BA009D4DFD /* GBottomTabItemView.m */; };
 		7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB738591EB22A51003AB74A /* GNavigationRCTModule.m */; };
 		B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967B128B2D3861E5473E978B /* libPods-GogoTV.a */; };
 /* End PBXBuildFile section */
@@ -168,10 +166,6 @@
 		7E84B7131EA62F1800F99052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E970CB21EB1C0B2009D4DFD /* GRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRootViewController.h; sourceTree = "<group>"; };
 		7E970CB31EB1C0B2009D4DFD /* GRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRootViewController.m; sourceTree = "<group>"; };
-		7E970CB61EB1C1A9009D4DFD /* GBottomTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBottomTabView.h; sourceTree = "<group>"; };
-		7E970CB71EB1C1A9009D4DFD /* GBottomTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBottomTabView.m; sourceTree = "<group>"; };
-		7E970CB91EB1C1BA009D4DFD /* GBottomTabItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBottomTabItemView.h; sourceTree = "<group>"; };
-		7E970CBA1EB1C1BA009D4DFD /* GBottomTabItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBottomTabItemView.m; sourceTree = "<group>"; };
 		7EA8A15B1EB1C5EB0071F521 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7EB738581EB22A51003AB74A /* GNavigationRCTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNavigationRCTModule.h; sourceTree = "<group>"; };
 		7EB738591EB22A51003AB74A /* GNavigationRCTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNavigationRCTModule.m; sourceTree = "<group>"; };
@@ -295,7 +289,6 @@
 		7E1059331EADF551007F957F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				7E970CB51EB1C18F009D4DFD /* View */,
 				7E1059341EADF551007F957F /* GNavigationViewController.h */,
 				7E1059351EADF551007F957F /* GNavigationViewController.m */,
 				7E970CB21EB1C0B2009D4DFD /* GRootViewController.h */,
@@ -443,17 +436,6 @@
 				7E84B7131EA62F1800F99052 /* Info.plist */,
 			);
 			path = GogoTVUITests;
-			sourceTree = "<group>";
-		};
-		7E970CB51EB1C18F009D4DFD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7E970CB61EB1C1A9009D4DFD /* GBottomTabView.h */,
-				7E970CB71EB1C1A9009D4DFD /* GBottomTabView.m */,
-				7E970CB91EB1C1BA009D4DFD /* GBottomTabItemView.h */,
-				7E970CBA1EB1C1BA009D4DFD /* GBottomTabItemView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7EA103D21EB97BB4000627AD /* Projects */ = {
@@ -821,8 +803,6 @@
 				7E1059481EADF551007F957F /* GBridgeManager.m in Sources */,
 				7E1059461EADF551007F957F /* GNavigationViewController.m in Sources */,
 				7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */,
-				7E970CB81EB1C1A9009D4DFD /* GBottomTabView.m in Sources */,
-				7E970CBB1EB1C1BA009D4DFD /* GBottomTabItemView.m in Sources */,
 				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
 				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
 				7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */,

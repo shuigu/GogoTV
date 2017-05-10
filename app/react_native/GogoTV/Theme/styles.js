@@ -20,5 +20,9 @@ module.exports = {
     alignItems:'center',
     ...colors.contentViewBkgColor,
     flex:1,
+  },
+  tabBarView:{
+    ...colors.tabBarBkgColor,
+    flex:1,
   }
 }

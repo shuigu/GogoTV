@@ -12,10 +12,9 @@
         android:layout_height="0dp"
         android:layout_weight="1">
     </FrameLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/id_tab"
+    <fragment
+        android:name="com.zhuguoqing.gogotv.view.TabBarFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </LinearLayout>
+        android:layout_height="55dp">
+    </fragment>
 </LinearLayout>
