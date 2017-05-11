@@ -73,6 +73,12 @@ static GBridgeManager * bridgeManager;
         }
     }
 }
+
+
+-(RCTRootView *) genRnViewWithModule:(NSString *)moduleName initProps:(NSDictionary *)initProps{
+    return [[RCTRootView alloc]initWithBridge:[self bridge] moduleName:moduleName initialProperties:initProps];
+}
+
 #pragma mark - RCTBridgeDelegate
 -(NSURL *)sourceURLForBridge:(RCTBridge *)bridge{
     return [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];

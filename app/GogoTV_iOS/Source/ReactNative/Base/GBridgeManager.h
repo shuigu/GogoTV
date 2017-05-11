@@ -10,6 +10,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBridgeDelegate.h>
 #import "GAppRCTModule.h"
+#import <React/RCTRootView.h>
 
 typedef void (^JavaScriptDidLoadBlock)();
 typedef void (^JSReturnValueBlock)(NSDictionary *returnJson);
@@ -30,6 +31,7 @@ typedef void (^JSReturnValueBlock)(NSDictionary *returnJson);
                  args:(NSArray *)args
            completion:(JSReturnValueBlock) completion;
 
+-(RCTRootView *) genRnViewWithModule:(NSString *)moduleName initProps:(NSDictionary *)initProps;
 
 @property (nonatomic,readonly)  RCTBridge * bridge;
 @property (nonatomic,strong)    JavaScriptDidLoadBlock javaScriptDidLoadBlock;

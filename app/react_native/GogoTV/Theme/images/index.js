@@ -3,7 +3,9 @@
  */
 import mineImages from './mine'
 import commonImages from './common'
+import playerImages from './Player'
 module.exports = {
   mineImages,
   commonImages,
+  playerImages,
 }

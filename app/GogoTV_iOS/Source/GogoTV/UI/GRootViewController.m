@@ -24,7 +24,9 @@
     [self initView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRNDispatchNotification:) name:KGDispatchNotification object:nil];
 }
-
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
 -(void)initView{
     // 显示内容的view
     contentView = [[UIView alloc]init];

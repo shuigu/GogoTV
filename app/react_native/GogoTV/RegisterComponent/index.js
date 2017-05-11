@@ -32,6 +32,9 @@ import  {
 // Player 
 import {
   TestPlayer,
+  PlayerControlBig,
+  PlayerControlSmall,
+  PlayerDetail
 } from './Player'
 
 function RegisterComponent() {
@@ -54,6 +57,9 @@ function RegisterComponent() {
 
   // Player
   AppRegistry.registerComponent('testPlayer',() => TestPlayer)
+  AppRegistry.registerComponent('PlayerControlSmall',() => PlayerControlSmall)
+  AppRegistry.registerComponent('PlayerControlBig',() => PlayerControlBig)
+  AppRegistry.registerComponent('PlayerDetail',() => PlayerDetail)
 }
 
 module.exports = RegisterComponent;

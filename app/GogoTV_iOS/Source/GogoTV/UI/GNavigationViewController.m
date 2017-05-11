@@ -27,5 +27,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return [self.topViewController supportedInterfaceOrientations];
+}
 @end
