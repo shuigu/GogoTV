@@ -120,7 +120,6 @@
         // 横屏
         self.isFullScreen = YES;
     }
-    
 }
 -(void)setIsFullScreen:(BOOL)isFullScreen{
     _isFullScreen = isFullScreen;

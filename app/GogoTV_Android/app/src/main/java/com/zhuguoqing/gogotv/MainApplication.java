@@ -100,7 +100,7 @@ public class MainApplication extends Application implements ReactApplication {
           mainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-              invokeReturn.onInvokeRetrun(returnJson);
+              invokeReturn.onInvokeReturn(returnJson);
             }
           });
           invokeMap.remove(invokeId);
@@ -114,7 +114,7 @@ public class MainApplication extends Application implements ReactApplication {
     invoke.doInvoke(getReactInstanceManager().getCurrentReactContext(),invokeId);
   }
   public  interface InvokeReturn {
-    public void onInvokeRetrun(Bundle returnJson);
+    public void onInvokeReturn(Bundle returnJson);
   }
   public interface Invoke {
     public void doInvoke(ReactContext context, String invokeId);

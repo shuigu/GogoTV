@@ -39,7 +39,7 @@ public class MainActivity extends ReactActivity {
                     }
                 }, new MainApplication.InvokeReturn() {
                     @Override
-                    public void onInvokeRetrun(Bundle returnJson) {
+                    public void onInvokeReturn(Bundle returnJson) {
                         mTabConfig = returnJson;
                         initTabView(mTabConfig);
                     }

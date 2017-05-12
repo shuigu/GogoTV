@@ -64,12 +64,10 @@ const styles = StyleSheet.create({
     width:BUTTON_SIZE,
     height:BUTTON_SIZE,
     justifyContent:'center',
-    backgroundColor:'#000000',
-    opacity:0.8,
   },
   backImageView:{
-    width:15,
-    height:15,
+    width:20,
+    height:20,
     tintColor:'#FFFFFF',
   },
 });
