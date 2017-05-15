@@ -10,6 +10,7 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.zhuguoqing.gogotv.AppManager;
 import com.zhuguoqing.gogotv.MainApplication;
+import com.zhuguoqing.gogotv.PlayerActivity;
 import com.zhuguoqing.greactnative.base.GReactActivity;
 import com.zhuguoqing.util.GUtil;
 
@@ -31,11 +32,13 @@ public class GNavigationRCTModule extends ReactContextBaseJavaModule {
         MainApplication.getInstance().mainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Activity currentActivity = AppManager.getAppManager().currentActivity();
-                Intent intent = new Intent(currentActivity, GReactActivity.class);
-                intent.putExtra("initProps",bundle);
-                intent.putExtra("moduleName",moduleName);
-                MainApplication.getInstance().mainActivity.startActivity(intent);
+            Activity currentActivity = AppManager.getAppManager().currentActivity();
+            Boolean isPlayer = bundle.getBoolean("isPlayer");
+            Class activityClass = isPlayer? PlayerActivity.class :GReactActivity.class;
+            Intent intent = new Intent(currentActivity, activityClass);
+            intent.putExtra("initProps",bundle);
+            intent.putExtra("moduleName",moduleName);
+            MainApplication.getInstance().mainActivity.startActivity(intent);
             }
         });
     }

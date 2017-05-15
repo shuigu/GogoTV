@@ -17,7 +17,6 @@ import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MainActivity extends ReactActivity {
     private Bundle mTabConfig;
     private List<GReactFragment> mFragments = new ArrayList();

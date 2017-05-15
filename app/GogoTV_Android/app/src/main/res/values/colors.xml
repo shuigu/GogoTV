@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="tabCheck">#FF0000</color>
     <color name="tabUnCheck">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
