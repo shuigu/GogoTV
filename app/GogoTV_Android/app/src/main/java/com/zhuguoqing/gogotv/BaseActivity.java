@@ -56,6 +56,6 @@ public class BaseActivity extends Activity{
     protected void onDestroy() {
         super.onDestroy();
         // 结束Activity&从堆栈中移除
-        AppManager.getAppManager().finishActivity(this);
+        AppManager.getAppManager().removeActivity(this);
     }
 }

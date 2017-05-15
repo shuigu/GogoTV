@@ -1,6 +1,11 @@
 package com.zhuguoqing.gogotv;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -11,11 +16,13 @@ import android.widget.LinearLayout;
 
 import com.facebook.react.ReactRootView;
 import com.zhuguoqing.gogotv.media.GVideoView;
+import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
 
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 public class PlayerActivity extends BaseActivity {
     GVideoView mVideoView;
+    private BroadcastReceiver mRNBroadcastReceiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +77,23 @@ public class PlayerActivity extends BaseActivity {
         mVideoView.setVideoPath("rtmp://live.hkstv.hk.lxdns.com/live/hks");
         mVideoView.start();
 
+
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(GAppRCTModule.BROADCAST_RN_DISPATCH);
+        mRNBroadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getStringExtra("action");
+                final Bundle paramJson = intent.getBundleExtra("paramJson");
+                if (action.equals("player_fullScreen")) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                }else if (action.equals("player_portraitScreen")){
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                }
+            }
+        };
+        registerReceiver(mRNBroadcastReceiver,intentFilter);
     }
     @Override
     protected void onStop() {
@@ -78,5 +102,10 @@ public class PlayerActivity extends BaseActivity {
             mVideoView.release(true);
         }
         IjkMediaPlayer.native_profileEnd();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mRNBroadcastReceiver);
     }
 }

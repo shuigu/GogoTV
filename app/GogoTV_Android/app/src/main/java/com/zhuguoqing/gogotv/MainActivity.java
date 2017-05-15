@@ -97,6 +97,6 @@ public class MainActivity extends ReactActivity {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(mRNBroadcastReceiver);
-        AppManager.getAppManager().finishActivity(this);
+        AppManager.getAppManager().removeActivity(this);
     }
 }
