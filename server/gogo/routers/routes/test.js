@@ -4,8 +4,15 @@
 
 const Paths = require('./../paths')
 
-function router(ctx, next) {
-  ctx.body = "test0"
+async function router(ctx, next) {
+  // body Post 参数
+  console.log('body:',ctx.request.body)
+  // query GET 参数
+  console.log('query:',ctx.query)
+
+  // 返回值
+  ctx.body = "test"
+
 }
 module.exports = {
   router,

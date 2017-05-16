@@ -7,12 +7,14 @@
 
 const Koa     = require('koa');
 const Route   = require('./routers');
-
+const bodyParser = require('koa-bodyparser');
 
 const app     = new Koa();
 const route   = new Route();
 
-
+// body 参数解析
+app.use(bodyParser());
+// route
 app.use(route.routes());
 
 
