@@ -13,7 +13,7 @@ const DataBase   = require('./database');
 
 const app     = new Koa();
 const route   = new Route();
-
+global.__dataBase = new DataBase();
 
 // body 参数解析
 app.use(bodyParser());

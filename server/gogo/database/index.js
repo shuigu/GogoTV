@@ -11,9 +11,4 @@ class DataBase {
   }
 }
 
-// 全局的,引用方法
-// const  dataBase = require('./database')
-var dataBase = new DataBase();
-module.exports = {
-  dataBase,
-};
+module.exports = DataBase;

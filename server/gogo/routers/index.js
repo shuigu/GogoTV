@@ -12,20 +12,26 @@ class Route {
   // 构造
   constructor() {
     this.router = new Router();
-    this.generateRoutes();
+    this.traverseRoutes(filePath,this.configRoute.bind(this));
   }
   routes(){
     return this.router.routes();
   }
-  generateRoutes(){
-    fs.readdir(filePath,function(err,files) {
+  traverseRoutes(path,handle){
+    fs.readdir(path,function(err,files) {
       if (err) {
         console.log('generateRoutes error:',err);
       }
       else{
-        files.forEach(function (route) {
-          let routePath = "./routes/"+route
-          this.configRoute(routePath)
+        files.forEach(function (item) {
+          let tmpPath = path + '/' + item;
+          fs.stat(tmpPath, function(err1, stats){
+            if (stats.isDirectory()) {
+              this.traverseRoutes(tmpPath, handle);
+            } else {
+              handle(tmpPath);
+            }
+          }.bind(this));
         }.bind(this))
       }
     }.bind(this))

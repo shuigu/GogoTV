@@ -3,7 +3,12 @@
  */
 
 var mysql   = require('mysql');
-var config  = require('./config')
+var config  = require('./config');
+var {
+  getSqlColumnsValuesString,
+  getSqlColumnsString,
+  getWhereString,
+} = require('./util');
 class Sql {
   // 构造
   constructor() {
@@ -14,11 +19,6 @@ class Sql {
         console.error('error connecting: ' + err);
         process.exit();
       }
-    });
-    this.query('SELECT * FROM gogo.test').then((results)=>{
-      console.log('results:',results[0]);
-    }).catch((error)=>{
-      console.log('error:',error);
     });
   }
   query(sql){
@@ -31,6 +31,23 @@ class Sql {
         }
       });
     }.bind(this));
+  }
+  insert(columnMap,columnData){
+    if (columnData.length < 1){
+      console.log('insert error. columnData : ',columnData);
+      return ;
+    }
+    let sql = 'insert into '+ columnMap.tableName+' '
+    let {columns,values} = getSqlColumnsValuesString(columnMap.columns,columnData);
+    sql = sql + columns + ' values ' + values ;
+    console.log('sql:',sql);
+    return this.query(sql);
+  }
+  select(columnMap,columns,where){
+    let c = columns?getSqlColumnsString(columnMap.columns,columns):'*';
+    let sql = 'select '+ c +' from ' + columnMap.tableName + ' ' + getWhereString(columnMap.columns,where);
+    console.log('selectAll sql:',sql);
+    return this.query(sql);
   }
 }
 module.exports = Sql;
