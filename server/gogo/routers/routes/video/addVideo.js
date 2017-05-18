@@ -6,18 +6,50 @@
  */
 
 var {addVideo} = require('./../../../database/gogo/video')
+var ErrorCode = require('./../../../constant/errorCode')
 
 const Paths = require('./../../paths')
 
 async function router(ctx, next) {
   // body Post 参数
-  console.log('body:',ctx.request.body)
-  // query GET 参数
-  console.log('query:',ctx.query)
+  let params = ctx.request.body;
+  /*
+  * 必须参数
+  * params:{
+  *   videoName,
+  *   playUrl,
+  * }
+  * */
+  if (!params.videoName || !params.playUrl){
+    ctx.body = {
+      code:ErrorCode.paramError.code,
+      msg:ErrorCode.paramError.msg,
+    }
+    return;
+  }
 
-  addVideo({name:'videoTest',playUrl:'www.baidu.com'});
-  // 返回值
-  ctx.body = "addVideo"
+  let columns = {
+    name:params.videoName,
+    playUrl:params.playUrl,
+  }
+
+  if(params.logoUrl){
+    columns.logoUrl = params.logoUrl;
+  }
+  if(params.screenShotUrl){
+    columns.screenShotUrl = params.screenShotUrl;
+  }
+  if(params.score){
+    columns.score = params.score;
+  }
+  if(params.describe){
+    columns.describe = params.describe;
+  }
+  if(params.type){
+    columns.type = params.type;
+  }
+
+  ctx.body = await addVideo(columns);
 
 }
 module.exports = {

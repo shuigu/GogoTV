@@ -6,8 +6,7 @@ var {getVideo} = require('./../../../database/gogo/video')
 const Paths = require('./../../paths')
 
 async function router(ctx, next) {
-
-
+  
   ctx.body = await getVideo();
 
 }
