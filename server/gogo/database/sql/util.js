@@ -36,10 +36,19 @@ function getWhereString(columnMap,where) {
   return sql;
 
 }
+function getSqlSetString(columnMap,columnData) {
+  let sql = ''
+  for (let item in columnData){
+    sql = sql + columnMap[item]+'=\''+ columnData[item] + '\' ,';
+  }
+  sql = sql.substring(0,sql.length-1);
+  return sql;
+}
 
 module.exports = {
   getSqlColumnsValuesString,
   getSqlColumnsString,
   getWhereString,
+  getSqlSetString,
 }
 

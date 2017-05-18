@@ -17,7 +17,7 @@ function getVideo() {
         item = results[i];
         let newItem = {};
 
-        newItem.videoID       = item[videoInfo.columns.id];
+        newItem.videoId       = item[videoInfo.columns.id];
         newItem.videoName     = item[videoInfo.columns.name];
         newItem.logoUrl       = item[videoInfo.columns.logoUrl];
         newItem.screenShotUrl = item[videoInfo.columns.screenShotUrl];

@@ -12,6 +12,6 @@ async function router(ctx, next) {
 }
 module.exports = {
   router,
-  path:Paths.API_VIDEO_GET,
+  path:Paths.API_VIDEO_LIST,
   methods:["POST"],
 }

@@ -8,6 +8,7 @@ var {
   getSqlColumnsValuesString,
   getSqlColumnsString,
   getWhereString,
+  getSqlSetString,
 } = require('./util');
 class Sql {
   // 构造
@@ -47,6 +48,12 @@ class Sql {
     let c = columns?getSqlColumnsString(columnMap.columns,columns):'*';
     let sql = 'select '+ c +' from ' + columnMap.tableName + ' ' + getWhereString(columnMap.columns,where);
     console.log('selectAll sql:',sql);
+    return this.query(sql);
+  }
+
+  update(columnMap,columnData,where){
+    let sql = 'update '+ columnMap.tableName + ' set ' + getSqlSetString(columnMap.columns,columnData) + ' ' +getWhereString(columnMap.columns,where);
+    console.log('update sql:',sql);
     return this.query(sql);
   }
 }
