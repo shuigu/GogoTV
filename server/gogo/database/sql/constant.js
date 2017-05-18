@@ -10,7 +10,6 @@ module.exports = {
       name:     'user_name',
       no:       'user_no',
       password: 'pass_word',
-      age:      'user_age',
       sex:      'user_sex',
       addTime:  'add_time',
     },

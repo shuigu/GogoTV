@@ -25,6 +25,7 @@ function getSqlColumnsString(columnMap,columns) {
   return sql
 }
 function getWhereString(columnMap,where) {
+  // console.log('getWhereString columnMap:',columnMap);
   if (!where){
     return 'where 1'
   }
@@ -33,6 +34,7 @@ function getWhereString(columnMap,where) {
     sql = sql + columnMap[item] + '=' + where[item] + ' and ';
   }
   sql = sql.substring(0,sql.length-4);
+  // console.log('getWhereString :',sql);
   return sql;
 
 }

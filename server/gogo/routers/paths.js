@@ -11,6 +11,8 @@ module.exports = {
   API_VIDEO_UPDATE:'/api/video/update',
 
   // user
+  API_USER_LOGIN:'/api/user/login',
+  API_USER_INFO:'/api/user/info',
 
   // history
   
