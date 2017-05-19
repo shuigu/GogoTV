@@ -54,6 +54,15 @@ class Token {
     let params = ctx.request.body;
     let token = params.token;
     let userId = Token.verifyToken(token);
+
+    // 参数错误
+    if (!token){
+      ctx.body = {
+        code:ErrorCode.paramError.code,
+        msg:ErrorCode.paramError.msg,
+      }
+      return;
+    }
     // 校验失败
     if (!userId){
       ctx.body = {
@@ -61,6 +70,10 @@ class Token {
         msg:ErrorCode.userInfoNotVerifyError.msg,
       }
       return;
+    }
+    // 权限通过了就构造userInfo数据
+    ctx.userInfo= {
+      userId,
     }
     await next();
   }

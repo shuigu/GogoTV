@@ -3,11 +3,10 @@
  */
 
 var {getUser} = require('./../../../database/gogo/user')
-const Paths   = require('./../../paths')
 var ErrorCode = require('./../../../constant/errorCode')
 var Token     = require('.././../../token')
 
-
+const Paths   = require('./../../paths')
 
 async function router(ctx, next) {
   let params = ctx.request.body;
@@ -25,11 +24,21 @@ async function router(ctx, next) {
     }
     return;
   }
-  let who = {
-    no:params.userNo
+
+  let userInfo = null;
+  try {
+    let who = {
+      no:params.userNo
+    }
+    userInfo = await getUser(who);
+  } catch (error){
+    ctx.body = {
+      code:ErrorCode.dbError.code,
+      msg:ErrorCode.dbError.msg,
+      dbCode:error,
+    }
+    return;
   }
-  let userInfo = await getUser(who);
-  
   /*
   * 用户没有注册
   * */
@@ -51,12 +60,15 @@ async function router(ctx, next) {
     return;
   }
   let token = Token.getToken(userInfo.userId);
+  delete userInfo.password;
   ctx.body = {
     code:ErrorCode.succeed.code,
     msg:ErrorCode.succeed.msg,
-    token:token,
+    datas:{
+      token:token,
+      userInfo,
+    }
   }
-
 }
 module.exports = {
   router,

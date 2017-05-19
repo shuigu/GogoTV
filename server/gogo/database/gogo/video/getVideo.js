@@ -3,16 +3,12 @@
  */
 
 const  videoInfo = require('./../../sql/constant').videoInfo;
-const  errorCode = require('./../../../constant/errorCode')
-
-
 const  sql = global.__dataBase.sql;
 
 function getVideo() {
   return new Promise(function(resolve, reject) {
-    let newResult = {}
     sql.select(videoInfo).then((results)=>{
-      let datas = [];
+      let list = [];
       for (let i=0;i<results.length;i++){
         item = results[i];
         let newItem = {};
@@ -25,24 +21,11 @@ function getVideo() {
         newItem.playUrl       = item[videoInfo.columns.playUrl];
         newItem.type          = item[videoInfo.columns.type];
 
-        datas.push(newItem);
+        list.push(newItem);
       }
-
-      newResult.code  = errorCode.succeed.code;
-      newResult.msg   = errorCode.succeed.msg;
-      newResult.count = datas.length;
-      newResult.datas = datas;
-
-      resolve(newResult);
-      
+      resolve(list);
     }).catch((error)=>{
-      console.log('getVideo catch:',error.code)
-      newResult = {
-        code:errorCode.dbError.code,
-        msg:errorCode.dbError.msg,
-        dbCode:error.code,
-      }
-      resolve(newResult);
+      reject(error.code)
     })
   });
 }

@@ -47,7 +47,19 @@ async function router(ctx, next) {
   if(params.type){
     columnsData.type = params.type;
   }
-  ctx.body = await updateVideo(columnsData,where);
+
+  let body = {}
+  try {
+    await updateVideo(columnsData,where);
+    body.code  = ErrorCode.succeed.code;
+    body.msg   = ErrorCode.succeed.msg;
+  }catch (error){
+    body.code=ErrorCode.dbError.code;
+    body.msg=ErrorCode.dbError.msg
+    body.dbCode=error;
+  }
+  ctx.body = body;
+  
 
 }
 module.exports = {

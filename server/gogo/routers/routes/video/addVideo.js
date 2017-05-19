@@ -48,9 +48,17 @@ async function router(ctx, next) {
   if(params.type){
     columns.type = params.type;
   }
-
-  ctx.body = await addVideo(columns);
-
+  let body = {}
+  try {
+    await addVideo(columns);
+    body.code  = ErrorCode.succeed.code;
+    body.msg   = ErrorCode.succeed.msg;
+  }catch (error){
+    body.code=ErrorCode.dbError.code;
+    body.msg=ErrorCode.dbError.msg
+    body.dbCode=error;
+  }
+  ctx.body = body;
 }
 module.exports = {
   router,

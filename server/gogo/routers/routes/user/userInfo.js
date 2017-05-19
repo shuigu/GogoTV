@@ -2,28 +2,14 @@
  * Created by zhuguoqing on 2017/5/18.
  */
 var {getUser} = require('./../../../database/gogo/user')
-const Paths = require('./../../paths')
 var ErrorCode = require('./../../../constant/errorCode')
-var Token = require('.././../../token')
+var Token     = require('.././../../token')
 
-
-
+const Paths = require('./../../paths')
+  
 async function router(ctx, next) {
-  let params = ctx.request.body;
-  /*
-   * 必须参数
-   * params:{
-   *   token,
-   * }
-   * */
-  if (!params.token){
-    ctx.body = {
-      code:ErrorCode.paramError.code,
-      msg:ErrorCode.paramError.msg,
-    }
-    return;
-  }
-  let userId = Token.verifyToken(params.token);
+
+  let userId = ctx.userInfo.userId;
   if (!userId){
     ctx.body = {
       code:ErrorCode.userInfoNotVerifyError.code,
@@ -31,17 +17,25 @@ async function router(ctx, next) {
     }
     return;
   }
-  let who = {
-    id:userId,
-  }
-  let userInfo = await getUser(who);
 
-  ctx.body = {
-    code:ErrorCode.succeed.code,
-    msg:ErrorCode.succeed.msg,
-    userInfo:userInfo,
+  let body = {}
+  try {
+    let who = {
+      id:userId,
+    }
+    let userInfo = await getUser(who);
+    delete userInfo.password;
+    body.code  = ErrorCode.succeed.code;
+    body.msg   = ErrorCode.succeed.msg;
+    body.datas = {
+      userInfo
+    }
+  }catch (error){
+    body.code=ErrorCode.dbError.code;
+    body.msg=ErrorCode.dbError.msg
+    body.dbCode=error;
   }
-
+  ctx.body = body;
 }
 module.exports = {
   router,

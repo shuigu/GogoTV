@@ -17,6 +17,7 @@ module.exports = {
   },
   
   // user
+  // login
   userLoginNoUser:{
     code:'00301',
     msg:'此用户还没注册',
@@ -25,8 +26,16 @@ module.exports = {
     code:'00302',
     msg:'密码错误',
   },
+
+  // info
   userInfoNotVerifyError:{
     code:'00321',
     msg:'权限不通过',
+  },
+  // register
+  userRegisterDupError:{
+    code:'00341',
+    msg:'此账户已被注册',
   }
+
 }
