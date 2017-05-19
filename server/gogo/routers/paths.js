@@ -8,6 +8,7 @@ module.exports = {
   // video
   API_VIDEO_ADD:'/api/video/add',
   API_VIDEO_LIST:'/api/video/list',
+  API_VIDEO_DETAIL:'/api/video/detail',
   API_VIDEO_UPDATE:'/api/video/update',
 
   // user

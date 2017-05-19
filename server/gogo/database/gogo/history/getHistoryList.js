@@ -20,9 +20,8 @@ function getHistoryList(where) {
       'from ' + historyInfo.tableName + ' left join ' + videoInfo.tableName + ' on ' +
       historyInfo.tableName +'.' +historyInfo.columns.videoId + '=' +
       videoInfo.tableName +'.' +videoInfo.columns.id + ' ' + getWhereString(historyInfo.columns,where);
-
-
-    console.log('sql:',sqlString);
+    
+    // console.log('sql:',sqlString);
 
     sql.query(sqlString).then((results)=>{
       // console.log(results);
