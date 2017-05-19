@@ -31,7 +31,7 @@ function getWhereString(columnMap,where) {
   }
   let sql = 'where '
   for (let item in where){
-    sql = sql + columnMap[item] + '=' + where[item] + ' and ';
+    sql = sql + columnMap[item] + '=\'' + where[item] + '\' and ';
   }
   sql = sql.substring(0,sql.length-4);
   // console.log('getWhereString :',sql);

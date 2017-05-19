@@ -22,7 +22,6 @@ class Token {
   static verifyToken(token){
     try {
       var decoded = jwt.verify(token, PRIVATE_KEY);
-      console.log('decoded:',decoded)
       if (decoded){
         return decoded.userId;
       }
@@ -54,7 +53,7 @@ class Token {
     let params = ctx.request.body;
     let token = params.token;
     let userId = Token.verifyToken(token);
-
+    
     // 参数错误
     if (!token){
       ctx.body = {

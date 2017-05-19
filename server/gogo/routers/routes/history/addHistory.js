@@ -9,8 +9,6 @@ const Paths = require('./../../paths')
 async function router(ctx, next) {
 // body Post 参数
   let params = ctx.request.body;
-
-  console.log('params:',params)
   /*
    * 必须参数
    * params:{

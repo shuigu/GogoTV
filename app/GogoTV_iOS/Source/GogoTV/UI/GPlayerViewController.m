@@ -76,7 +76,10 @@
     [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_DEBUG];
     [IJKFFMoviePlayerController checkIfFFmpegVersionMatch:YES];
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-    self.url = [NSURL URLWithString:@"rtmp://live.hkstv.hk.lxdns.com/live/hks"];
+    
+    NSString * url = @"rtmp://rlive.jia.360.cn/live_jia_public/36072775889";
+    
+    self.url = [NSURL URLWithString:url];
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.player.view.frame = self.playerView.bounds;

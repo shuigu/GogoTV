@@ -5,9 +5,9 @@ const  userInfo = require('./../../sql/constant').userInfo;
 
 const  sql = global.__dataBase.sql;
 
-function getUser(columnData) {
+function getUser(who) {
   return new Promise(function(resolve, reject) {
-    sql.select(userInfo,null,columnData).then((results)=>{
+    sql.select(userInfo,null,who).then((results)=>{
       if (results.length > 0){
         let user = results[0];
         let info = {
