@@ -9,7 +9,7 @@ import {
   View
 } from 'react-native';
 import {
-  themeStyles,
+  ThemeStyles,
 } from './../../Theme'
 import {
   TabBarItem,
@@ -51,7 +51,7 @@ class TabBar extends  Component {
   }
   render() {
     return (
-      <View style={themeStyles.tabBarView}>
+      <View style={ThemeStyles.tabBarView}>
         <View style={{height:1,backgroundColor:'#d9d9d9'}}/>
         <View style={styles.container}>
           {this.itemsRender()}

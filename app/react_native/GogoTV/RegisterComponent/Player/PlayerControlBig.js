@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {
-  themeImages,
+  ThemeImages,
 } from './../../Theme'
 import {
   PlayerDispatch
@@ -31,7 +31,7 @@ class PlayerControlBig extends Component {
             GAppModule.dispatch(PlayerDispatch.PLAYER_PORTRAIT_SCREEN,{})
           }}>
           <View style={styles.backButtonView}>
-            <Image style={styles.backImageView} source={themeImages.commonImages.leftArrow}/>
+            <Image style={styles.backImageView} source={ThemeImages.commonImages.leftArrow}/>
           </View>
         </TouchableOpacity>
       </View>

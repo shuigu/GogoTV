@@ -15,7 +15,7 @@ import {
   NavigationBar,
 } from './../../Component/Common'
 import {
-  themeStyles,
+  ThemeStyles,
 } from './../../Theme'
 import {Player} from './../../Component/Player'
 
@@ -28,7 +28,7 @@ class TestPlayer extends  Component {
     let textContent = this.props.content || '请输入内容'
     let title = this.props.title || '标题';
     return (
-      <View key="rootView" style={themeStyles.rootView}>
+      <View key="rootView" style={ThemeStyles.rootView}>
         <NavigationBar showBackButton={true} title={title}/>
         <View style={styles.container}>
           {

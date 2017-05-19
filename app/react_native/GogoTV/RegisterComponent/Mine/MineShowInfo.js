@@ -13,7 +13,7 @@ import {
   NavigationBar,
 } from './../../Component/Common'
 import {
-  themeStyles,
+  ThemeStyles,
 } from './../../Theme'
 
 class MineShowInfo extends  Component {
@@ -24,7 +24,7 @@ class MineShowInfo extends  Component {
     let textContent = this.props.content || '请输入内容'
     let title = this.props.title || '标题';
     return (
-      <View key="rootView" style={themeStyles.rootView}>
+      <View key="rootView" style={ThemeStyles.rootView}>
         <NavigationBar showBackButton={true} title={title}/>
         <View style={styles.container}>
           <Text>{textContent}</Text>

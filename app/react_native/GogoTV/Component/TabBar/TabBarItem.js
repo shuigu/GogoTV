@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {themeImages} from './../../Theme'
+import {ThemeImages} from './../../Theme'
 
 const CHECK_COLOR    = "#26Ab68"
 const UN_CHECK_COLOR = "#9d9da1"
@@ -29,7 +29,7 @@ class TabBarItem extends Component{
   }
   render(){
     let label = this.props.label || 'label'
-    let icon  = this.props.icon  || themeImages.commonImages.noImage
+    let icon  = this.props.icon  || ThemeImages.commonImages.noImage
     let iconStyle = this.props.check
       ? {...objStyles.iconView,tintColor:CHECK_TINT_COLOR}
       :{...objStyles.iconView,tintColor:UN_CHECK_TINT_COLOR}

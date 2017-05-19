@@ -15,7 +15,7 @@ import {
   SectionLineView,
 } from './../../Component/Common'
 import {
-  themeStyles,
+  ThemeStyles,
 } from './../../Theme'
 import {
   MineInfoView,
@@ -37,9 +37,9 @@ class Mine extends  Component {
   render() {
     let title = this.props.title;
     return (
-      <View key="rootView" style={themeStyles.rootView}>
+      <View key="rootView" style={ThemeStyles.rootView}>
         <NavigationBar title={title}/>
-        <ScrollView style={themeStyles.scrollView}>
+        <ScrollView style={ThemeStyles.scrollView}>
           <SectionLineView height={15} />
           <MineInfoView onClick={this.onMineInfoClick}/>
           <SectionLineView height={20} />

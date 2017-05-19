@@ -11,8 +11,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {
-  themeImages,
-  themeColors,
+  ThemeImages,
+  ThemeColors,
 } from './../../Theme'
 var Navigator    = require('NativeModules').GNavigationRCTModule;
 
@@ -52,7 +52,7 @@ class NavigationBar extends Component{
           }
         }}>
           <View style={styles.backButtonView}>
-            <Image style={styles.backImageView} source={themeImages.commonImages.leftArrow}/>
+            <Image style={styles.backImageView} source={ThemeImages.commonImages.leftArrow}/>
             <Text style={styles.backText}>{"返回"}</Text>
           </View>
         </TouchableOpacity>
@@ -78,7 +78,7 @@ class NavigationBar extends Component{
 }
 const styles = StyleSheet.create({
   rootView:{
-    ...themeColors.statusBkgColor,
+    ...ThemeColors.statusBkgColor,
   },
   statusView:{
     height:STATUS_BAR_HEIGHT,

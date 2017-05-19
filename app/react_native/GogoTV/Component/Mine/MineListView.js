@@ -14,7 +14,7 @@ import {
   SectionContainerView,
 } from './../Common'
 
-import {themeImages} from './../../Theme'
+import {ThemeImages} from './../../Theme'
 const CONTENT_HEIGHT = 40
 
 class MineListView extends Component {
@@ -34,11 +34,11 @@ class MineListView extends Component {
       }}>
         <View style={styles.rootView}>
           <View key="left" style={styles.leftView}>
-            <Image style={styles.iconView} source={themeImages.commonImages.noImage}/>
+            <Image style={styles.iconView} source={ThemeImages.commonImages.noImage}/>
             <Text style={styles.titleView}>{title}</Text>
           </View>
           <View key="right" style={styles.rightView}>
-            <Image style={styles.rightArrowImage} source={themeImages.commonImages.rightArrow}/>
+            <Image style={styles.rightArrowImage} source={ThemeImages.commonImages.rightArrow}/>
           </View>
         </View>
       </TouchableOpacity>

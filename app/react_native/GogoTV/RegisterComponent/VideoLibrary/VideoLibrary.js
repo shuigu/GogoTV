@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {NavigationBar} from './../../Component/Common'
 import {
-  themeStyles,
+  ThemeStyles,
 } from './../../Theme'
 
 
@@ -18,9 +18,9 @@ class VideoLibrary extends  Component {
   render() {
     let title = this.props.title;
     return (
-      <View key="rootView" style={themeStyles.rootView}>
+      <View key="rootView" style={ThemeStyles.rootView}>
         <NavigationBar title={title}/>
-        <View style={themeStyles.defaultContainer}>
+        <View style={ThemeStyles.defaultContainer}>
           <Text style={styles.welcome}>
             VideoLibrary page
           </Text>

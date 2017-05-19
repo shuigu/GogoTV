@@ -7,8 +7,8 @@ import {
   View,
 } from 'react-native';
 import {
-  themeStyles,
-  themeColors,
+  ThemeStyles,
+  ThemeColors,
 } from './../../Theme'
 
 class SectionContainerView extends Component {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   rootView:{
     flex:1,
     justifyContent:'space-between',
-    ...themeColors.contentViewBkgColor,
+    ...ThemeColors.contentViewBkgColor,
   }
 });
 module.exports = SectionContainerView

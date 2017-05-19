@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {
-  themeImages,
+  ThemeImages,
 } from './../../Theme'
 
 import {
@@ -32,7 +32,7 @@ class PlayerControlSmall extends Component {
               Navigator.pop();
           }}>
           <View style={styles.backButtonView}>
-            <Image style={styles.backImageView} source={themeImages.commonImages.leftArrow}/>
+            <Image style={styles.backImageView} source={ThemeImages.commonImages.leftArrow}/>
           </View>
         </TouchableOpacity>
       </View>
@@ -45,7 +45,7 @@ class PlayerControlSmall extends Component {
             GAppModule.dispatch(PlayerDispatch.PLAYER_FULL_SCREEN,{})
             }}>
           <View style={styles.backButtonView}>
-            <Image style={styles.backImageView} source={themeImages.playerImages.fullScreenButton}/>
+            <Image style={styles.backImageView} source={ThemeImages.playerImages.fullScreenButton}/>
           </View>
         </TouchableOpacity>
       </View>
