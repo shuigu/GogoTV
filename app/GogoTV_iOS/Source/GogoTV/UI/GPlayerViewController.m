@@ -77,7 +77,7 @@
     [IJKFFMoviePlayerController checkIfFFmpegVersionMatch:YES];
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
-    NSString * url = @"rtmp://rlive.jia.360.cn/live_jia_public/36072775889";
+    NSString * url = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
     
     self.url = [NSURL URLWithString:url];
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];

@@ -13,7 +13,10 @@ import {
   BigVideoGrid,
 } from './../../Component/Common'
 import {
+  Grid,
   ThemeStyles,
+  ThemeColors,
+  StyleCombine,
 } from './../../Theme'
 
 import {Post,NetworkConst} from './../../Network'
@@ -39,9 +42,7 @@ class Recommend extends  Component {
   }
   rowRender(rowData){
     return (
-
       <BigVideoGrid item={rowData}/>
-
     );
   }
   render() {
@@ -49,7 +50,7 @@ class Recommend extends  Component {
     return (
       <View key="rootView" style={ThemeStyles.rootView}>
         <NavigationBar title={title}/>
-        <View style={ThemeStyles.defaultContainer}>
+        <View style={ StyleCombine(ThemeStyles.defaultContainer,ThemeStyles.scrollView)}>
           <ListView
             contentContainerStyle={styles.list}
             dataSource={this.state.dataSource}
@@ -62,10 +63,11 @@ class Recommend extends  Component {
 }
 const styles = StyleSheet.create({
   list: {
-    marginTop:5,
+    marginTop:Grid.a,
     justifyContent: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap'
+
   },
 });
 
