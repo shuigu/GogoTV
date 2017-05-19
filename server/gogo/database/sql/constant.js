@@ -33,8 +33,8 @@ module.exports = {
     columns:{
       id:       'history_id',
       duration: 'history_duration',
-      userID:   'user_id',
-      videoID:  'video_id',
+      userId:   'user_id',
+      videoId:  'video_id',
       addTime:  'add_time',
     },
   }

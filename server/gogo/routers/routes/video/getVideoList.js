@@ -1,7 +1,7 @@
 /**
  * Created by zhuguoqing on 2017/5/17.
  */
-var {getVideo} = require('./../../../database/gogo/video')
+var {getVideoList} = require('./../../../database/gogo/video')
 var ErrorCode = require('./../../../constant/errorCode')
 
 const Paths = require('./../../paths')
@@ -10,7 +10,7 @@ async function router(ctx, next) {
 
   let body = {}
   try{
-    let list = await getVideo();
+    let list = await getVideoList();
     body.code  = ErrorCode.succeed.code;
     body.msg   = ErrorCode.succeed.msg;
     body.datas = list;

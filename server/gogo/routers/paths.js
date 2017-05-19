@@ -16,6 +16,7 @@ module.exports = {
   API_USER_INFO:'/api/user/info',
 
   // history
-  
+  API_HISTORY_ADD:'/api/history/add',
+  API_HISTORY_List:'/api/history/list'
 
 }
