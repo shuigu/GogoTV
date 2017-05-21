@@ -19,31 +19,67 @@ import {
   StyleCombine,
 } from './../../Theme'
 
-import {Post,NetworkConst} from './../../Network'
+import {Post,NetworkConst,NetworkStatic} from './../../Network'
 
 class Recommend extends  Component {
-
   // 构造
   constructor(props) {
     super(props);
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2','row 1', 'row 2','row 1', 'row 2','row 1', 'row 2']),
+      loading:true,
+      dataSource: [],
     };
   }
   componentDidMount() {
-    console.log('Post:',Post);
-    console.log('Post:',NetworkConst.API_RECOM_LIST());
     Post(NetworkConst.API_RECOM_LIST()).then((res)=>{
-      console.log('res:',res);
+      console.log('res',res)
+      this.updateDataSource(res.datas);
     }).catch((error)=>{
       console.log('error:',error);
+      if (error){
+        // 启用本地数据
+        let res = NetworkStatic.videoList;
+        console.log('error res :',res);
+        this.updateDataSource(res.datas);
+      }
     })
+  }
+  componentWillUnmount() {
+    this.ds = null;
+  }
+  updateDataSource(newDataSource){
+    this.setState({
+      loading:false,
+      dataSource:this.ds.cloneWithRows(newDataSource)
+    })
+  }
+
+
+  onItemClick(rowData){
+    console.log('onItemClick',rowData)
+
   }
   rowRender(rowData){
     return (
-      <BigVideoGrid item={rowData}/>
+      <BigVideoGrid item={rowData} onPress={this.onItemClick.bind(this)}/>
     );
+  }
+  loadingRender(){
+    return (
+      <View>
+        <Text>loading...</Text>
+      </View>
+    )
+  }
+  listRender(){
+    return (
+      <ListView
+        contentContainerStyle={styles.list}
+        dataSource={this.state.dataSource}
+        renderRow={ this.rowRender.bind(this)}
+      />
+    )
   }
   render() {
     let title = this.props.title;
@@ -51,11 +87,9 @@ class Recommend extends  Component {
       <View key="rootView" style={ThemeStyles.rootView}>
         <NavigationBar title={title}/>
         <View style={ StyleCombine(ThemeStyles.defaultContainer,ThemeStyles.scrollView)}>
-          <ListView
-            contentContainerStyle={styles.list}
-            dataSource={this.state.dataSource}
-            renderRow={ this.rowRender.bind(this)}
-          />
+          {
+            this.state.loading?this.loadingRender():this.listRender()
+          }
         </View>
       </View>
     );

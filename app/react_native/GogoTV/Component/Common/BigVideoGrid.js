@@ -19,10 +19,12 @@ class BigVideoGrid extends Component {
 
   onClick(){
     let item = this.props.item;
-    console.log('item click:',item)
+    if (this.props.onPress){
+      this.props.onPress(item)
+    }
   }
   render(){
-    let score = this.props.item.videoScore?this.props.item.videoScore:'0.0';
+    let score = this.props.item.score?this.props.item.score:'0.0';
     let name = this.props.item.videoName?this.props.item.videoName:'名称';
 
     return (

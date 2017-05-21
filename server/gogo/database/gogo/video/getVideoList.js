@@ -17,9 +17,11 @@ function getVideo() {
         newItem.videoName     = item[videoInfo.columns.name];
         newItem.logoUrl       = item[videoInfo.columns.logoUrl];
         newItem.screenShotUrl = item[videoInfo.columns.screenShotUrl];
+        newItem.score         = item[videoInfo.columns.score];
         newItem.describe      = item[videoInfo.columns.describe];
         newItem.playUrl       = item[videoInfo.columns.playUrl];
         newItem.type          = item[videoInfo.columns.type];
+
 
         list.push(newItem);
       }
