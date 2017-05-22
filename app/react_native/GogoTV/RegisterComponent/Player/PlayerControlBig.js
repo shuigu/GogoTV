@@ -17,10 +17,12 @@ import {
   PlayerDispatch
 } from './../../Constant/dispatch'
 
+
+
 const  BAR_HEIGHT = 44
 const  BUTTON_SIZE = 44
 
-var GAppModule = require('NativeModules').GAppRCTModule;
+import {Player} from './../../JSModule'
 
 class PlayerControlBig extends Component {
 
@@ -28,7 +30,7 @@ class PlayerControlBig extends Component {
     return (
       <View style={{flex:1}}>
         <TouchableOpacity onPress={()=>{
-            GAppModule.dispatch(PlayerDispatch.PLAYER_PORTRAIT_SCREEN,{})
+            Player.dispatchPortraitScreen();
           }}>
           <View style={styles.backButtonView}>
             <Image style={styles.backImageView} source={ThemeImages.commonImages.leftArrow}/>

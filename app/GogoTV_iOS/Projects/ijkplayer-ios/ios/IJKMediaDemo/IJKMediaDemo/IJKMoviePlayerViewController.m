@@ -183,6 +183,7 @@
     [self.mediaControl continueDragMediaSlider];
 }
 
+
 - (void)loadStateDidChange:(NSNotification*)notification
 {
     //    MPMovieLoadStateUnknown        = 0,

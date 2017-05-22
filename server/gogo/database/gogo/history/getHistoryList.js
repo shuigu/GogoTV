@@ -16,6 +16,10 @@ function getHistoryList(where) {
       historyInfo.tableName +'.' +historyInfo.columns.videoId + ',' +
       videoInfo.columns.name + ',' +
       videoInfo.columns.logoUrl + ',' +
+      videoInfo.columns.playUrl + ',' +
+      videoInfo.columns.score + ',' +
+      videoInfo.columns.describe + ',' +
+
       videoInfo.columns.screenShotUrl + ' ' +
       'from ' + historyInfo.tableName + ' left join ' + videoInfo.tableName + ' on ' +
       historyInfo.tableName +'.' +historyInfo.columns.videoId + '=' +
@@ -35,6 +39,9 @@ function getHistoryList(where) {
         newItem.videoName     = item[videoInfo.columns.name];
         newItem.logoUrl       = item[videoInfo.columns.logoUrl];
         newItem.screenShotUrl = item[videoInfo.columns.screenShotUrl];
+        newItem.playUrl       = item[videoInfo.columns.playUrl];
+        newItem.score         = item[videoInfo.columns.score];
+        newItem.describe      = item[videoInfo.columns.describe];
         list.push(newItem);
       }
       resolve(list);

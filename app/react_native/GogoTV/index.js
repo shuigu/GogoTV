@@ -3,12 +3,12 @@
  */
 
 
-import App from './app'
+import JSModule from './JSModule'
 import RegisterComponent from './RegisterComponent'
 import Config from './Config'
 
 module.exports = {
   RegisterComponent,
-  App,
+  JSModule,
   Config,
 }

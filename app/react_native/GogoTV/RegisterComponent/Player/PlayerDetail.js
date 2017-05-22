@@ -22,6 +22,7 @@ class PlayerDetail extends Component {
         <View>
           <Text>{'视频名:'+this.props.videoName}</Text>
           <Text>{'评分:'+this.props.score}</Text>
+          <Text>{'介绍:'+this.props.describe}</Text>
           <Text>{'地址:'+this.props.playUrl}</Text>
         </View>
     </ScrollView>

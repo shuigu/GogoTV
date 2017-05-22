@@ -12,16 +12,13 @@ import {
 import {
   ThemeImages,
 } from './../../Theme'
+import {Player} from './../../JSModule'
 
-import {
-  PlayerDispatch
-} from './../../Constant/dispatch'
 
 const  BAR_HEIGHT = 44
 const  BUTTON_SIZE = 44
 
 var Navigator    = require('NativeModules').GNavigationRCTModule;
-var GAppModule = require('NativeModules').GAppRCTModule;
 
 class PlayerControlSmall extends Component {
 
@@ -42,7 +39,7 @@ class PlayerControlSmall extends Component {
     return(
       <View>
         <TouchableOpacity onPress={()=>{
-            GAppModule.dispatch(PlayerDispatch.PLAYER_FULL_SCREEN,{})
+            Player.dispatchFullScreen();
             }}>
           <View style={styles.backButtonView}>
             <Image style={styles.backImageView} source={ThemeImages.playerImages.fullScreenButton}/>

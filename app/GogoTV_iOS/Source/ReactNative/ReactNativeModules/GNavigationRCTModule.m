@@ -34,6 +34,13 @@ RCT_EXPORT_METHOD(push:(NSString *)moduleName initProps:(NSDictionary *)initProp
 }
 RCT_EXPORT_METHOD(pop){
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UIViewController * topVc = [GNavigatorManager shareInstance].rootNavigationViewController.topViewController;
+        if ([topVc isKindOfClass:[GBaseViewController class]]) {
+            if ([topVc respondsToSelector:@selector(viewWillPop)]) {
+                [(GBaseViewController *)topVc viewWillPop];
+            }
+        }
         [[GNavigatorManager shareInstance].rootNavigationViewController popViewControllerAnimated:YES];
     });
 }

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
+#import "GBaseViewController.h"
 
-@interface GPlayerViewController : UIViewController
+@interface GPlayerViewController : GBaseViewController
 
 -(instancetype)initWithPlayUrl:(NSString *)playUrl;
 -(instancetype)initWithInitProps:(NSDictionary *)initProps;

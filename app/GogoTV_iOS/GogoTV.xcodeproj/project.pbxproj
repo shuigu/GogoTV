@@ -37,6 +37,7 @@
 		7E84B6FC1EA62F1800F99052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */; };
 		7E84B7071EA62F1800F99052 /* GogoTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7061EA62F1800F99052 /* GogoTVTests.m */; };
 		7E84B7121EA62F1800F99052 /* GogoTVUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B7111EA62F1800F99052 /* GogoTVUITests.m */; };
+		7E85D40C1ED2CD3000CA3D6E /* GBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85D40A1ED2CD3000CA3D6E /* GBaseViewController.m */; };
 		7E970CB41EB1C0B2009D4DFD /* GRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CB31EB1C0B2009D4DFD /* GRootViewController.m */; };
 		7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB738591EB22A51003AB74A /* GNavigationRCTModule.m */; };
 		B82C6A15E5144B430558EF4C /* libPods-GogoTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967B128B2D3861E5473E978B /* libPods-GogoTV.a */; };
@@ -164,6 +165,8 @@
 		7E84B70D1EA62F1800F99052 /* GogoTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogoTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E84B7111EA62F1800F99052 /* GogoTVUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GogoTVUITests.m; sourceTree = "<group>"; };
 		7E84B7131EA62F1800F99052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E85D4091ED2CD3000CA3D6E /* GBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBaseViewController.h; sourceTree = "<group>"; };
+		7E85D40A1ED2CD3000CA3D6E /* GBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBaseViewController.m; sourceTree = "<group>"; };
 		7E970CB21EB1C0B2009D4DFD /* GRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRootViewController.h; sourceTree = "<group>"; };
 		7E970CB31EB1C0B2009D4DFD /* GRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRootViewController.m; sourceTree = "<group>"; };
 		7EA8A15B1EB1C5EB0071F521 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 			children = (
 				7E1059311EADF551007F957F /* GNavigatorManager.h */,
 				7E1059321EADF551007F957F /* GNavigatorManager.m */,
+				7E85D4091ED2CD3000CA3D6E /* GBaseViewController.h */,
+				7E85D40A1ED2CD3000CA3D6E /* GBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -804,6 +809,7 @@
 				7E1059461EADF551007F957F /* GNavigationViewController.m in Sources */,
 				7EB7385A1EB22A51003AB74A /* GNavigationRCTModule.m in Sources */,
 				7E26762B1EC31BDA0075E025 /* GPlayerViewController.m in Sources */,
+				7E85D40C1ED2CD3000CA3D6E /* GBaseViewController.m in Sources */,
 				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
 				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
 				7E970CB41EB1C0B2009D4DFD /* GRootViewController.m in Sources */,

@@ -6,10 +6,12 @@ import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.WritableNativeMap;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by zhuguoqing on 17/4/24.
@@ -82,5 +84,16 @@ public class GUtil extends Object {
             }
         }
         return list;
+    }
+
+
+    public static ReadableMap getReadableMap(Bundle bundle){
+        // 还没写完成，应该针对 map array做处理
+        WritableNativeMap writableNativeMap = new WritableNativeMap();
+        Set<String> keySet = bundle.keySet();  //获取所有的Key,
+        for(String key : keySet) {
+            writableNativeMap.putString(key,bundle.get(key).toString());
+        }
+        return writableNativeMap;
     }
 }

@@ -20,7 +20,7 @@ import {
   StyleCombine,
 } from './../../Theme'
 
-import {Post,NetworkConst,NetworkStatic} from './../../Network'
+import {RecomList,NetworkStatic} from './../../Network'
 
 var GNavigator = require('NativeModules').GNavigationRCTModule;
 
@@ -39,8 +39,8 @@ class Recommend extends  Component {
     };
   }
   componentDidMount() {
-    Post(NetworkConst.API_RECOM_LIST()).then((res)=>{
-      console.log('res',res)
+    RecomList().then((res)=>{
+      // console.log('res',res)
       this.updateDataSource(res.datas);
     }).catch((error)=>{
       console.log('error:',error);

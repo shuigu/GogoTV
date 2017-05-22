@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBaseViewController.h"
 
-@interface GRootViewController : UIViewController
+@interface GRootViewController : GBaseViewController
 
 @property (nonatomic) NSDictionary * tabConfig;
 @property (nonatomic) NSInteger selectIndex;

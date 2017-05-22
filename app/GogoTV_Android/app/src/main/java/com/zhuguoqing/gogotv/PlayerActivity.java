@@ -10,13 +10,16 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.facebook.react.ReactRootView;
 import com.zhuguoqing.gogotv.media.GVideoView;
+import com.zhuguoqing.greactnative.javascriptmodules.PlayerModule;
 import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
+import com.zhuguoqing.util.GUtil;
+
+import java.util.Date;
 
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
@@ -24,6 +27,7 @@ public class PlayerActivity extends BaseActivity {
     GVideoView mVideoView;
     private BroadcastReceiver mRNBroadcastReceiver;
     private Bundle mInitProps;
+    private Date startData = new Date(System.currentTimeMillis());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,5 +116,14 @@ public class PlayerActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(mRNBroadcastReceiver);
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        Date current = new Date(System.currentTimeMillis());
+        long duration = current.getTime() - startData.getTime();
+        Bundle  palyItem = (Bundle)mInitProps.clone();
+        palyItem.putInt("duration",(int)duration/1000);
+        MainApplication.getInstance().getJSModule(PlayerModule.class).onPlayFinish(GUtil.getReadableMap(palyItem));
     }
 }

@@ -6,6 +6,7 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.zhuguoqing.greactnative.javascriptmodules.AppModule;
+import com.zhuguoqing.greactnative.javascriptmodules.PlayerModule;
 import com.zhuguoqing.greactnative.reactnativemodule.GAppRCTModule;
 import com.zhuguoqing.greactnative.reactnativemodule.GNavigationRCTModule;
 
@@ -25,11 +26,11 @@ public class GReactPackage extends Object implements ReactPackage {
         list.add(new GNavigationRCTModule(reactContext));
         return list;
     }
-
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         List<Class<? extends JavaScriptModule>> list = new ArrayList<>();
         list.add(AppModule.class);
+        list.add(PlayerModule.class);
         return list;
     }
 
