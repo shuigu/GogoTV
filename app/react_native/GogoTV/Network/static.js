@@ -94,8 +94,57 @@ var videoList = {
       describe: '北京卫视直播地址精彩在线',
       playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
       type: 0
-    }
-  ]
+    },
+    {
+      videoId: 11,
+      videoName: '云南卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      score: '8.1',
+      describe: '云南卫视直播地址精彩在线',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      type: 0
+    },
+    {
+      videoId: 12,
+      videoName: '贵州卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      score: '9.0',
+      describe: '贵州卫视直播地址精彩在线',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      type: 0
+    },
+    {
+      videoId: 13,
+      videoName: '山东卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      score: '6.1',
+      describe: '山东卫视直播地址精彩在线',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      type: 0
+    },
+    {
+      videoId: 14,
+      videoName: '山西卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      score: '8.9',
+      describe: '山西卫视直播地址精彩在线',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      type: 0
+    },
+    {
+      videoId: 15,
+      videoName: '天津卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      score: '7.6',
+      describe: '天津卫视直播地址精彩在线',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      type: 0
+    }]
 }
 module.exports = {
   videoList,

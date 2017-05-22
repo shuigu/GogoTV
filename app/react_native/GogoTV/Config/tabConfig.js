@@ -3,7 +3,7 @@
  */
 var TabConfig = {
   version:'1.0',
-  selectedIndex:0,
+  selectedIndex:1,
   tabs:[
     {
       title:'推荐',
@@ -18,7 +18,7 @@ var TabConfig = {
       moduleName:'history',
     },
     {
-      title:'我的',
+      title:'我的', 
       moduleName:'mine',
     }
   ],

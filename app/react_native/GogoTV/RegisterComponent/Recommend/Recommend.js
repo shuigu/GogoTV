@@ -7,6 +7,7 @@ import {
   Text,
   View,
   ListView,
+  ActivityIndicator,
 } from 'react-native';
 import {
   NavigationBar,
@@ -49,16 +50,15 @@ class Recommend extends  Component {
     this.ds = null;
   }
   updateDataSource(newDataSource){
-    this.setState({
-      loading:false,
-      dataSource:this.ds.cloneWithRows(newDataSource)
-    })
+    if(this.ds){
+      this.setState({
+        loading:false,
+        dataSource:this.ds.cloneWithRows(newDataSource)
+      })
+    }
   }
-
-
   onItemClick(rowData){
     console.log('onItemClick',rowData)
-
   }
   rowRender(rowData){
     return (
@@ -68,7 +68,7 @@ class Recommend extends  Component {
   loadingRender(){
     return (
       <View>
-        <Text>loading...</Text>
+        <ActivityIndicator size="large"/>
       </View>
     )
   }
