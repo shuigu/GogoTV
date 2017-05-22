@@ -28,7 +28,6 @@
 		7E1777A81EB97E560018678F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A71EB97E560018678F /* QuartzCore.framework */; };
 		7E1777AA1EB97E5F0018678F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777A91EB97E5F0018678F /* UIKit.framework */; };
 		7E1777AC1EB97E670018678F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777AB1EB97E670018678F /* VideoToolbox.framework */; };
-		7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */; };
 		7E1778091EB988A50018678F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1777F91EB985110018678F /* IJKMediaFramework.framework */; };
 		7E2676221EC1E4070075E025 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26761D1EC1E3FB0075E025 /* libRCTAnimation.a */; };
 		7E26762B1EC31BDA0075E025 /* GPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E26762A1EC31BDA0075E025 /* GPlayerViewController.m */; };
@@ -145,8 +144,6 @@
 		7E1777A71EB97E560018678F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E1777A91EB97E5F0018678F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E1777AB1EB97E670018678F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		7E1777AD1EB97EC00018678F /* TestPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPlayerViewController.h; sourceTree = "<group>"; };
-		7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlayerViewController.m; sourceTree = "<group>"; };
 		7E1777F21EB985110018678F /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
 		7E17780A1EB988CB0018678F /* IJKMediaDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaDemo.xcodeproj; path = "Projects/ijkplayer-ios/ios/IJKMediaDemo/IJKMediaDemo.xcodeproj"; sourceTree = "<group>"; };
 		7E2676151EC1E36B0075E025 /* libRCTAnimation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTAnimation.a; path = "../../../../../Library/Developer/Xcode/DerivedData/GogoTV-hedhaqxkljrbhjgbyzthuecnybda/Build/Products/Debug-iphonesimulator/libRCTAnimation.a"; sourceTree = "<group>"; };
@@ -411,8 +408,6 @@
 				7E84B6FA1EA62F1800F99052 /* LaunchScreen.storyboard */,
 				7E84B6FD1EA62F1800F99052 /* Info.plist */,
 				7E84B6EC1EA62F1800F99052 /* Supporting Files */,
-				7E1777AD1EB97EC00018678F /* TestPlayerViewController.h */,
-				7E1777AE1EB97EC00018678F /* TestPlayerViewController.m */,
 			);
 			path = GogoTV;
 			sourceTree = "<group>";
@@ -811,7 +806,6 @@
 				7E26762B1EC31BDA0075E025 /* GPlayerViewController.m in Sources */,
 				7E1059491EADF551007F957F /* GAppRCTModule.m in Sources */,
 				7E84B6F11EA62F1800F99052 /* AppDelegate.m in Sources */,
-				7E1777B01EB97EC00018678F /* TestPlayerViewController.m in Sources */,
 				7E970CB41EB1C0B2009D4DFD /* GRootViewController.m in Sources */,
 				7E84B6EE1EA62F1800F99052 /* main.m in Sources */,
 				7E10594A1EADF551007F957F /* GRCTViewController.m in Sources */,

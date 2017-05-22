@@ -12,8 +12,13 @@
 @interface GPlayerViewController : UIViewController
 
 -(instancetype)initWithPlayUrl:(NSString *)playUrl;
+-(instancetype)initWithInitProps:(NSDictionary *)initProps;
+
 
 @property(atomic, retain) id<IJKMediaPlayback> player;
 @property(atomic,strong) NSURL *url;
+@property(nonatomic) NSDictionary   *defautlProps;
+
+
 
 @end

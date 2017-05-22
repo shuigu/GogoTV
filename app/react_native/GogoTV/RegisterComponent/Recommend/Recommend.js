@@ -75,7 +75,7 @@ class Recommend extends  Component {
   onItemClick(rowData){
     console.log('onItemClick',rowData)
     let params = {
-      playUrl:rowData.playUrl,
+      ...rowData,
       isPlayer:true
     }
     GNavigator.push('noUserModuleName',params)

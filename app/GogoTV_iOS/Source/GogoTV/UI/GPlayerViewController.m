@@ -32,7 +32,13 @@
     }
     return self;
 }
-
+-(instancetype)initWithInitProps:(NSDictionary *)initProps{
+    if (self=[super init]) {
+        _defautlProps = initProps;
+        _url = [NSURL URLWithString:[initProps valueForKey:@"playUrl"]];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUi];
@@ -62,10 +68,10 @@
     self.playerView = [[UIView alloc]init];
     [self.playerView setBackgroundColor:[UIColor blackColor]];
     
-    self.rnPlayerDetailView = [[GBridgeManager shareInstance]genRnViewWithModule:@"PlayerDetail" initProps:nil];
-    self.rnPlayerControlSmallView = [[GBridgeManager shareInstance]genRnViewWithModule:@"PlayerControlSmall" initProps:nil];
+    self.rnPlayerDetailView = [[GBridgeManager shareInstance]genRnViewWithModule:@"PlayerDetail" initProps:_defautlProps];
+    self.rnPlayerControlSmallView = [[GBridgeManager shareInstance]genRnViewWithModule:@"PlayerControlSmall" initProps:_defautlProps];
     self.rnPlayerControlSmallView.backgroundColor = [UIColor clearColor];
-    self.rnPlayerControlBigView = [[GBridgeManager shareInstance]genRnViewWithModule:@"PlayerControlBig" initProps:nil];
+    self.rnPlayerControlBigView = [[GBridgeManager shareInstance]genRnViewWithModule:@"PlayerControlBig" initProps:_defautlProps];
     self.rnPlayerControlBigView.backgroundColor = [UIColor clearColor];
     
     
