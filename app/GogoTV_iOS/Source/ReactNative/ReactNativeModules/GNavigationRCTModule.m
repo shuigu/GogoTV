@@ -22,7 +22,8 @@ RCT_EXPORT_METHOD(push:(NSString *)moduleName initProps:(NSDictionary *)initProp
         BOOL isPlayer = [initProps valueForKey:@"isPlayer"];
         UIViewController * vc = nil;
         if(isPlayer){
-            vc = [[GPlayerViewController alloc]init];
+            NSString * playUrl = [initProps valueForKey:@"playUrl"];
+            vc = [[GPlayerViewController alloc]initWithPlayUrl:playUrl];
         }else{
             vc = [[GRCTViewController alloc]initWithBridge:[GBridgeManager shareInstance].bridge
                                                 moduleName:moduleName

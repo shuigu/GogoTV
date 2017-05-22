@@ -26,7 +26,12 @@
 @end
 
 @implementation GPlayerViewController
-
+-(instancetype)initWithPlayUrl:(NSString *)playUrl{
+    if (self=[super init]) {
+        _url = [NSURL URLWithString:playUrl];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,9 +82,6 @@
     [IJKFFMoviePlayerController checkIfFFmpegVersionMatch:YES];
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
-    NSString * url = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
-    
-    self.url = [NSURL URLWithString:url];
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.player.view.frame = self.playerView.bounds;

@@ -22,11 +22,17 @@ import {
 
 import {Post,NetworkConst,NetworkStatic} from './../../Network'
 
+var GNavigator = require('NativeModules').GNavigationRCTModule;
+
 class Recommend extends  Component {
   // 构造
   constructor(props) {
     super(props);
-    this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+      sectionHeaderHasChanged:(r1, r2) => r1 !== r2,
+      getSectionData:this.getSectionData,
+    });
     this.state = {
       loading:true,
       dataSource: [],
@@ -50,15 +56,29 @@ class Recommend extends  Component {
     this.ds = null;
   }
   updateDataSource(newDataSource){
+
+    let count = 8;
+    let datas = {
+      sectionId1:newDataSource.slice(0,count),
+      sectionId2:newDataSource.slice(count,newDataSource.length),
+    }
     if(this.ds){
       this.setState({
         loading:false,
-        dataSource:this.ds.cloneWithRows(newDataSource)
+        dataSource:this.ds.cloneWithRowsAndSections(datas)
       })
     }
   }
+  getRowData(datas,sectionId,rowId){
+    return datas[sectionId][rowId];
+  }
   onItemClick(rowData){
     console.log('onItemClick',rowData)
+    let params = {
+      playUrl:rowData.playUrl,
+      isPlayer:true
+    }
+    GNavigator.push('noUserModuleName',params)
   }
   rowRender(rowData){
     return (
@@ -72,12 +92,24 @@ class Recommend extends  Component {
       </View>
     )
   }
+
+  renderSectionHeader(sectionDatas,sectionId){
+    let titles = {sectionId1:'为您推荐:',sectionId2:'经典在线:'};
+    let title = titles[sectionId];
+    return (
+      <View style={styles.sectionHeaderView}>
+        <Text style={styles.sectionHeaderText}>{title}</Text>
+      </View>
+    )
+  }
   listRender(){
     return (
       <ListView
         contentContainerStyle={styles.list}
         dataSource={this.state.dataSource}
         renderRow={ this.rowRender.bind(this)}
+        renderSectionHeader={this.renderSectionHeader.bind(this)}
+        showsVerticalScrollIndicator={false}
       />
     )
   }
@@ -97,12 +129,22 @@ class Recommend extends  Component {
 }
 const styles = StyleSheet.create({
   list: {
-    marginTop:Grid.a,
     justifyContent: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap'
-
   },
+  sectionHeaderView:{
+    height:Grid.a * 5,
+    width:Grid.a * 25 *2 + Grid.a * 1.5 * 4,
+    justifyContent: 'center',
+    ...ThemeStyles.scrollView
+  },
+  sectionHeaderText:{
+    fontSize: 16,
+    fontWeight: 'bold',
+    color:'#666666'
+  }
+
 });
 
 module.exports = Recommend;

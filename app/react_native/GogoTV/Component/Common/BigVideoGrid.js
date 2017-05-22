@@ -46,20 +46,25 @@ class BigVideoGrid extends Component {
     );
   }
 }
+
+const GRID_W = Grid.a * 23;
+const GRID_H = GRID_W * 0.56;
+const GRID_MARGIN = GRID_W * 0.1;
+
 const styles = StyleSheet.create({
   root: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: Grid.a * 25,
-    height: Grid.a * 25 * 0.56,
-    margin: Grid.a * 1.5,
+    width: GRID_W,
+    height: GRID_H,
+    margin: GRID_MARGIN,
     backgroundColor: '#F6F6F6',
     borderWidth: 1,
     borderColor: '#CCC',
   },
   image:{
-    width: Grid.a * 25,
-    height: Grid.a * 25 * 0.56,
+    width: GRID_W,
+    height: GRID_H,
     backgroundColor: 'transparent'
   },
   topView:{
