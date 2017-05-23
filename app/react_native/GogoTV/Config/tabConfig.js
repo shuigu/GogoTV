@@ -3,7 +3,7 @@
  */
 var TabConfig = {
   version:'1.0',
-  selectedIndex:1,
+  selectedIndex:0,
   tabs:[
     {
       title:'推荐',

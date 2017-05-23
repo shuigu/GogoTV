@@ -25,7 +25,11 @@ var PlayerModule = {
       videoId:playItem.videoId,
       duration:playItem.duration,
     }
-    AddHistory(history);
+    AddHistory(history).then((res)=>{
+      console.log('AddHistory res:',res);
+    }).catch((error)=>{
+      console.log('AddHistory error:',error);
+    });
   }
 }
 BatchedBridge.registerCallableModule('PlayerModule', PlayerModule);

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,16 +77,12 @@ public class PlayerActivity extends BaseActivity {
         playerDetailView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         detailContainer.addView(playerDetailView);
 
-
-        // init player
-        IjkMediaPlayer.loadLibrariesOnce(null);
-        IjkMediaPlayer.native_profileBegin("libijkplayer.so");
-
-        mVideoView = (GVideoView) findViewById(R.id.video_view);
-//        mVideoView.setVideoPath("rtmp://live.hkstv.hk.lxdns.com/live/hks");
-        mVideoView.setVideoPath(mInitProps.getString("playUrl"));
-        mVideoView.start();
-
+        // 延迟1s加载播放器，避免卡顿
+        new Handler().postDelayed(new Runnable(){
+            public void run() {
+                initPlayer();
+            }
+        }, 1000);
 
 
         IntentFilter intentFilter = new IntentFilter();
@@ -103,6 +100,24 @@ public class PlayerActivity extends BaseActivity {
             }
         };
         registerReceiver(mRNBroadcastReceiver,intentFilter);
+    }
+    public void initPlayer(){
+        // init player
+        // rtmp://live.hkstv.hk.lxdns.com/live/hks
+        IjkMediaPlayer.loadLibrariesOnce(null);
+        IjkMediaPlayer.native_profileBegin("libijkplayer.so");
+
+        FrameLayout videoContainer = (FrameLayout)findViewById(R.id.video_container);
+        mVideoView = new GVideoView(getBaseContext());
+        mVideoView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        videoContainer.addView(mVideoView);
+        mVideoView.setVideoPath(mInitProps.getString("playUrl"));
+        mVideoView.start();
+    }
+    public void unInitPlayer(){
+        FrameLayout videoContainer = (FrameLayout)findViewById(R.id.video_container);
+        videoContainer.removeAllViews();
+        mVideoView = null;
     }
     @Override
     protected void onStop() {
@@ -122,8 +137,8 @@ public class PlayerActivity extends BaseActivity {
         super.finish();
         Date current = new Date(System.currentTimeMillis());
         long duration = current.getTime() - startData.getTime();
-        Bundle  palyItem = (Bundle)mInitProps.clone();
-        palyItem.putInt("duration",(int)duration/1000);
-        MainApplication.getInstance().getJSModule(PlayerModule.class).onPlayFinish(GUtil.getReadableMap(palyItem));
+        Bundle  playItem = (Bundle)mInitProps.clone();
+        playItem.putInt("duration",(int)duration/1000);
+        MainApplication.getInstance().getJSModule(PlayerModule.class).onPlayFinish(GUtil.getReadableMap(playItem));
     }
 }
