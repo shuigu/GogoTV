@@ -11,11 +11,8 @@
 
 
 #ifdef DEBUG
-//#define RN_DEV //RN调试，默认关闭
+#define RN_DEV //RN调试，模拟器要打开
 #endif
-
-
-
 
 
 static GBridgeManager * bridgeManager;
