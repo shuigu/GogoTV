@@ -8,6 +8,7 @@ import {
   View,
   ListView,
   ActivityIndicator,
+  RefreshControl,
 } from 'react-native';
 import {
   NavigationBar,
@@ -35,13 +36,21 @@ class Recommend extends  Component {
     });
     this.state = {
       loading:true,
+      isRefreshing:false,
       dataSource: [],
     };
   }
   componentDidMount() {
+    this.fetchRecomList();
+  }
+  componentWillUnmount() {
+    this.ds = null;
+  }
+  fetchRecomList(callback) {
     RecomList().then((res)=>{
-      // console.log('res',res)
+      console.log('res',res)
       this.updateDataSource(res.datas);
+      callback&&callback();
     }).catch((error)=>{
       console.log('error:',error);
       if (error){
@@ -50,10 +59,8 @@ class Recommend extends  Component {
         console.log('error res :',res);
         this.updateDataSource(res.datas);
       }
+      callback&&callback();
     })
-  }
-  componentWillUnmount() {
-    this.ds = null;
   }
   updateDataSource(newDataSource){
     let count = 8;
@@ -67,6 +74,12 @@ class Recommend extends  Component {
         dataSource:this.ds.cloneWithRowsAndSections(datas)
       })
     }
+  }
+  onRefresh(){
+    this.fetchRecomList(function () {
+      this.setState({isRefreshing: false});
+    }.bind(this));
+    this.setState({isRefreshing: true});
   }
   getRowData(datas,sectionId,rowId){
     return datas[sectionId][rowId];
@@ -108,6 +121,15 @@ class Recommend extends  Component {
         renderRow={ this.rowRender.bind(this)}
         renderSectionHeader={this.renderSectionHeader.bind(this)}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.isRefreshing}
+            onRefresh={this.onRefresh.bind(this)}
+            tintColor="#666666"
+            title="Loading..."
+            titleColor="#666666"
+          />
+        }
       />
     )
   }

@@ -9,6 +9,7 @@ import {
   View,
   ListView,
   ActivityIndicator,
+  RefreshControl,
 } from 'react-native';
 import {
   NavigationBar,
@@ -34,12 +35,17 @@ class History extends  Component {
     this.state = {
       loading:true,
       dataSource: [],
+      isRefreshing:false,
     };
   }
   componentDidMount() {
-    HistoryList().then((results)=>{
-      console.log('results:',results);
+    this.fetchHistory();
+  }
+  fetchHistory(callback){
+    HistoryList().then((res)=>{
+      console.log('res:',res);
       this.updateDataSource(res.datas);
+      callback&&callback();
     }).catch((error)=>{
       console.log('error:',error);
       if (error){
@@ -48,6 +54,7 @@ class History extends  Component {
         console.log('error res :',res);
         this.updateDataSource(res.datas);
       }
+      callback&&callback();
     });
   }
   componentWillUnmount() {
@@ -60,6 +67,12 @@ class History extends  Component {
         dataSource:this.ds.cloneWithRows(newDataSource),
       })
     }
+  }
+  onRefresh(){
+    this.fetchHistory(function () {
+      this.setState({isRefreshing: false});
+    }.bind(this));
+    this.setState({isRefreshing: true});
   }
   onItemPress(rowData){
     console.log('onItemPress',rowData)
@@ -88,6 +101,15 @@ class History extends  Component {
         dataSource={this.state.dataSource}
         renderRow={ this.rowRender.bind(this)}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.isRefreshing}
+            onRefresh={this.onRefresh.bind(this)}
+            tintColor="#666666"
+            title="Loading..."
+            titleColor="#666666"
+          />
+        }
       />
     )
   }
