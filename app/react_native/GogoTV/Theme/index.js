@@ -20,6 +20,8 @@ function StyleWithCombine(target,from1,from2,from3,from4) {
 let Grid = {
   A: SCREEN_WIDTH/12,
   a: SCREEN_WIDTH/60,
+  aMax:60,
+  AMax:12,
 };
 
 

@@ -2,12 +2,10 @@
  * Created by zhuguoqing on 2017/5/19.
  */
 
+import {App} from './../JSModule'
 var NetworkConst  = require('./constant')
 var NetworkStatic = require('./static')
 
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTQ5NTE3MzE0Mn0.0V4cfhI9G9zR1n1YFAPv0XnpVNq9IvJDCnwyuNgE2gc";
-
-var App = global._App;
 
 function Fetch(){
   return fetch(...arguments).then((response) => response.json())
@@ -23,11 +21,11 @@ function Post(url,params) {
     body: JSON.stringify({...params})
   })
 }
-function RecomList() {
-  return Post(NetworkConst.API_RECOM_LIST());
-}
 function Login(params) {
   return Post(NetworkConst.API_USER_LOGIN(),params)
+}
+function RecomList() {
+  return Post(NetworkConst.API_RECOM_LIST());
 }
 function AddHistory(history) {
   console.log('AddHistory.')
@@ -37,6 +35,13 @@ function AddHistory(history) {
   }
   return Post(NetworkConst.API_HISTORY_ADD(),params);
 }
+function HistoryList() {
+  let params = {
+    token:global._App.getToken(),
+  }
+  return Post(NetworkConst.API_HISTORY_LIST(),params);
+}
+
 module.exports ={
   NetworkConst,
   Post,
@@ -44,4 +49,5 @@ module.exports ={
   AddHistory,
   Login,
   RecomList,
+  HistoryList,
 }

@@ -146,6 +146,44 @@ var videoList = {
       type: 0
     }]
 }
+var historyList = {
+  code: '000000',
+  msg: '操作成功',
+  datas: [{
+    historyId: 1,
+    duration: 4,
+    videoId: 1,
+    videoName: '香港卫视',
+    logoUrl: '',
+    screenShotUrl: '',
+    playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+    score: '8.0',
+    describe: '香港卫视直播地址精彩在线'
+  },
+    {
+      historyId: 2,
+      duration: 3,
+      videoId: 5,
+      videoName: '广东卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      score: '7.8',
+      describe: '广东卫视直播地址精彩在线'
+    },
+    {
+      historyId: 3,
+      duration: 2,
+      videoId: 4,
+      videoName: '广西卫视',
+      logoUrl: '',
+      screenShotUrl: '',
+      playUrl: 'rtmp://live.hkstv.hk.lxdns.com/live/hks',
+      score: '7.6',
+      describe: '广西卫视直播地址精彩在线'
+    }]
+}
 module.exports = {
   videoList,
+  historyList,
 }

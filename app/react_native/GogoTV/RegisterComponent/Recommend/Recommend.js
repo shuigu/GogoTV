@@ -56,7 +56,6 @@ class Recommend extends  Component {
     this.ds = null;
   }
   updateDataSource(newDataSource){
-
     let count = 8;
     let datas = {
       sectionId1:newDataSource.slice(0,count),
@@ -92,7 +91,6 @@ class Recommend extends  Component {
       </View>
     )
   }
-
   renderSectionHeader(sectionDatas,sectionId){
     let titles = {sectionId1:'为您推荐:',sectionId2:'经典在线:'};
     let title = titles[sectionId];
