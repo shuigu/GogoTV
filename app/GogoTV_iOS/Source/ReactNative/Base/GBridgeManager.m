@@ -10,6 +10,14 @@
 #import "GUtil.h"
 
 
+#ifdef DEBUG
+//#define RN_DEV //RN调试，默认关闭
+#endif
+
+
+
+
+
 static GBridgeManager * bridgeManager;
 
 @implementation GBridgeManager{
@@ -81,7 +89,14 @@ static GBridgeManager * bridgeManager;
 
 #pragma mark - RCTBridgeDelegate
 -(NSURL *)sourceURLForBridge:(RCTBridge *)bridge{
-    return [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+
+    NSURL * rnPath;
+#ifdef RN_DEV
+    rnPath = [NSURL URLWithString:@"http://127.0.0.1:8081/index.bundle?platform=ios"];
+#else
+    rnPath = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"main" ofType:@"jsbundle"]];
+#endif
+    return rnPath;
 }
 
 #pragma mark - javaScript notification
