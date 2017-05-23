@@ -27,24 +27,24 @@ server/gogo    ---- 服务器业务代码
 server/sql     ---- 数据库备份   
 
 ### 运行代码
-1.环境要求   
-nodejs7.6以上、pod 1.0以上、xcode、android studio、chrome浏览器、React Developer Tools
-2.clone代码
-git clone git@github.com:shuigu/GogoTV.git GogoTV
-3.下载react-native环境
-cd GogoTV/app/react_native
-npm install 
-npm start
-4.运行iOS   
-cd GogoaTV/app/GogoTV_iOS 
-pod install 
-open GogoTV.xcworkspace
-5.运行android  
-通过android studio 打开 GogoaTV/app/GogoTV_Android
-6.服务器运行
-cd GogoaTV/server/gogo 
-npm install 
-npm start
+1.环境要求     
+nodejs7.6以上、pod 1.0以上、xcode、android studio、chrome浏览器、React Developer Tools    
+2.clone代码    
+git clone git@github.com:shuigu/GogoTV.git GogoTV    
+3.下载react-native环境     
+cd GogoTV/app/react_native    
+npm install     
+npm start    
+4.运行iOS    
+cd GogoaTV/app/GogoTV_iOS     
+pod install    
+open GogoTV.xcworkspace    
+5.运行android    
+通过android studio 打开 GogoaTV/app/GogoTV_Android    
+6.服务器运行    
+cd GogoaTV/server/gogo    
+npm install    
+npm start     
 
 
 
