@@ -7,7 +7,7 @@
 ### 其中客户端用到的技术
 object-c、java、nodejs、react-native、javascript 
 ### 其中服务器用到的技术
-nodejs、koa框架、javascript 
+nodejs、koa框架、javascript,mysql、token
 ### 客户端架构解析  
 GogoTV的客户端是基于react-native开发的，react-native是Facebook的一个开源项目。      
 通过react-native框架我们可以只写一份代码就能在两端iOS、android运行，并且运行效率还不低。在调试UI方面，react-native开发只需要reload一下就能马上反馈出所作出的UI修改，这个过程只需要几秒钟。相比原生的UI开发调试（重新run）不知方便高效多少倍。  
