@@ -81,6 +81,8 @@
 #pragma mark - UI
 -(void)initUi{
     
+    [self.view setBackgroundColor:UIColorFromHex(0x303035)];
+    
     self.playerView = [[UIView alloc]init];
     [self.playerView setBackgroundColor:[UIColor blackColor]];
     

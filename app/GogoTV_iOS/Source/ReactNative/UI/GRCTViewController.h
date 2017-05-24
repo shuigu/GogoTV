@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <React/RCTBridge.h>
 #import <React/RCTRootView.h>
+#import "GBaseViewController.h"
 
-@interface GRCTViewController : UIViewController
+@interface GRCTViewController : GBaseViewController
 
 - (instancetype)initWithBridge:(RCTBridge *)bridge
                     moduleName:(NSString *)moduleName

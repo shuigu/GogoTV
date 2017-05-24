@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Nullable;
+
 public class MainApplication extends Application implements ReactApplication {
   private static String JsMainModuleName = "index";
   private static MainApplication instance;
@@ -43,6 +45,18 @@ public class MainApplication extends Application implements ReactApplication {
     protected String getJSMainModuleName() {
       return JsMainModuleName;
     }
+
+    @Nullable
+    @Override
+    protected String getJSBundleFile() {
+      return super.getJSBundleFile();
+    }
+    @Nullable
+    @Override
+    protected String getBundleAssetName() {
+      return super.getBundleAssetName();
+    }
+
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(

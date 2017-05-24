@@ -12,16 +12,20 @@ import com.zhuguoqing.gogotv.MainApplication;
 public class GReactFragment extends Fragment {
     private String mModuleName;
     private Bundle mInitProps;
-    public GReactFragment() {
-        super();
-    }
-    public GReactFragment(String moduleName,Bundle initProps){
-        mModuleName = moduleName;
-        mInitProps  = initProps;
+    public static GReactFragment newInstance(String moduleName,Bundle initProps){
+        GReactFragment gReactFragment = new GReactFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("moduleName",moduleName);
+        bundle.putBundle("initProps",initProps);
+        gReactFragment.setArguments(bundle);
+        return gReactFragment;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle args = getArguments();
+        mModuleName = args.getString("moduleName");
+        mInitProps = args.getBundle("initProps");
     }
     @Nullable
     @Override

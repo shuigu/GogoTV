@@ -70,8 +70,7 @@ public class MainActivity extends ReactActivity {
         for (int i=0;i<list.size();i++){
             Bundle item = list.get(i);
             String moduleName = item.getString("moduleName");
-
-            GReactFragment fragment = new GReactFragment(moduleName,item);
+            GReactFragment fragment = GReactFragment.newInstance(moduleName,item);
             mFragments.add(fragment);
 
             FragmentTransaction transaction = getFragmentManager().beginTransaction();

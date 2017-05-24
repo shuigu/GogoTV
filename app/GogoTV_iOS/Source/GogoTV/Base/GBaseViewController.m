@@ -14,6 +14,9 @@
 
 @implementation GBaseViewController
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 -(void)viewWillPop{
     //
     NSLog(@"GBaseViewController [%@] viewWillPop",self);

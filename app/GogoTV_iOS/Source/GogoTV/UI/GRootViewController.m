@@ -24,6 +24,7 @@
     [self initView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRNDispatchNotification:) name:KGDispatchNotification object:nil];
 }
+
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
 }

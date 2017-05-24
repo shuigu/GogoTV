@@ -64,6 +64,11 @@ import com.android.build.OutputFile
  *   extraPackagerArgs: []
  * ]
  */
+project.ext.react = [
+//        bundleAssetName: "main.js.bundle",
+        entryFile: "index.js",
+        root: "../../react_native",
+]
 
 apply from: "../../react_native/node_modules/react-native/react.gradle"
 
@@ -120,6 +125,11 @@ android {
                 output.versionCodeOverride =
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
             }
+        }
+    }
+    signingConfigs {
+        release {
+            v2SigningEnabled false
         }
     }
 }
