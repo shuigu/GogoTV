@@ -1,5 +1,8 @@
 # GogoTV
 ## GogoTV是一个在线看直播的开源项目
+### 截图请戳下面
+https://github.com/shuigu/GogoTV/tree/master/screenshot   
+
 ### 整个项目包括3个工程   
 1.iOS客户端  
 2.android客户端  
