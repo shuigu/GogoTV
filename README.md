@@ -2,6 +2,10 @@
 ## GogoTV是一个在线看直播的开源项目
 ### 截图请戳下面
 https://github.com/shuigu/GogoTV/tree/master/screenshot   
+### 体验包请戳下面
+安装包说明：   
+只有安卓的安装包，并在小米4，华为P9正确运行   
+https://github.com/shuigu/GogoTV/tree/master/app/release 
 
 ### 整个项目包括3个工程   
 1.iOS客户端  
