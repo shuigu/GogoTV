@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     marginLeft:8,
+    height:30,
   },
   backImageView:{
     width:15,
